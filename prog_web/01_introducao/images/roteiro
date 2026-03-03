@@ -1,0 +1,87 @@
+================================================================================
+RESUMO DA APRESENTAÇÃO
+================================================================================
+A apresentação explora a jornada da Internet desde sua origem militar na 
+Guerra Fria até se tornar uma infraestrutura global vital, analisando seus 
+marcos técnicos, governança e as transformações no papel do usuário.
+
+================================================================================
+ROTEIRO DE APRESENTAÇÃO POR SLIDE
+================================================================================
+
+SLIDE 01: Capa - A História da Internet
+- Foco: Boas-vindas e introdução. 
+- Discurso: Definir a internet não apenas como tecnologia, mas como um 
+  "ecossistema vivo" essencial para a sociedade global contemporânea.
+
+SLIDE 02: Tensão Geopolítica - A Guerra Fria
+- Foco: Contexto histórico e necessidade.
+- Discurso: Explicar o trauma pós-Sputnik. O objetivo era criar uma rede de 
+  comunicação descentralizada capaz de sobreviver a ataques nucleares parciais.
+
+SLIDE 03: Conceito - Comutação de Pacotes
+- Foco: A lógica técnica da resiliência.
+- Discurso: Explicar que os dados são quebrados em pequenos pedaços (pacotes) 
+  que viajam por rotas independentes, garantindo que a informação chegue mesmo 
+  se um nó for destruído.
+
+SLIDE 04: O Início Físico - ARPANET
+- Foco: Linha do tempo inicial (1969).
+- Discurso: Narrar a conexão das 4 primeiras universidades e o primeiro teste 
+  curioso (a palavra LOGIN que travou no GO), provando que o conceito funcionava.
+
+SLIDE 05: A "Língua Franca" - TCP/IP
+- Foco: Padronização (1983).
+- Discurso: Apresentar Vint Cerf e Robert Kahn. O TCP/IP foi a solução para a 
+  "Torre de Babel" tecnológica, permitindo que redes diferentes conversassem.
+
+SLIDE 06: A Citação - A Web não é a Internet
+- Foco: Diferenciação conceitual (anos 90).
+- Discurso: Explicar que a Internet é a infraestrutura (cabos/protocolos) e a 
+  Web (Tim Berners-Lee) é uma aplicação gráfica que democratizou o acesso.
+
+SLIDE 07: Evolução das Motivações
+- Foco: Mudança de paradigma social/econômico.
+- Discurso: Transição do foco: Militar -> Acadêmico/Utopista -> Comercial 
+  -> Economia da Atenção e Vigilância (atual).
+
+SLIDE 08: Os 4 Pilares (Atores)
+- Foco: Visão sistêmica da rede.
+- Discurso: A internet depende da interação entre Governança, Infraestrutura, 
+  Produtores de Conteúdo e Usuários Finais.
+
+SLIDE 09: Governança e Normatização
+- Foco: Quem "manda" na rede?
+- Discurso: Detalhar que não há um presidente, mas consórcios técnicos 
+  (IETF, W3C, ICANN) que definem as regras que todos aceitam seguir.
+
+SLIDE 10: Infraestrutura Física
+- Foco: A "Nuvem" é de metal e vidro.
+- Discurso: Mostrar a realidade física: cabos submarinos intercontinentais e 
+  grandes backbones de fibra óptica que sustentam o tráfego mundial.
+
+SLIDE 11: Produtores de Conteúdo (Big Techs)
+- Foco: Concentração de poder.
+- Discurso: Discutir como Google e Meta se tornaram curadores do que vemos, 
+  influenciando economias e comportamentos globais.
+
+SLIDE 12: A Ambivalência do Usuário
+- Foco: Criador vs. Produto.
+- Discurso: Refletir sobre como a Web 2.0 nos deu voz (criadores), mas também 
+  transformou nossos dados em mercadoria para algoritmos de IA.
+
+SLIDE 13: Evolução Técnica e Novos Paradigmas
+- Foco: Do modem ao futuro.
+- Discurso: A transição da conexão discada para a mobilidade total (5G) e 
+  a promessa de descentralização da Web 3.0 e Blockchain.
+
+SLIDE 14: Teste de Conhecimento (Quiz)
+- Foco: Interação e fixação.
+- Discurso: Reforçar que o TCP/IP é a base técnica que sustenta tudo o que 
+  foi discutido até aqui.
+
+SLIDE 15: Encerramento Estratégico
+- Foco: Provocação final.
+- Discurso: Concluir que a internet é um projeto inacabado e que o futuro 
+  depende do equilíbrio entre lucro, segurança e liberdade individual.
+================================================================================
