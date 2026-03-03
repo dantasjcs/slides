@@ -1,0 +1,933 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A História da Internet</title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --bg-color: #f4f6f9;
+      --text-color: #2c3e50;
+      --accent-1: #3498db;
+      --accent-2: #e74c3c;
+      --accent-3: #2ecc71;
+      --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-secondary: 'Georgia', serif;
+      --transition-speed: 0.6s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slide-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-speed) ease-in-out, visibility var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5%;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Navegação Comum */
+    .nav-controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .nav-btn {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px 15px;
+      margin-left: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: var(--accent-1);
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container" id="presentation">
+
+    <!-- Slide 1: Hero (Capa) -->
+    <section class="slide active" id="slide-1">
+      <style>
+        #slide-1 {
+          background: linear-gradient(135deg, var(--accent-1), #2980b9);
+          color: white;
+        }
+        #slide-1 .hero-icon {
+          font-size: 6rem;
+          margin-bottom: 20px;
+          animation: float 3s ease-in-out infinite;
+        }
+        #slide-1 h1 {
+          font-size: 4rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        #slide-1 p {
+          font-size: 1.5rem;
+          max-width: 800px;
+          text-align: center;
+          opacity: 0.9;
+        }
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+        }
+      </style>
+      <i class="bi bi-globe2 hero-icon"></i>
+      <h1>A História da Internet</h1>
+      <p>Da Guerra Fria à infraestrutura vital da sociedade global. Um ecossistema vivo em constante evolução.</p>
+    </section>
+
+    <!-- Slide 2: Problema / Alerta (Contexto Histórico) -->
+    <section class="slide" id="slide-2">
+      <style>
+        #slide-2 .alert-container {
+          background-color: #f8d7da;
+          color: #721c24;
+          padding: 40px;
+          border-radius: 15px;
+          border-left: 10px solid var(--accent-2);
+          max-width: 800px;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+        #slide-2 .alert-icon {
+          font-size: 5rem;
+          color: var(--accent-2);
+        }
+        #slide-2 h2 {
+          text-align: left;
+          margin-bottom: 15px;
+        }
+        #slide-2 p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+        }
+      </style>
+      <div class="alert-container">
+        <i class="bi bi-exclamation-triangle-fill alert-icon"></i>
+        <div>
+          <h2>Tensão Geopolítica: A Guerra Fria</h2>
+          <p>Anos 1950: O lançamento do satélite Sputnik pela URSS gerou alerta máximo nos EUA. Era urgente criar sistemas de comunicação que sobrevivessem a ataques nucleares, substituindo redes centralizadas e vulneráveis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Definição / Conceito -->
+    <section class="slide" id="slide-3">
+      <style>
+        #slide-3 .concept-box {
+          background: white;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          text-align: center;
+          max-width: 700px;
+        }
+        #slide-3 .concept-icon {
+          font-size: 4rem;
+          color: var(--accent-1);
+          margin-bottom: 20px;
+        }
+        #slide-3 h2 {
+          color: var(--accent-1);
+        }
+        #slide-3 p {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+        }
+        #slide-3 .highlight {
+          font-weight: bold;
+          color: var(--accent-2);
+        }
+      </style>
+      <div class="concept-box">
+        <i class="bi bi-boxes concept-icon"></i>
+        <h2>Comutação de Pacotes</h2>
+        <p>A solução revolucionária para a resiliência militar.</p>
+        <p>Os dados são divididos em <span class="highlight">pequenos pacotes</span> que viajam por rotas independentes. Se uma rota falha, os pacotes encontram caminhos alternativos até o destino.</p>
+      </div>
+    </section>
+
+    <!-- Slide 4: Timeline (ARPANET) -->
+    <section class="slide" id="slide-4">
+      <style>
+        #slide-4 .timeline {
+          display: flex;
+          gap: 20px;
+          max-width: 900px;
+          margin-top: 30px;
+        }
+        #slide-4 .time-item {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+          flex: 1;
+          text-align: center;
+          border-top: 5px solid var(--accent-1);
+        }
+        #slide-4 .time-icon {
+          font-size: 2.5rem;
+          color: var(--text-color);
+          margin-bottom: 10px;
+        }
+        #slide-4 .year {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: var(--accent-1);
+          margin-bottom: 10px;
+        }
+      </style>
+      <h2>O Início Físico: ARPANET</h2>
+      <div class="timeline">
+        <div class="time-item">
+          <i class="bi bi-building time-icon"></i>
+          <div class="year">1969</div>
+          <p>Conexão de 4 universidades americanas (UCLA, Stanford, UC Santa Barbara, Utah).</p>
+        </div>
+        <div class="time-item">
+          <i class="bi bi-terminal time-icon"></i>
+          <div class="year">O Primeiro Teste</div>
+          <p>O envio da palavra "LOGIN". Travou após "LO", mas provou o conceito.</p>
+        </div>
+        <div class="time-item">
+          <i class="bi bi-translate time-icon"></i>
+          <div class="year">Anos 1970</div>
+          <p>A rede cresce, mas sofre do efeito "Torre de Babel": linguagens incompatíveis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Split 50/50 (TCP/IP) -->
+    <section class="slide" id="slide-5">
+      <style>
+        #slide-5 .split-layout {
+          display: flex;
+          width: 80%;
+          height: 60vh;
+          background: white;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        #slide-5 .split-text {
+          flex: 1;
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #slide-5 .split-visual {
+          flex: 1;
+          background: var(--accent-1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+        #slide-5 .big-icon {
+          font-size: 8rem;
+        }
+        #slide-5 ul {
+          list-style: none;
+          padding: 0;
+        }
+        #slide-5 li {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: flex-start;
+        }
+        #slide-5 li i {
+          color: var(--accent-1);
+          margin-right: 10px;
+          font-size: 1.4rem;
+        }
+      </style>
+      <div class="split-layout">
+        <div class="split-text">
+          <h2>A "Língua Franca": TCP/IP</h2>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i> Desenvolvido por Vint Cerf e Robert Kahn.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Implementado em 1º de Janeiro de 1983.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Solucionou o problema de comunicação entre redes heterogêneas.</li>
+            <li><i class="bi bi-check-circle-fill"></i> Deu origem à "Internet" (interconnected networks).</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <i class="bi bi-diagram-3-fill big-icon"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Citação / Statement (A Web) -->
+    <section class="slide" id="slide-6">
+      <style>
+        #slide-6 {
+          background-color: var(--text-color);
+          color: white;
+        }
+        #slide-6 .quote-box {
+          max-width: 800px;
+          text-align: center;
+        }
+        #slide-6 .quote-icon {
+          font-size: 4rem;
+          color: var(--accent-3);
+          opacity: 0.5;
+        }
+        #slide-6 h2 {
+          font-size: 2.5rem;
+          font-style: italic;
+          margin: 20px 0;
+        }
+        #slide-6 p {
+          font-size: 1.3rem;
+          color: #bdc3c7;
+        }
+      </style>
+      <div class="quote-box">
+        <i class="bi bi-chat-quote quote-icon"></i>
+        <h2>"A Web não é a internet, mas sim uma aplicação que roda sobre ela."</h2>
+        <p>Criada no início dos anos 90 por Tim Berners-Lee no CERN. Trouxe HTML, HTTP, o primeiro navegador e a interface gráfica, democratizando o acesso e transformando a rede em um espaço multimídia.</p>
+      </div>
+    </section>
+
+    <!-- Slide 7: Grid 2x2 (Evolução das Motivações) -->
+    <section class="slide" id="slide-7">
+      <style>
+        #slide-7 .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          max-width: 900px;
+          width: 100%;
+        }
+        #slide-7 .grid-item {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+          text-align: center;
+        }
+        #slide-7 .grid-icon {
+          font-size: 3rem;
+          margin-bottom: 15px;
+        }
+        #slide-7 .c-military { color: var(--accent-2); }
+        #slide-7 .c-utopia { color: var(--accent-3); }
+        #slide-7 .c-commerce { color: var(--accent-1); }
+        #slide-7 .c-data { color: #9b59b6; }
+      </style>
+      <h2>A Evolução das Motivações</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <i class="bi bi-shield-lock-fill grid-icon c-military"></i>
+          <h3>Resiliência Militar (Anos 60/70)</h3>
+          <p>Sobrevivência a ataques e compartilhamento de supercomputadores acadêmicos.</p>
+        </div>
+        <div class="grid-item">
+          <i class="bi bi-book-half grid-icon c-utopia"></i>
+          <h3>Democratização (Anos 90)</h3>
+          <p>Visão utópica: conhecimento livre e disponível para todos sem censura.</p>
+        </div>
+        <div class="grid-item">
+          <i class="bi bi-cart4 grid-icon c-commerce"></i>
+          <h3>Explosão Comercial (Anos 2000)</h3>
+          <p>A internet como epicentro da economia global (ex: Amazon, eBay).</p>
+        </div>
+        <div class="grid-item">
+          <i class="bi bi-database-fill-gear grid-icon c-data"></i>
+          <h3>Economia da Atenção (Atual)</h3>
+          <p>Coleta de dados comportamentais para publicidade direcionada e IA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Diagrama Conceitual (Atores da Internet) -->
+    <section class="slide" id="slide-8">
+      <style>
+        #slide-8 .diagram {
+          position: relative;
+          width: 500px;
+          height: 500px;
+          margin-top: 20px;
+        }
+        #slide-8 .center-node {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: var(--text-color);
+          color: white;
+          padding: 20px;
+          border-radius: 50%;
+          width: 140px;
+          height: 140px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          text-align: center;
+          z-index: 2;
+        }
+        #slide-8 .satellite {
+          position: absolute;
+          background: white;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          width: 160px;
+          text-align: center;
+          font-size: 0.9rem;
+        }
+        #slide-8 .sat-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        #slide-8 .sat-2 { bottom: 0; left: 50%; transform: translateX(-50%); }
+        #slide-8 .sat-3 { top: 50%; left: 0; transform: translateY(-50%); }
+        #slide-8 .sat-4 { top: 50%; right: 0; transform: translateY(-50%); }
+        #slide-8 .icon-diagram { font-size: 2rem; color: var(--accent-1); margin-bottom: 5px; }
+      </style>
+      <h2>Os 4 Pilares (Atores) da Internet</h2>
+      <div class="diagram">
+        <div class="center-node">Ecossistema<br>da Internet</div>
+        <div class="satellite sat-1">
+          <i class="bi bi-bank icon-diagram"></i><br>
+          <strong>Governança</strong><br>Padrões e Normas
+        </div>
+        <div class="satellite sat-2">
+          <i class="bi bi-hdd-network icon-diagram"></i><br>
+          <strong>Infraestrutura</strong><br>O "Corpo" físico
+        </div>
+        <div class="satellite sat-3">
+          <i class="bi bi-laptop icon-diagram"></i><br>
+          <strong>Produtores</strong><br>Conteúdo e Serviços
+        </div>
+        <div class="satellite sat-4">
+          <i class="bi bi-people icon-diagram"></i><br>
+          <strong>Usuários</strong><br>Consumidores e Criadores
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Accordion / Expansível (Órgãos de Governança) -->
+    <section class="slide" id="slide-9">
+      <style>
+        #slide-9 .accordion-container {
+          width: 80%;
+          max-width: 800px;
+        }
+        #slide-9 .acc-item {
+          background: white;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        #slide-9 .acc-header {
+          padding: 15px 20px;
+          background: var(--text-color);
+          color: white;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+        #slide-9 .acc-body {
+          padding: 0 20px;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out, padding 0.3s ease;
+          background: #fff;
+        }
+        #slide-9 .acc-body.open {
+          padding: 15px 20px;
+          max-height: 200px;
+        }
+      </style>
+      <h2>Atores: Governança e Normatização</h2>
+      <p class="text-center" style="margin-bottom: 20px;">A internet não tem um "presidente", depende de padrões técnicos seguidos por todos.</p>
+      <div class="accordion-container">
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span><i class="bi bi-tools"></i> IETF (Internet Engineering Task Force)</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="acc-body">
+            <p>Grupo voluntário responsável por desenvolver e promover os protocolos técnicos básicos da internet, garantindo que a base técnica evolua de forma interoperável.</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span><i class="bi bi-globe"></i> W3C (World Wide Web Consortium)</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="acc-body">
+            <p>Fundado por Tim Berners-Lee, estabelece as normas técnicas para a Web, garantindo que os sites e aplicações funcionem uniformemente em qualquer navegador.</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <span><i class="bi bi-signpost-split"></i> ICANN</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="acc-body">
+            <p>Gerencia os endereços IP e o sistema de nomes de domínio (DNS). Garante que digitar um endereço URL leve exatamente ao servidor correto em qualquer lugar do mundo.</p>
+          </div>
+        </div>
+      </div>
+      <script>
+        function toggleAcc(el) {
+          const body = el.nextElementSibling;
+          const icon = el.querySelector('.bi-chevron-down, .bi-chevron-up');
+          if (body.classList.contains('open')) {
+            body.classList.remove('open');
+            icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+          } else {
+            document.querySelectorAll('#slide-9 .acc-body').forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('#slide-9 .acc-header i:last-child').forEach(i => i.classList.replace('bi-chevron-up', 'bi-chevron-down'));
+            body.classList.add('open');
+            icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+          }
+        }
+      </script>
+    </section>
+
+    <!-- Slide 10: Imagem / Fluxograma (Infraestrutura) -->
+    <section class="slide" id="slide-10">
+      <style>
+        #slide-10 .content-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 900px;
+        }
+        #slide-10 img {
+          width: 100%;
+          max-width: 700px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+          margin: 20px 0;
+        }
+        #slide-10 ul {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+        }
+        #slide-10 li {
+          background: white;
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          flex: 1;
+        }
+        #slide-10 .icon-infra {
+          font-size: 2rem;
+          color: var(--accent-1);
+          display: block;
+          margin-bottom: 10px;
+        }
+      </style>
+      <h2>Atores: A Infraestrutura Física</h2>
+      <div class="content-box">
+        <p>O "corpo" da internet que transporta o tráfego de dados globalmente e localmente.</p>
+        <!-- Placeholder para a imagem gerada -->
+        <img src="images/fluxograma_infraestrutura_internet.png" alt="Fluxograma da Infraestrutura da Internet">
+        <ul>
+          <li>
+            <i class="bi bi-water icon-infra"></i>
+            <strong>Cabos Submarinos</strong><br>Fibra óptica intercontinental.
+          </li>
+          <li>
+            <i class="bi bi-diagram-2 icon-infra"></i>
+            <strong>Backbones</strong><br>Espinha dorsal de alta velocidade.
+          </li>
+          <li>
+            <i class="bi bi-router icon-infra"></i>
+            <strong>ISPs Locais</strong><br>Provedores de acesso final.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Slide 11: Lista Vertical Estratégica (Produtores e Big Techs) -->
+    <section class="slide" id="slide-11">
+      <style>
+        #slide-11 .strategic-list {
+          width: 80%;
+          max-width: 700px;
+        }
+        #slide-11 .list-item {
+          display: flex;
+          align-items: center;
+          background: white;
+          margin-bottom: 15px;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+          border-left: 5px solid var(--accent-2);
+        }
+        #slide-11 .list-icon {
+          font-size: 2.5rem;
+          color: var(--accent-2);
+          margin-right: 20px;
+          width: 50px;
+          text-align: center;
+        }
+        #slide-11 h3 {
+          margin: 0 0 5px 0;
+          font-size: 1.2rem;
+          text-align: left;
+        }
+        #slide-11 p {
+          margin: 0;
+          font-size: 1rem;
+          color: #555;
+        }
+      </style>
+      <h2>Atores: Produtores de Conteúdo (Big Techs)</h2>
+      <div class="strategic-list">
+        <div class="list-item">
+          <i class="bi bi-google list-icon"></i>
+          <div>
+            <h3>O Curador Mundial</h3>
+            <p>Algoritmos de busca que filtram e direcionam o que vemos na rede.</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <i class="bi bi-meta list-icon"></i>
+          <div>
+            <h3>Interação Social</h3>
+            <p>Redefinição das relações sociais e coleta massiva de dados comportamentais.</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <i class="bi bi-lightning-charge-fill list-icon"></i>
+          <div>
+            <h3>Poder Sem Precedentes</h3>
+            <p>Influência direta em economias, eleições e comportamento social global.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12: Comparativo Lado a Lado (O Usuário) -->
+    <section class="slide" id="slide-12">
+      <style>
+        #slide-12 .compare-container {
+          display: flex;
+          gap: 30px;
+          max-width: 800px;
+          width: 100%;
+        }
+        #slide-12 .side {
+          flex: 1;
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        #slide-12 .side-icon {
+          font-size: 4rem;
+          margin-bottom: 20px;
+        }
+        #slide-12 .creator .side-icon { color: var(--accent-3); }
+        #slide-12 .product .side-icon { color: var(--accent-2); }
+      </style>
+      <h2>Atores: A Ambivalência do Usuário</h2>
+      <div class="compare-container">
+        <div class="side creator">
+          <i class="bi bi-pencil-square side-icon"></i>
+          <h3>O Usuário Criador (Web 2.0)</h3>
+          <p>Deixou de ser espectador passivo. Alimenta a rede com blogs, vídeos, postagens e avaliações.</p>
+        </div>
+        <div class="side product">
+          <i class="bi bi-box-seam side-icon"></i>
+          <h3>O Usuário "Produto"</h3>
+          <p>Seus dados comportamentais são extraídos para alimentar algoritmos de IA corporativos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 13: Timeline / Evolução Hardware e Paradigmas -->
+    <section class="slide" id="slide-13">
+      <style>
+        #slide-13 .evolution-box {
+          width: 80%;
+          max-width: 800px;
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        #slide-13 .step {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+        #slide-13 .step:last-child {
+          margin-bottom: 0;
+        }
+        #slide-13 .step-icon {
+          font-size: 2rem;
+          color: var(--text-color);
+          background: var(--bg-color);
+          padding: 15px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        #slide-13 .step-content h3 {
+          text-align: left;
+          margin-bottom: 5px;
+          font-size: 1.2rem;
+        }
+      </style>
+      <h2>Evolução Técnica e Novos Paradigmas</h2>
+      <div class="evolution-box">
+        <div class="step">
+          <i class="bi bi-modem step-icon"></i>
+          <div class="step-content">
+            <h3>Conexão Discada à Banda Larga</h3>
+            <p>De sites estáticos (56kbps) a plataformas de streaming 4K (Fibra).</p>
+          </div>
+        </div>
+        <div class="step">
+          <i class="bi bi-phone-vibrate step-icon"></i>
+          <div class="step-content">
+            <h3>A Revolução Móvel (2007+)</h3>
+            <p>Smartphones e redes 3G/4G/5G transformaram a rede em um ambiente habitado permanentemente.</p>
+          </div>
+        </div>
+        <div class="step">
+          <i class="bi bi-link-45deg step-icon"></i>
+          <div class="step-content">
+            <h3>Web 3.0 e IoT (O Futuro)</h3>
+            <p>Busca por descentralização (Blockchain) e conexão de bilhões de dispositivos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 14: Quiz / Múltipla Escolha -->
+    <section class="slide" id="slide-14">
+      <style>
+        #slide-14 .quiz-container {
+          background: white;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          max-width: 600px;
+          width: 100%;
+          text-align: center;
+        }
+        #slide-14 .options {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 20px;
+        }
+        #slide-14 .btn-option {
+          padding: 15px;
+          border: 2px solid var(--accent-1);
+          background: transparent;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1.1rem;
+          transition: all 0.3s;
+        }
+        #slide-14 .btn-option:hover {
+          background: var(--accent-1);
+          color: white;
+        }
+        #slide-14 .btn-option.correct {
+          background: var(--accent-3);
+          border-color: var(--accent-3);
+          color: white;
+        }
+        #slide-14 .btn-option.wrong {
+          background: var(--accent-2);
+          border-color: var(--accent-2);
+          color: white;
+        }
+        #slide-14 #quiz-feedback {
+          margin-top: 20px;
+          font-weight: bold;
+          min-height: 24px;
+        }
+      </style>
+      <h2>Teste de Conhecimento</h2>
+      <div class="quiz-container">
+        <i class="bi bi-question-circle" style="font-size: 3rem; color: var(--accent-1);"></i>
+        <p style="font-size: 1.2rem; margin-top:10px;">Qual protocolo solucionou o problema da "Torre de Babel" e é considerado a "língua franca" da internet?</p>
+        <div class="options">
+          <button class="btn-option" onclick="checkAnswer(this, false)">HTML / HTTP</button>
+          <button class="btn-option" onclick="checkAnswer(this, false)">ARPANET</button>
+          <button class="btn-option" onclick="checkAnswer(this, true)">TCP/IP</button>
+          <button class="btn-option" onclick="checkAnswer(this, false)">DNS</button>
+        </div>
+        <div id="quiz-feedback"></div>
+      </div>
+      <script>
+        function checkAnswer(btn, isCorrect) {
+          const container = btn.parentElement;
+          const buttons = container.querySelectorAll('.btn-option');
+          const feedback = document.getElementById('quiz-feedback');
+          
+          // Reset styles
+          buttons.forEach(b => {
+            b.classList.remove('correct', 'wrong');
+          });
+
+          if (isCorrect) {
+            btn.classList.add('correct');
+            feedback.style.color = 'var(--accent-3)';
+            feedback.innerHTML = '<i class="bi bi-check-circle"></i> Correto! O TCP/IP permitiu a interconexão de redes diferentes.';
+          } else {
+            btn.classList.add('wrong');
+            feedback.style.color = 'var(--accent-2)';
+            feedback.innerHTML = '<i class="bi bi-x-circle"></i> Incorreto. Tente novamente!';
+          }
+        }
+      </script>
+    </section>
+
+    <!-- Slide 15: Encerramento Estratégico -->
+    <section class="slide" id="slide-15">
+      <style>
+        #slide-15 {
+          background: linear-gradient(135deg, #2c3e50, #000000);
+          color: white;
+          text-align: center;
+        }
+        #slide-15 .closing-icon {
+          font-size: 5rem;
+          color: var(--accent-3);
+          margin-bottom: 20px;
+        }
+        #slide-15 h1 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+        }
+        #slide-15 p {
+          font-size: 1.3rem;
+          max-width: 800px;
+          line-height: 1.6;
+          color: #ecf0f1;
+        }
+        #slide-15 .highlight-text {
+          color: var(--accent-1);
+          font-weight: bold;
+        }
+      </style>
+      <i class="bi bi-power closing-icon"></i>
+      <h1>Um Projeto Contínuo</h1>
+      <p>A internet não é um produto finalizado. Ela é moldada pelas tensões entre <span class="highlight-text">lucro, segurança e liberdade</span>.</p>
+      <p style="margin-top: 15px;">O futuro da rede depende de como nós — desenvolvedores, usuários e cidadãos — protegeremos os ideais de acesso universal contra mecanismos de controle e vigilância.</p>
+    </section>
+
+    <!-- Controles de Navegação -->
+    <div class="nav-controls">
+      <button class="nav-btn" id="btn-prev" onclick="navSlide(-1)" aria-label="Slide Anterior">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+      <button class="nav-btn" id="btn-next" onclick="navSlide(1)" aria-label="Próximo Slide">
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      // Bounds checking
+      if (index >= totalSlides) index = totalSlides - 1;
+      if (index < 0) index = 0;
+      
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+      currentSlide = index;
+
+      // Update button states
+      document.getElementById('btn-prev').style.opacity = currentSlide === 0 ? '0.5' : '1';
+      document.getElementById('btn-next').style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+    }
+
+    function navSlide(step) {
+      showSlide(currentSlide + step);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        navSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        navSlide(-1);
+      }
+    });
+
+    // Initial setup
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>
