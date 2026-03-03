@@ -1,1 +1,479 @@
-<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Introdução às Redes de Computadores</title><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'><script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script><style>:root{--bg-color:#f8f9fa;--text-color:#212529;--accent-1:#0d6efd;--accent-2:#ffc107;--accent-3:#198754;--font-primary:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;--font-secondary:'Georgia', serif;}body, html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background-color:var(--bg-color);font-family:var(--font-primary);color:var(--text-color);}.slide{position:absolute;top:0;left:0;width:100vw;height:100vh;opacity:0;pointer-events:none;transition:opacity 0.5s ease-in-out, transform 0.5s ease;transform:translateY(20px);display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:2rem;}.slide.active{opacity:1;pointer-events:all;transform:translateY(0);}.nav-hints{position:absolute;bottom:20px;font-size:0.9rem;color:#6c757d;opacity:0.7;}</style></head><body><section class='slide active' id='slide-1'><style>#slide-1 .hero-title{font-size:4rem;color:var(--accent-1);font-weight:bold;text-align:center;margin-bottom:1rem;}#slide-1 .hero-subtitle{font-size:2rem;color:var(--text-color);text-align:center;}#slide-1 .icon-large{font-size:8rem;color:var(--accent-2);margin-bottom:2rem;}</style><i class='bi bi-globe2 icon-large'></i><h1 class='hero-title'>Introdução às Redes de Computadores</h1><p class='hero-subtitle'>A espinha dorsal da sociedade moderna</p><div class='nav-hints'>Use as setas do teclado para navegar ➡️</div><script>if(!window.hasNavScript){window.hasNavScript=true;document.addEventListener('keydown',(e)=>{const slides=Array.from(document.querySelectorAll('.slide'));const activeIdx=slides.findIndex(s=>s.classList.contains('active'));if(e.key==='ArrowRight'&&activeIdx<slides.length-1){slides[activeIdx].classList.remove('active');slides[activeIdx+1].classList.add('active');}else if(e.key==='ArrowLeft'&&activeIdx>0){slides[activeIdx].classList.remove('active');slides[activeIdx-1].classList.add('active');}});}</script></section><section class='slide' id='slide-2'><style>#slide-2 h2{font-size:3rem;color:var(--accent-1);margin-bottom:2rem;}#slide-2 p{font-size:1.5rem;max-width:800px;text-align:center;line-height:1.6;}#slide-2 .icon-concept{font-size:5rem;color:var(--accent-3);margin-bottom:1rem;}</style><i class='bi bi-broadcast icon-concept'></i><h2>Comunicação de Dados</h2><p>É a troca de informações entre dois dispositivos por meio de um meio de transmissão físico ou sem fio. Depende da combinação harmoniosa de hardware (equipamento) e software (programas).</p></section><section class='slide' id='slide-3'><style>#slide-3 .split-container{display:flex;width:100%;max-width:1200px;align-items:center;gap:2rem;}#slide-3 .text-col, #slide-3 .img-col{flex:1;}#slide-3 h2{font-size:2.5rem;color:var(--accent-1);}#slide-3 ul{font-size:1.3rem;line-height:1.8;}#slide-3 img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}</style><div class='split-container'><div class='text-col'><h2><i class='bi bi-diagram-3'></i> Os 5 Componentes</h2><ul><li><strong>Mensagem:</strong> A informação transmitida.</li><li><strong>Emissor:</strong> Quem envia os dados.</li><li><strong>Receptor:</strong> Quem recebe os dados.</li><li><strong>Meio de Transmissão:</strong> O caminho físico (cabos, ondas).</li><li><strong>Protocolo:</strong> Regras que governam a comunicação.</li></ul></div><div class='img-col'><img src='images/infografico_5_componentes_comunicacao.png' alt='Infográfico dos 5 Componentes da Comunicação'></div></div></section><section class='slide' id='slide-4'><style>#slide-4 h2{font-size:2.5rem;color:var(--accent-1);margin-bottom:2rem;}#slide-4 .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1000px;width:100%;}#slide-4 .card{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);text-align:center;}#slide-4 .card i{font-size:3rem;color:var(--accent-2);margin-bottom:1rem;display:block;}#slide-4 .card h3{margin:0 0 1rem 0;font-size:1.5rem;}</style><h2><i class='bi bi-file-binary'></i> Representação de Dados</h2><div class='grid'><div class='card'><i class='bi bi-file-text'></i><h3>Texto e Números</h3><p>Convertidos em bits (ASCII, Unicode) ou binários matemáticos.</p></div><div class='card'><i class='bi bi-image'></i><h3>Imagens</h3><p>Divididas em pixels, com valores numéricos para cor e intensidade.</p></div><div class='card'><i class='bi bi-mic'></i><h3>Áudio</h3><p>Som convertido em sinal digital através de amostragem.</p></div><div class='card'><i class='bi bi-camera-video'></i><h3>Vídeo</h3><p>Imagens em movimento e sons exigindo grande largura de banda.</p></div></div></section><section class='slide' id='slide-5'><style>#slide-5 h2{font-size:3rem;color:var(--accent-1);margin-bottom:2rem;}#slide-5 .flow-list{display:flex;flex-direction:column;gap:1.5rem;max-width:800px;width:100%;}#slide-5 .flow-item{display:flex;align-items:center;background:#fff;padding:1.5rem;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}#slide-5 .flow-item i{font-size:2.5rem;color:var(--accent-3);margin-right:1.5rem;min-width:50px;}#slide-5 h3{margin:0 0 0.5rem 0;}</style><h2><i class='bi bi-arrows-collapse'></i> Fluxo de Dados</h2><div class='flow-list'><div class='flow-item'><i class='bi bi-arrow-right-circle'></i><div><h3>Simplex</h3><p>Comunicação unidirecional. Apenas um transmite, o outro recebe (Ex: teclado).</p></div></div><div class='flow-item'><i class='bi bi-arrow-left-right'></i><div><h3>Half-Duplex</h3><p>Ambos transmitem e recebem, mas não ao mesmo tempo (Ex: walkie-talkie).</p></div></div><div class='flow-item'><i class='bi bi-arrows-move'></i><div><h3>Full-Duplex</h3><p>Ambos transmitem e recebem simultaneamente (Ex: telefonia móvel).</p></div></div></div></section><section class='slide' id='slide-6'><style>#slide-6 h2{font-size:3rem;color:var(--accent-1);margin-bottom:1.5rem;}#slide-6 p{font-size:1.5rem;text-align:center;max-width:900px;line-height:1.6;}#slide-6 .icon-huge{font-size:6rem;color:var(--accent-2);margin-bottom:1rem;}</style><i class='bi bi-pc-display-horizontal icon-huge'></i><h2>Redes e Processamento Distribuído</h2><p>Uma rede é um conjunto de dispositivos (nós) conectados. As redes modernas usam o <strong>processamento distribuído</strong>, onde tarefas são divididas entre vários computadores para aumentar a eficiência e evitar falhas no sistema como um todo.</p></section><section class='slide' id='slide-7'><style>#slide-7 h2{font-size:2.8rem;color:var(--accent-1);margin-bottom:2rem;}#slide-7 .pillars{display:flex;justify-content:center;gap:3rem;width:100%;max-width:1000px;}#slide-7 .pillar{flex:1;text-align:center;}#slide-7 .pillar i{font-size:4rem;color:var(--accent-3);margin-bottom:1rem;display:block;}#slide-7 .equation{margin-top:2rem;font-size:1.5rem;background:#fff;padding:1rem;border-radius:8px;}</style><h2><i class='bi bi-bar-chart-line'></i> Critérios de Eficiência de Redes</h2><div class='pillars'><div class='pillar'><i class='bi bi-speedometer2'></i><h3>Desempenho</h3><p>Tempo de trânsito e vazão de dados adequados ao número de usuários.</p></div><div class='pillar'><i class='bi bi-shield-check'></i><h3>Confiabilidade</h3><p>Frequência de falhas baixa e rápida recuperação de links.</p></div><div class='pillar'><i class='bi bi-lock'></i><h3>Segurança</h3><p>Proteção de dados contra acessos não autorizados e danos.</p></div></div><div class='equation'>Exemplo de métrica: $$ Throughput = rac{	ext{Dados Transferidos}}{	ext{Tempo}} $$</div></section><section class='slide' id='slide-8'><style>#slide-8 .split-container{display:flex;width:100%;max-width:1200px;align-items:center;gap:2rem;}#slide-8 h2{font-size:2.5rem;color:var(--accent-1);}#slide-8 ul{font-size:1.2rem;line-height:1.6;}#slide-8 img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}</style><div class='split-container'><div class='text-col'><h2><i class='bi bi-share'></i> Topologias Físicas</h2><ul><li><strong>Malha (Mesh):</strong> Link dedicado entre todos os dispositivos. Muito robusta, mas cara.</li><li><strong>Estrela (Star):</strong> Todos conectados a um switch central. Topologia mais comum em LANs.</li><li><strong>Barramento (Bus):</strong> Um cabo único conecta todos. Pouco usada hoje.</li><li><strong>Anel (Ring):</strong> Conexão circular ponto a ponto com os vizinhos.</li></ul></div><div class='img-col'><img src='images/fluxograma_topologias_rede.png' alt='Fluxograma de Topologias de Rede'></div></div></section><section class='slide' id='slide-9'><style>#slide-9 h2{font-size:3rem;color:var(--accent-1);margin-bottom:2rem;}#slide-9 .comparison{display:flex;gap:2rem;max-width:1000px;width:100%;}#slide-9 .side{flex:1;background:#fff;padding:2rem;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,0.1);text-align:center;}#slide-9 .side i{font-size:4rem;margin-bottom:1rem;color:var(--accent-2);}</style><h2><i class='bi bi-hdd-network'></i> Modelos de Redes</h2><div class='comparison'><div class='side'><i class='bi bi-server'></i><h3>Cliente-Servidor</h3><p>Servidores poderosos fornecem recursos e serviços centrais, enquanto os clientes os solicitam e utilizam.</p></div><div class='side'><i class='bi bi-people'></i><h3>Ponto a Ponto (P2P)</h3><p>Todos os computadores atuam como clientes e servidores, compartilhando recursos diretamente entre si.</p></div></div></section><section class='slide' id='slide-10'><style>#slide-10 .container{display:flex;flex-direction:column;align-items:center;max-width:1000px;width:100%;}#slide-10 h2{font-size:2.8rem;color:var(--accent-1);margin-bottom:1rem;}#slide-10 .timeline{display:flex;justify-content:space-between;width:100%;margin-top:2rem;}#slide-10 .point{text-align:center;flex:1;}#slide-10 .point i{font-size:3rem;color:var(--accent-3);}#slide-10 img{max-width:500px;margin-top:2rem;border-radius:8px;}</style><div class='container'><h2><i class='bi bi-geo-alt'></i> Categorias por Alcance</h2><div class='timeline'><div class='point'><i class='bi bi-earbuds'></i><h3>PAN</h3><p>Pessoa / Curta distância</p></div><div class='point'><i class='bi bi-building'></i><h3>LAN</h3><p>Prédio / Campus</p></div><div class='point'><i class='bi bi-buildings'></i><h3>MAN</h3><p>Cidade</p></div><div class='point'><i class='bi bi-globe-americas'></i><h3>WAN</h3><p>País / Mundo (Ex: Internet)</p></div></div><img src='images/infografico_alcance_geografico_redes.png' alt='Alcance Geográfico PAN LAN MAN WAN'></div></section><section class='slide' id='slide-11'><style>#slide-11 h2{font-size:3rem;color:var(--accent-1);margin-bottom:2rem;}#slide-11 ul{font-size:1.5rem;line-height:2;max-width:900px;}#slide-11 li i{color:var(--accent-2);margin-right:10px;}</style><h2><i class='bi bi-clock-history'></i> A Internet: Breve Histórico</h2><ul><li><i class='bi bi-caret-right-fill'></i><strong>Anos 60:</strong> Criação da ARPANET para comunicação resiliente a ataques nucleares.</li><li><i class='bi bi-caret-right-fill'></i><strong>Anos 70:</strong> Desenvolvimento do TCP/IP (Vint Cerf e Robert Kahn).</li><li><i class='bi bi-caret-right-fill'></i><strong>1983:</strong> ARPANET adota TCP/IP. Nascimento oficial da Internet.</li><li><i class='bi bi-caret-right-fill'></i><strong>Anos 90:</strong> Invenção da World Wide Web (WWW), popularizando o acesso global.</li></ul></section><section class='slide' id='slide-12'><style>#slide-12 h2{font-size:2.8rem;color:var(--accent-1);margin-bottom:2rem;}#slide-12 .accordion{width:100%;max-width:800px;}#slide-12 .acc-item{background:#fff;margin-bottom:1rem;border-radius:5px;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,0.1);}#slide-12 .acc-header{background:var(--accent-1);color:#fff;padding:1rem;cursor:pointer;font-size:1.2rem;font-weight:bold;display:flex;justify-content:space-between;}#slide-12 .acc-body{padding:0;max-height:0;overflow:hidden;transition:max-height 0.3s ease;background:#fff;color:var(--text-color);}#slide-12 .acc-body p{padding:1rem;margin:0;}</style><h2><i class='bi bi-layers'></i> Estrutura da Internet Atual</h2><div class='accordion'><div class='acc-item'><div class='acc-header' onclick='toggleAcc(this)'><span>Tier-1 ISPs (Nível 1)</span><i class='bi bi-chevron-down'></i></div><div class='acc-body'><p>Provedores de redes globais que formam o esqueleto (backbone) da Internet mundial.</p></div></div><div class='acc-item'><div class='acc-header' onclick='toggleAcc(this)'><span>Tier-2 ISPs (Nível 2)</span><i class='bi bi-chevron-down'></i></div><div class='acc-body'><p>Pagam aos provedores de nível 1 por conectividade e atendem a grandes regiões ou países inteiros.</p></div></div><div class='acc-item'><div class='acc-header' onclick='toggleAcc(this)'><span>ISPs Locais</span><i class='bi bi-chevron-down'></i></div><div class='acc-body'><p>Na base da pirâmide, fornecem o acesso direto à internet para as casas e empresas dos usuários finais.</p></div></div></div><script>function toggleAcc(el){let body=el.nextElementSibling;if(body.style.maxHeight){body.style.maxHeight=null;}else{let all=document.querySelectorAll('#slide-12 .acc-body');all.forEach(b=>b.style.maxHeight=null);body.style.maxHeight=body.scrollHeight+'px';}}</script></section><section class='slide' id='slide-13'><style>#slide-13 h2{font-size:3rem;color:var(--accent-1);margin-bottom:2rem;}#slide-13 .list-container{max-width:900px;font-size:1.4rem;}#slide-13 ul{list-style:none;padding:0;}#slide-13 li{background:#fff;padding:1rem;margin-bottom:1rem;border-left:5px solid var(--accent-3);box-shadow:0 2px 4px rgba(0,0,0,0.1);display:flex;align-items:center;}#slide-13 li i{font-size:2rem;margin-right:1rem;color:var(--accent-3);}</style><h2><i class='bi bi-card-checklist'></i> Protocolos e Padrões</h2><div class='list-container'><ul><li><i class='bi bi-code-slash'></i><strong>Sintaxe do Protocolo:</strong> Define a estrutura e formato dos dados transmitidos.</li><li><i class='bi bi-info-circle'></i><strong>Semântica:</strong> O significado de cada seção de bits e ações correspondentes.</li><li><i class='bi bi-stopwatch'></i><strong>Sincronização:</strong> Momento exato de envio e velocidade da comunicação.</li><li><i class='bi bi-award'></i><strong>Padrões de Facto:</strong> Adotados por uso generalizado sem planejamento formal.</li><li><i class='bi bi-bank'></i><strong>Padrões de Jure:</strong> Legislados ou aprovados por órgãos oficiais (ISO, IEEE).</li></ul></div></section><section class='slide' id='slide-14'><style>#slide-14 .split-container{display:flex;width:100%;max-width:1200px;align-items:center;gap:2rem;}#slide-14 h2{font-size:2.5rem;color:var(--accent-1);}#slide-14 p{font-size:1.2rem;line-height:1.6;}#slide-14 img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}</style><div class='split-container'><div class='text-col'><h2><i class='bi bi-journal-check'></i> Padrões Internet (RFC)</h2><p>O desenvolvimento da Internet ocorre de forma aberta. O principal mecanismo é o RFC (Request for Comments). Um documento começa como rascunho e, após testes e revisões, pode se tornar um padrão oficial supervisionado pela IETF.</p></div><div class='img-col'><img src='images/fluxograma_processo_rfc_internet.png' alt='Fluxograma do Processo RFC'></div></div></section><section class='slide' id='slide-15'><style>#slide-15 h2{font-size:2.8rem;color:var(--accent-1);margin-bottom:2rem;}#slide-15 .quiz-container{max-width:800px;width:100%;text-align:center;}#slide-15 .options{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}#slide-15 button{padding:1rem;font-size:1.2rem;border:2px solid var(--accent-1);border-radius:8px;background:transparent;cursor:pointer;transition:all 0.3s;}#slide-15 button:hover{background:var(--accent-1);color:#fff;}</style><h2><i class='bi bi-question-circle'></i> Quiz: Topologia e Confiabilidade</h2><div class='quiz-container'><p style='font-size:1.5rem;'>Qual topologia física é conhecida por ser extremamente robusta devido a possuir um link dedicado ponto a ponto entre todos os dispositivos, embora seja cara?</p><div class='options'><button onclick='checkAns(this, false)'>Estrela (Star)</button><button onclick='checkAns(this, false)'>Barramento (Bus)</button><button onclick='checkAns(this, true)'>Malha (Mesh)</button><button onclick='checkAns(this, false)'>Anel (Ring)</button></div></div><script>function checkAns(btn, isCorrect){if(isCorrect){btn.style.backgroundColor='var(--accent-3)';btn.style.color='#fff';btn.style.borderColor='var(--accent-3)';btn.textContent+=' ✅';}else{btn.style.backgroundColor='#dc3545';btn.style.color='#fff';btn.style.borderColor='#dc3545';setTimeout(()=>{btn.style.backgroundColor='transparent';btn.style.color='var(--text-color)';btn.style.borderColor='var(--accent-1)';}, 1500);}}</script></section></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução às Redes de Computadores</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --accent-1: #0d6efd;
+            --accent-2: #ffc107;
+            --accent-3: #198754;
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-secondary: 'Georgia', serif;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            font-family: var(--font-primary);
+            color: var(--text-color);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+            transform: translateY(20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 2rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .nav-hints {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="slide active" id="slide-1">
+        <style>
+            #slide-1 .hero-title { font-size: 4rem; color: var(--accent-1); font-weight: bold; text-align: center; margin-bottom: 1rem; }
+            #slide-1 .hero-subtitle { font-size: 2rem; color: var(--text-color); text-align: center; }
+            #slide-1 .icon-large { font-size: 8rem; color: var(--accent-2); margin-bottom: 2rem; }
+        </style>
+        <i class="bi bi-globe2 icon-large"></i>
+        <h1 class="hero-title">Introdução às Redes de Computadores</h1>
+        <p class="hero-subtitle">A espinha dorsal da sociedade moderna</p>
+        <div class="nav-hints">Use as setas do teclado para navegar ➡️</div>
+
+        <script>
+            if (!window.hasNavScript) {
+                window.hasNavScript = true;
+                document.addEventListener('keydown', (e) => {
+                    const slides = Array.from(document.querySelectorAll('.slide'));
+                    const activeIdx = slides.findIndex(s => s.classList.contains('active'));
+                    if (e.key === 'ArrowRight' && activeIdx < slides.length - 1) {
+                        slides[activeIdx].classList.remove('active');
+                        slides[activeIdx + 1].classList.add('active');
+                    } else if (e.key === 'ArrowLeft' && activeIdx > 0) {
+                        slides[activeIdx].classList.remove('active');
+                        slides[activeIdx - 1].classList.add('active');
+                    }
+                });
+            }
+        </script>
+    </section>
+
+    <section class="slide" id="slide-2">
+        <style>
+            #slide-2 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-2 p { font-size: 1.5rem; max-width: 800px; text-align: center; line-height: 1.6; }
+            #slide-2 .icon-concept { font-size: 5rem; color: var(--accent-3); margin-bottom: 1rem; }
+        </style>
+        <i class="bi bi-broadcast icon-concept"></i>
+        <h2>Comunicação de Dados</h2>
+        <p>É a troca de informações entre dois dispositivos por meio de um meio de transmissão físico ou sem fio. Depende da combinação harmoniosa de hardware (equipamento) e software (programas).</p>
+    </section>
+
+    <section class="slide" id="slide-3">
+        <style>
+            #slide-3 .split-container { display: flex; width: 100%; max-width: 1200px; align-items: center; gap: 2rem; }
+            #slide-3 .text-col, #slide-3 .img-col { flex: 1; }
+            #slide-3 h2 { font-size: 2.5rem; color: var(--accent-1); }
+            #slide-3 ul { font-size: 1.3rem; line-height: 1.8; }
+            #slide-3 img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        </style>
+        <div class="split-container">
+            <div class="text-col">
+                <h2><i class="bi bi-diagram-3"></i> Os 5 Componentes</h2>
+                <ul>
+                    <li><strong>Mensagem:</strong> A informação transmitida.</li>
+                    <li><strong>Emissor:</strong> Quem envia os dados.</li>
+                    <li><strong>Receptor:</strong> Quem recebe os dados.</li>
+                    <li><strong>Meio de Transmissão:</strong> O caminho físico (cabos, ondas).</li>
+                    <li><strong>Protocolo:</strong> Regras que governam a comunicação.</li>
+                </ul>
+            </div>
+            <div class="img-col">
+                <img src="images/infografico_5_componentes_comunicacao.png" alt="Infográfico dos 5 Componentes da Comunicação">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-4">
+        <style>
+            #slide-4 h2 { font-size: 2.5rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-4 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; width: 100%; }
+            #slide-4 .card { background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); text-align: center; }
+            #slide-4 .card i { font-size: 3rem; color: var(--accent-2); margin-bottom: 1rem; display: block; }
+            #slide-4 .card h3 { margin: 0 0 1rem 0; font-size: 1.5rem; }
+        </style>
+        <h2><i class="bi bi-file-binary"></i> Representação de Dados</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="bi bi-file-text"></i>
+                <h3>Texto e Números</h3>
+                <p>Convertidos em bits (ASCII, Unicode) ou binários matemáticos.</p>
+            </div>
+            <div class="card">
+                <i class="bi bi-image"></i>
+                <h3>Imagens</h3>
+                <p>Divididas em pixels, com valores numéricos para cor e intensidade.</p>
+            </div>
+            <div class="card">
+                <i class="bi bi-mic"></i>
+                <h3>Áudio</h3>
+                <p>Som convertido em sinal digital através de amostragem.</p>
+            </div>
+            <div class="card">
+                <i class="bi bi-camera-video"></i>
+                <h3>Vídeo</h3>
+                <p>Imagens em movimento e sons exigindo grande largura de banda.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-5">
+        <style>
+            #slide-5 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-5 .flow-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; width: 100%; }
+            #slide-5 .flow-item { display: flex; align-items: center; background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+            #slide-5 .flow-item i { font-size: 2.5rem; color: var(--accent-3); margin-right: 1.5rem; min-width: 50px; }
+            #slide-5 h3 { margin: 0 0 0.5rem 0; }
+        </style>
+        <h2><i class="bi bi-arrows-collapse"></i> Fluxo de Dados</h2>
+        <div class="flow-list">
+            <div class="flow-item">
+                <i class="bi bi-arrow-right-circle"></i>
+                <div>
+                    <h3>Simplex</h3>
+                    <p>Comunicação unidirecional. Apenas um transmite, o outro recebe (Ex: teclado).</p>
+                </div>
+            </div>
+            <div class="flow-item">
+                <i class="bi bi-arrow-left-right"></i>
+                <div>
+                    <h3>Half-Duplex</h3>
+                    <p>Ambos transmitem e recebem, mas não ao mesmo tempo (Ex: walkie-talkie).</p>
+                </div>
+            </div>
+            <div class="flow-item">
+                <i class="bi bi-arrows-move"></i>
+                <div>
+                    <h3>Full-Duplex</h3>
+                    <p>Ambos transmitem e recebem simultaneamente (Ex: telefonia móvel).</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="slide" id="slide-6">
+        <style>
+            #slide-6 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 1.5rem; }
+            #slide-6 p { font-size: 1.5rem; text-align: center; max-width: 900px; line-height: 1.6; }
+            #slide-6 .icon-huge { font-size: 6rem; color: var(--accent-2); margin-bottom: 1rem; }
+        </style>
+        <i class="bi bi-pc-display-horizontal icon-huge"></i>
+        <h2>Redes e Processamento Distribuído</h2>
+        <p>Uma rede é um conjunto de dispositivos (nós) conectados. As redes modernas usam o <strong>processamento distribuído</strong>, onde tarefas são divididas entre vários computadores para aumentar a eficiência e evitar falhas no sistema como um todo.</p>
+    </section>
+
+    <section class="slide" id="slide-7">
+        <style>
+            #slide-7 h2 { font-size: 2.8rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-7 .pillars { display: flex; justify-content: center; gap: 3rem; width: 100%; max-width: 1000px; }
+            #slide-7 .pillar { flex: 1; text-align: center; }
+            #slide-7 .pillar i { font-size: 4rem; color: var(--accent-3); margin-bottom: 1rem; display: block; }
+            #slide-7 .equation { margin-top: 2rem; font-size: 1.5rem; background: #fff; padding: 1rem; border-radius: 8px; }
+        </style>
+        <h2><i class="bi bi-bar-chart-line"></i> Critérios de Eficiência de Redes</h2>
+        <div class="pillars">
+            <div class="pillar">
+                <i class="bi bi-speedometer2"></i>
+                <h3>Desempenho</h3>
+                <p>Tempo de trânsito e vazão de dados adequados ao número de usuários.</p>
+            </div>
+            <div class="pillar">
+                <i class="bi bi-shield-check"></i>
+                <h3>Confiabilidade</h3>
+                <p>Frequência de falhas baixa e rápida recuperação de links.</p>
+            </div>
+            <div class="pillar">
+                <i class="bi bi-lock"></i>
+                <h3>Segurança</h3>
+                <p>Proteção de dados contra acessos não autorizados e danos.</p>
+            </div>
+        </div>
+        <div class="equation">
+            Exemplo de métrica: $$ Throughput = \frac{\text{Dados Transferidos}}{\text{Tempo}} $$
+        </div>
+    </section>
+
+    <section class="slide" id="slide-8">
+        <style>
+            #slide-8 .split-container { display: flex; width: 100%; max-width: 1200px; align-items: center; gap: 2rem; }
+            #slide-8 h2 { font-size: 2.5rem; color: var(--accent-1); }
+            #slide-8 ul { font-size: 1.2rem; line-height: 1.6; }
+            #slide-8 img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        </style>
+        <div class="split-container">
+            <div class="text-col">
+                <h2><i class="bi bi-share"></i> Topologias Físicas</h2>
+                <ul>
+                    <li><strong>Malha (Mesh):</strong> Link dedicado entre todos os dispositivos. Muito robusta, mas cara.</li>
+                    <li><strong>Estrela (Star):</strong> Todos conectados a um switch central. Topologia mais comum em LANs.</li>
+                    <li><strong>Barramento (Bus):</strong> Um cabo único conecta todos. Pouco usada hoje.</li>
+                    <li><strong>Anel (Ring):</strong> Conexão circular ponto a ponto com os vizinhos.</li>
+                </ul>
+            </div>
+            <div class="img-col">
+                <img src="images/fluxograma_topologias_rede.png" alt="Fluxograma de Topologias de Rede">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-9">
+        <style>
+            #slide-9 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-9 .comparison { display: flex; gap: 2rem; max-width: 1000px; width: 100%; }
+            #slide-9 .side { flex: 1; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); text-align: center; }
+            #slide-9 .side i { font-size: 4rem; margin-bottom: 1rem; color: var(--accent-2); }
+        </style>
+        <h2><i class="bi bi-hdd-network"></i> Modelos de Redes</h2>
+        <div class="comparison">
+            <div class="side">
+                <i class="bi bi-server"></i>
+                <h3>Cliente-Servidor</h3>
+                <p>Servidores poderosos fornecem recursos e serviços centrais, enquanto os clientes os solicitam e utilizam.</p>
+            </div>
+            <div class="side">
+                <i class="bi bi-people"></i>
+                <h3>Ponto a Ponto (P2P)</h3>
+                <p>Todos os computadores atuam como clientes e servidores, compartilhando recursos diretamente entre si.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-10">
+        <style>
+            #slide-10 .container { display: flex; flex-direction: column; align-items: center; max-width: 1000px; width: 100%; }
+            #slide-10 h2 { font-size: 2.8rem; color: var(--accent-1); margin-bottom: 1rem; }
+            #slide-10 .timeline { display: flex; justify-content: space-between; width: 100%; margin-top: 2rem; }
+            #slide-10 .point { text-align: center; flex: 1; }
+            #slide-10 .point i { font-size: 3rem; color: var(--accent-3); }
+            #slide-10 img { max-width: 500px; margin-top: 2rem; border-radius: 8px; }
+        </style>
+        <div class="container">
+            <h2><i class="bi bi-geo-alt"></i> Categorias por Alcance</h2>
+            <div class="timeline">
+                <div class="point">
+                    <i class="bi bi-earbuds"></i>
+                    <h3>PAN</h3>
+                    <p>Pessoa / Curta distância</p>
+                </div>
+                <div class="point">
+                    <i class="bi bi-building"></i>
+                    <h3>LAN</h3>
+                    <p>Prédio / Campus</p>
+                </div>
+                <div class="point">
+                    <i class="bi bi-buildings"></i>
+                    <h3>MAN</h3>
+                    <p>Cidade</p>
+                </div>
+                <div class="point">
+                    <i class="bi bi-globe-americas"></i>
+                    <h3>WAN</h3>
+                    <p>País / Mundo (Ex: Internet)</p>
+                </div>
+            </div>
+            <img src="images/infografico_alcance_geografico_redes.png" alt="Alcance Geográfico PAN LAN MAN WAN">
+            [Image comparing the scale of computer networks from Personal Area Network (PAN) to Wide Area Network (WAN)]
+        </div>
+    </section>
+
+    <section class="slide" id="slide-11">
+        <style>
+            #slide-11 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-11 ul { font-size: 1.5rem; line-height: 2; max-width: 900px; }
+            #slide-11 li i { color: var(--accent-2); margin-right: 10px; }
+        </style>
+        <h2><i class="bi bi-clock-history"></i> A Internet: Breve Histórico</h2>
+        <ul>
+            <li><i class="bi bi-caret-right-fill"></i><strong>Anos 60:</strong> Criação da ARPANET para comunicação resiliente a ataques nucleares.</li>
+            <li><i class="bi bi-caret-right-fill"></i><strong>Anos 70:</strong> Desenvolvimento do TCP/IP (Vint Cerf e Robert Kahn).</li>
+            <li><i class="bi bi-caret-right-fill"></i><strong>1983:</strong> ARPANET adota TCP/IP. Nascimento oficial da Internet.</li>
+            <li><i class="bi bi-caret-right-fill"></i><strong>Anos 90:</strong> Invenção da World Wide Web (WWW), popularizando o acesso global.</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-12">
+        <style>
+            #slide-12 h2 { font-size: 2.8rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-12 .accordion { width: 100%; max-width: 800px; }
+            #slide-12 .acc-item { background: #fff; margin-bottom: 1rem; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+            #slide-12 .acc-header { background: var(--accent-1); color: #fff; padding: 1rem; cursor: pointer; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; }
+            #slide-12 .acc-body { padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff; color: var(--text-color); }
+            #slide-12 .acc-body p { padding: 1rem; margin: 0; }
+        </style>
+        <h2><i class="bi bi-layers"></i> Estrutura da Internet Atual</h2>
+        <div class="accordion">
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span>Tier-1 ISPs (Nível 1)</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="acc-body">
+                    <p>Provedores de redes globais que formam o esqueleto (backbone) da Internet mundial.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span>Tier-2 ISPs (Nível 2)</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="acc-body">
+                    <p>Pagam aos provedores de nível 1 por conectividade e atendem a grandes regiões ou países inteiros.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                    <span>ISPs Locais</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="acc-body">
+                    <p>Na base da pirâmide, fornecem o acesso direto à internet para as casas e empresas dos usuários finais.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function toggleAcc(el) {
+                let body = el.nextElementSibling;
+                if (body.style.maxHeight) {
+                    body.style.maxHeight = null;
+                } else {
+                    let all = document.querySelectorAll('#slide-12 .acc-body');
+                    all.forEach(b => b.style.maxHeight = null);
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                }
+            }
+        </script>
+    </section>
+
+    <section class="slide" id="slide-13">
+        <style>
+            #slide-13 h2 { font-size: 3rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-13 .list-container { max-width: 900px; font-size: 1.4rem; }
+            #slide-13 ul { list-style: none; padding: 0; }
+            #slide-13 li { background: #fff; padding: 1rem; margin-bottom: 1rem; border-left: 5px solid var(--accent-3); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); display: flex; align-items: center; }
+            #slide-13 li i { font-size: 2rem; margin-right: 1rem; color: var(--accent-3); }
+        </style>
+        <h2><i class="bi bi-card-checklist"></i> Protocolos e Padrões</h2>
+        <div class="list-container">
+            <ul>
+                <li><i class="bi bi-code-slash"></i><strong>Sintaxe do Protocolo:</strong> Define a estrutura e formato dos dados transmitidos.</li>
+                <li><i class="bi bi-info-circle"></i><strong>Semântica:</strong> O significado de cada seção de bits e ações correspondentes.</li>
+                <li><i class="bi bi-stopwatch"></i><strong>Sincronização:</strong> Momento exato de envio e velocidade da comunicação.</li>
+                <li><i class="bi bi-award"></i><strong>Padrões de Facto:</strong> Adotados por uso generalizado sem planejamento formal.</li>
+                <li><i class="bi bi-bank"></i><strong>Padrões de Jure:</strong> Legislados ou aprovados por órgãos oficiais (ISO, IEEE).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-14">
+        <style>
+            #slide-14 .split-container { display: flex; width: 100%; max-width: 1200px; align-items: center; gap: 2rem; }
+            #slide-14 h2 { font-size: 2.5rem; color: var(--accent-1); }
+            #slide-14 p { font-size: 1.2rem; line-height: 1.6; }
+            #slide-14 img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        </style>
+        <div class="split-container">
+            <div class="text-col">
+                <h2><i class="bi bi-journal-check"></i> Padrões Internet (RFC)</h2>
+                <p>O desenvolvimento da Internet ocorre de forma aberta. O principal mecanismo é o RFC (Request for Comments). Um documento começa como rascunho e, após testes e revisões, pode se tornar um padrão oficial supervisionado pela IETF.</p>
+            </div>
+            <div class="img-col">
+                <img src="images/fluxograma_processo_rfc_internet.png" alt="Fluxograma do Processo RFC">
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-15">
+        <style>
+            #slide-15 h2 { font-size: 2.8rem; color: var(--accent-1); margin-bottom: 2rem; }
+            #slide-15 .quiz-container { max-width: 800px; width: 100%; text-align: center; }
+            #slide-15 .options { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+            #slide-15 button { padding: 1rem; font-size: 1.2rem; border: 2px solid var(--accent-1); border-radius: 8px; background: transparent; cursor: pointer; transition: all 0.3s; }
+            #slide-15 button:hover { background: var(--accent-1); color: #fff; }
+        </style>
+        <h2><i class="bi bi-question-circle"></i> Quiz: Topologia e Confiabilidade</h2>
+        <div class="quiz-container">
+            <p style="font-size: 1.5rem;">Qual topologia física é conhecida por ser extremamente robusta devido a possuir um link dedicado ponto a ponto entre todos os dispositivos, embora seja cara?</p>
+            <div class="options">
+                <button onclick="checkAns(this, false)">Estrela (Star)</button>
+                <button onclick="checkAns(this, false)">Barramento (Bus)</button>
+                <button onclick="checkAns(this, true)">Malha (Mesh)</button>
+                <button onclick="checkAns(this, false)">Anel (Ring)</button>
+            </div>
+        </div>
+        <script>
+            function checkAns(btn, isCorrect) {
+                if (isCorrect) {
+                    btn.style.backgroundColor = 'var(--accent-3)';
+                    btn.style.color = '#fff';
+                    btn.style.borderColor = 'var(--accent-3)';
+                    btn.textContent += ' ✅';
+                } else {
+                    btn.style.backgroundColor = '#dc3545';
+                    btn.style.color = '#fff';
+                    btn.style.borderColor = '#dc3545';
+                    setTimeout(() => {
+                        btn.style.backgroundColor = 'transparent';
+                        btn.style.color = 'var(--text-color)';
+                        btn.style.borderColor = 'var(--accent-1)';
+                    }, 1500);
+                }
+            }
+        </script>
+    </section>
+
+</body>
+
+</html>
