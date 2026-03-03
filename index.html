@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositório de Slides</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        h1 { color: var(--primary); margin-bottom: 10px; }
+
+        .discipline-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .slide-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .slide-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .slide-item:hover {
+            transform: translateX(5px);
+        }
+
+        .slide-link {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .slide-link:hover { text-decoration: underline; }
+
+        .description {
+            display: block;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>📚 Meus Slides</h1>
+        <p>Repositório central de apresentações e materiais.</p>
+    </header>
+
+    <section class="discipline-section">
+        <h2>Sistemas Operacionais</h2>
+        <ul class="slide-list">
+            <li class="slide-item">
+                <a href="slides/so/aula-01/" class="slide-link">Aula 01: Introdução ao Kernel</a>
+                <span class="description">Conceitos básicos, tipos de kernel e gerenciamento de processos.</span>
+            </li>
+            <li class="slide-item">
+                <a href="https://link-externo.com/slides" class="slide-link">Aula 02: Memória Virtual</a>
+                <span class="description">Paginação, segmentação e algoritmos de substituição.</span>
+            </li>
+        </ul>
+    </section>
+    <section class="discipline-section">
+        <h2>Estrutura de Dados</h2>
+        <ul class="slide-list">
+            <li class="slide-item">
+                <a href="slides/ed/listas-ligadas/" class="slide-link">Listas Ligadas e Árvores</a>
+                <span class="description">Implementação em C e análise de complexidade O(n).</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        Atualizado em: 03 de Março de 2026
+    </footer>
+</div>
+
+</body>
+</html>
