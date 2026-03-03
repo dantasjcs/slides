@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositório de Slides</title>
     <style>
+        /* Reset básico para garantir alinhamento perfeito */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         :root {
             --primary: #2563eb;
             --bg: #f8fafc;
             --text: #1e293b;
             --card-bg: #ffffff;
+            --border: #e2e8f0;
         }
 
         body {
@@ -17,21 +25,47 @@
             line-height: 1.6;
             color: var(--text);
             background-color: var(--bg);
-            margin: 0;
-            padding: 20px;
+            padding: 0 20px; /* Respiro lateral no mobile */
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding-bottom: 50px;
         }
 
         header {
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 0 20px 0;
         }
 
         h1 { color: var(--primary); margin-bottom: 10px; }
+
+        /* Barra de Busca Alinhada */
+        .search-container {
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg); /* Fundo igual ao da página para não sobrepor texto ao rolar */
+            padding: 15px 0; /* Espaço para a sombra não ser cortada */
+            z-index: 100;
+        }
+
+        #searchInput {
+            width: 100%; /* Ocupa 100% do container de 800px */
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px; /* Combinando com o estilo dos cards */
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #searchInput:focus {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px -1px rgba(37, 99, 235, 0.2);
+        }
 
         .discipline-section {
             margin-bottom: 40px;
@@ -40,21 +74,21 @@
         h2 {
             border-bottom: 2px solid var(--primary);
             padding-bottom: 5px;
+            margin-bottom: 15px;
             color: var(--primary);
             font-size: 1.5rem;
         }
 
         .slide-list {
             list-style: none;
-            padding: 0;
         }
 
         .slide-item {
             background: var(--card-bg);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
             transition: transform 0.2s;
         }
 
@@ -67,60 +101,74 @@
             color: var(--primary);
             text-decoration: none;
             font-size: 1.1rem;
+            display: block;
         }
 
-        .slide-link:hover { text-decoration: underline; }
-
         .description {
-            display: block;
             font-size: 0.9rem;
             color: #64748b;
-            margin-top: 5px;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            padding: 20px;
             font-size: 0.8rem;
             color: #94a3b8;
         }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>📚 Meus Slides</h1>
-        <p>Repositório central de apresentações e materiais.</p>
+        <h1>📚 Repositório de Slides</h1>
+        <p>Acesse os materiais das aulas abaixo.</p>
     </header>
 
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Pesquisar por assunto ou disciplina...">
+    </div>
+
     <section class="discipline-section">
-        <h2>Sistemas Operacionais</h2>
+        <h2>Engenharia de Software</h2>
         <ul class="slide-list">
             <li class="slide-item">
-                <a href="slides/so/aula-01/" class="slide-link">Aula 01: Introdução ao Kernel</a>
-                <span class="description">Conceitos básicos, tipos de kernel e gerenciamento de processos.</span>
+                <a href="slides/es/requisitos/" class="slide-link">Engenharia de Requisitos</a>
+                <span class="description">Levantamento, validação e especificação de requisitos.</span>
             </li>
             <li class="slide-item">
-                <a href="https://link-externo.com/slides" class="slide-link">Aula 02: Memória Virtual</a>
-                <span class="description">Paginação, segmentação e algoritmos de substituição.</span>
-            </li>
-        </ul>
-    </section>
-    <section class="discipline-section">
-        <h2>Estrutura de Dados</h2>
-        <ul class="slide-list">
-            <li class="slide-item">
-                <a href="slides/ed/listas-ligadas/" class="slide-link">Listas Ligadas e Árvores</a>
-                <span class="description">Implementação em C e análise de complexidade O(n).</span>
+                <a href="slides/es/arquitetura/" class="slide-link">Padrões de Arquitetura</a>
+                <span class="description">MVC, Microservices e Camadas.</span>
             </li>
         </ul>
     </section>
 
     <footer>
-        Atualizado em: 03 de Março de 2026
+        Página Estática • GitHub Pages • 2026
     </footer>
 </div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const slideItems = document.querySelectorAll('.slide-item');
+    const sections = document.querySelectorAll('.discipline-section');
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+
+        slideItems.forEach(item => {
+            const text = item.innerText.toLowerCase();
+            item.classList.toggle('hidden', !text.includes(term));
+        });
+
+        sections.forEach(section => {
+            const hasVisibleItems = section.querySelectorAll('.slide-item:not(.hidden)').length > 0;
+            section.classList.toggle('hidden', !hasVisibleItems);
+        });
+    });
+</script>
 
 </body>
 </html>
