@@ -1,0 +1,134 @@
+Texto de referência:
+
+**Capítulo 1: Introdução às Redes de Computadores**
+
+No mundo contemporâneo, a capacidade de trocar informações de forma rápida e eficiente é a espinha dorsal da sociedade moderna. Seja para fins educacionais, comerciais ou de entretenimento, as redes de computadores permeiam quase todas as nossas atividades diárias. O estudo das redes não trata apenas de cabos e roteadores, mas sim da compreensão de como os dados são transformados, transmitidos e recebidos de forma confiável através de diversos meios e distâncias.
+
+**1.1 Comunicação de Dados**
+
+A comunicação de dados é definida como a troca de informações entre dois dispositivos por meio de algum tipo de meio de transmissão, como um fio de metal, fibra óptica ou ondas de rádio. Para que essa comunicação ocorra, os dispositivos devem fazer parte de um sistema de comunicação composto por uma combinação de hardware (equipamento físico) e software (programas).
+
+**Componentes**
+
+Um sistema de comunicação de dados possui cinco componentes fundamentais:
+
+1.  **A Mensagem:** É a informação a ser comunicada. Pode consistir em texto, números, imagens, áudio ou vídeo.
+2.  **O Emissor:** É o dispositivo que envia a mensagem de dados. Pode ser um computador, estação de trabalho, telefone celular, câmera de vídeo, entre outros.
+3.  **O Receptor:** É o dispositivo que recebe a mensagem. Assim como o emissor, pode ser um computador, impressora ou qualquer outro terminal capaz de processar os dados recebidos.
+4.  **O Meio de Transmissão:** É o caminho físico por onde a mensagem viaja do emissor ao receptor. Exemplos incluem cabos de par trançado, cabos coaxiais, cabos de fibra óptica e ondas de rádio (em redes sem fio).
+5.  **O Protocolo:** É um conjunto de regras que governa a comunicação de dados. Representa um acordo entre os dispositivos que se comunicam. Sem um protocolo, dois dispositivos podem estar conectados, mas não conseguirão se comunicar, assim como duas pessoas que falam idiomas diferentes tentando conversar.
+
+[IMAGEM 1: INFOGRÁFICO DOS 5 COMPONENTES DA COMUNICAÇÃO. Descrição: Um diagrama linear mostrando o "Emissor" à esquerda e o "Receptor" à direita. Entre eles, uma linha rotulada como "Meio de Transmissão". Acima da linha, um ícone de "Mensagem" (envelope ou documento). Sobrepondo todo o processo, o "Protocolo" representado como um livro de regras ou engrenagens de coordenação.]
+
+**Representação de Dados**
+
+A informação hoje em dia é transmitida em formato digital. Para isso, diferentes tipos de dados são representados da seguinte forma:
+
+*   **Texto:** Representado como uma sequência de bits (0s e 1s). Diferentes conjuntos de padrões de bits foram criados para representar símbolos de texto, como o ASCII (American Standard Code for Information Interchange) e o Unicode, que é capaz de representar caracteres de quase todos os idiomas do mundo.
+*   **Números:** Também são convertidos em números binários. Ao contrário do texto, que é mapeado caractere por caractere, os números são frequentemente convertidos diretamente para sua representação binária matemática.
+*   **Imagens:** São representadas por padrões de bits. Uma imagem é dividida em pixels (elementos de imagem), onde cada pixel recebe um valor numérico que define sua cor e intensidade. Quanto maior a densidade de pixels, melhor a resolução da imagem.
+*   **Áudio e Vídeo:** O áudio refere-se à gravação ou transmissão de som e é convertido em sinal digital através de amostragem. O vídeo refere-se à gravação ou transmissão de imagens em movimento e sons, exigindo uma largura de banda significativamente maior para transmissão eficiente.
+
+**Fluxo de Dados**
+
+A comunicação entre dois dispositivos pode ocorrer de três maneiras distintas quanto à direção do fluxo:
+
+1.  **Simplex:** A comunicação é unidirecional, como em uma rua de mão única. Apenas um dos dois dispositivos em um link pode transmitir; o outro só pode receber. Exemplos clássicos são teclados (apenas enviam) e monitores tradicionais (apenas recebem).
+2.  **Half-Duplex:** Cada dispositivo pode tanto transmitir quanto receber, mas não ao mesmo tempo. Quando um dispositivo está transmitindo, o outro deve apenas receber e vice-versa. É semelhante ao funcionamento de um walkie-talkie.
+3.  **Full-Duplex:** Ambos os dispositivos podem transmitir e receber simultaneamente. É como uma rua de mão dupla onde o tráfego flui em ambas as direções ao mesmo tempo. Um exemplo comum é a rede de telefonia móvel ou uma conexão de internet moderna.
+
+**1.2 Redes**
+
+Uma rede é o conjunto de dispositivos (muitas vezes chamados de nós) conectados por links de comunicação. Um nó pode ser um computador, uma impressora ou qualquer outro dispositivo capaz de enviar e/ou receber dados gerados por outros nós da rede.
+
+**Processamento Distribuído**
+
+A maioria das redes modernas utiliza o processamento distribuído, no qual uma tarefa é dividida entre vários computadores. Em vez de uma única máquina central realizar todo o processamento, diferentes nós colaboram para resolver problemas complexos. Isso aumenta a eficiência, melhora a velocidade de resposta e garante que a falha de um único computador não interrompa todo o sistema.
+
+**Critérios de Redes**
+
+Para ser considerada eficiente e eficaz, uma rede deve atender a três critérios principais:
+
+1.  **Desempenho:** Depende de vários fatores, como o número de usuários, o tipo de meio de transmissão e a eficiência do software. É medido frequentemente pelo tempo de trânsito (tempo que uma mensagem leva para ir de um dispositivo a outro) e pelo throughput (vazão de dados).
+2.  **Confiabilidade:** Medida pela frequência de falhas, pelo tempo que um link leva para se recuperar de uma falha e pela robustez da rede em situações de erro.
+3.  **Segurança:** Inclui a proteção de dados contra acessos não autorizados, proteção contra danos e alterações, e a implementação de políticas de recuperação de dados em caso de perdas ou ataques.
+
+**Estruturas Físicas**
+
+As redes são definidas por suas conexões e topologias.
+
+*   **Tipo de Conexão:**
+    *   **Ponto a ponto:** Fornece um link dedicado entre dois dispositivos. Toda a capacidade do link é reservada para a transmissão entre esses dois pontos.
+    *   **Multiponto:** É uma configuração em que mais de dois dispositivos específicos compartilham um único link. A capacidade do canal é compartilhada espacialmente ou temporariamente.
+
+*   **Topologia Física:** Refere-se à maneira como a rede é organizada fisicamente. Existem quatro topologias básicas:
+    1.  **Malha (Mesh):** Cada dispositivo possui um link dedicado ponto a ponto com todos os outros dispositivos. É extremamente robusta, mas cara devido à quantidade de cabeamento.
+    2.  **Estrela (Star):** Cada dispositivo tem um link dedicado ponto a ponto conectado a um controlador central, chamado de hub ou switch. É a topologia mais comum em redes locais (LANs) modernas. Se um link quebra, apenas aquele dispositivo é afetado.
+    3.  **Barramento (Bus):** Utiliza um cabo longo (o backbone) que atua como um link multiponto, conectando todos os nós da rede. Era comum no início da computação, mas hoje é pouco usada devido à dificuldade de isolamento de falhas.
+    4.  **Anel (Ring):** Cada dispositivo tem uma conexão dedicada ponto a ponto apenas com os dois dispositivos vizinhos. O sinal passa ao longo do anel em uma direção até chegar ao destino.
+
+[IMAGEM 2: FLUXOGRAMA DE TOPOLOGIAS DE REDE. Descrição: Um quadro comparativo apresentando desenhos esquemáticos de quatro topologias: Estrela (computadores em volta de um switch central), Malha (todos conectados entre si), Barramento (computadores conectados a uma linha reta central) e Anel (computadores formando um círculo).]
+
+**Modelos de Redes**
+
+As redes podem ser estruturadas em diferentes modelos operacionais. O modelo **Cliente-Servidor** é o mais difundido, onde computadores poderosos (servidores) fornecem recursos e serviços, e computadores pessoais (clientes) solicitam e utilizam esses serviços. Já o modelo **Ponto a Ponto (P2P)** permite que todos os computadores da rede atuem tanto como clientes quanto como servidores, compartilhando recursos diretamente entre si sem a necessidade de um servidor central.
+
+**Categorias de Redes**
+
+As redes são geralmente categorizadas com base em seu tamanho e alcance geográfico:
+
+1.  **PAN (Personal Area Network):** Rede de área pessoal, geralmente usada para conectar dispositivos individuais em um espaço curto, como fones bluetooth conectados a um smartphone.
+2.  **LAN (Local Area Network):** Rede de área local. Geralmente privada e conecta dispositivos em um único escritório, prédio ou campus. Possui altas taxas de transmissão e baixas taxas de erro.
+3.  **MAN (Metropolitan Area Network):** Rede de área metropolitana. Projetada para abranger uma cidade inteira, como a rede de TV a cabo ou uma rede conectando vários campi de uma universidade em uma cidade.
+4.  **WAN (Wide Area Network):** Rede de longa distância. Fornece transmissão de dados em grandes distâncias geográficas, abrangendo países ou continentes. A Internet é o exemplo mais famoso de uma WAN.
+
+[IMAGEM 3: INFOGRÁFICO DE ALCANCE GEOGRÁFICO. Descrição: Círculos concêntricos ou uma escala crescente mostrando: PAN (um indivíduo) < LAN (um prédio) < MAN (uma cidade) < WAN (o globo terrestre).]
+
+**Interconexão de Redes: Internetwork**
+
+Raramente vemos redes isoladas. Quando duas ou mais redes são conectadas, elas formam uma "internetwork" ou simplesmente uma internet (com "i" minúsculo). Para conectar essas redes distintas, utilizamos dispositivos chamados roteadores e gateways, que traduzem as diferenças de hardware e protocolos entre as redes interconectadas, permitindo que a informação flua de uma LAN em um continente para uma LAN em outro.
+
+**1.3 A Internet**
+
+A Internet (com "I" maiúsculo) é uma colaboração mundial de redes interconectadas. Ela não é uma entidade única, mas sim um sistema global de sistemas que utiliza o conjunto de protocolos TCP/IP para ligar bilhões de dispositivos em todo o mundo.
+
+**Um Breve Histórico**
+
+A origem da Internet remonta ao final da década de 1960, durante a Guerra Fria. O Departamento de Defesa dos Estados Unidos criou a **ARPANET** (Advanced Research Projects Agency Network) com o objetivo de criar uma rede de comunicação que pudesse sobreviver a ataques nucleares parciais. Inicialmente, conectava apenas quatro universidades.
+
+Na década de 1970, o desenvolvimento dos protocolos TCP (Transmission Control Protocol) e IP (Internet Protocol) por Vint Cerf e Robert Kahn permitiu que diferentes redes de computadores "falassem" a mesma língua. Em 1º de janeiro de 1983, a ARPANET mudou oficialmente para o TCP/IP, marco que muitos consideram o nascimento oficial da Internet. Nos anos 90, com a invenção da World Wide Web (WWW) por Tim Berners-Lee, a Internet deixou de ser uma ferramenta acadêmica e militar para se tornar um fenômeno comercial e social.
+
+**A Internet Hoje em Dia**
+
+Atualmente, a Internet é organizada de forma hierárquica. No topo, existem os provedores de serviços de Internet de nível 1 (Tier-1 ISPs), que são redes globais que formam o "esqueleto" (backbone) da Internet. Abaixo deles estão os ISPs de nível 2, que pagam aos de nível 1 por conectividade e atendem regiões ou países. Na base da pirâmide estão os ISPs locais (como os que contratamos para nossas casas), que fornecem acesso direto aos usuários finais.
+
+**1.4 Protocolos e Padrões**
+
+Para que a comunicação global funcione, é necessária uma padronização rigorosa. Sem regras comuns, a interoperabilidade entre dispositivos de fabricantes diferentes seria impossível.
+
+**Protocolos**
+
+Como mencionado anteriormente, um protocolo é um conjunto de regras que governa a comunicação. Ele define:
+*   **Sintaxe:** A estrutura ou formato dos dados (o que vem primeiro, como os bits são agrupados).
+*   **Semântica:** O significado de cada seção de bits e quais ações devem ser tomadas com base neles.
+*   **Sincronização:** Quando os dados devem ser enviados e com que velocidade.
+
+**Padrões**
+
+Os padrões são essenciais para criar e manter um mercado aberto e competitivo para fabricantes de equipamentos de rede e para garantir a interoperabilidade nacional e internacional de dados e tecnologias de telecomunicação. Existem dois tipos de padrões:
+1.  **De facto:** Padrões que surgiram sem planejamento formal, mas que foram adotados por uso generalizado.
+2.  **De jure:** Padrões que foram legislados ou aprovados por um órgão oficialmente reconhecido.
+
+**Organizações para Estabelecimento de Padrões**
+
+Diversas organizações trabalham para criar e manter esses padrões:
+*   **ISO (International Organization for Standardization):** Atua em diversas áreas e é famosa pelo modelo OSI de redes.
+*   **IEEE (Institute of Electrical and Electronics Engineers):** A maior organização profissional do mundo, responsável por padrões como o Ethernet (802.3) e o Wi-Fi (802.11).
+*   **ITU-T (International Telecommunication Union-Telecommunication Standardization Sector):** Foca em padrões para telecomunicações e sistemas de telefonia.
+*   **ANSI (American National Standards Institute):** Coordena padrões nos Estados Unidos que frequentemente se tornam globais.
+
+**Padrões Internet**
+
+Os padrões específicos da Internet são desenvolvidos através de um processo aberto e democrático. O principal mecanismo de publicação é o **RFC (Request for Comments)**. Um RFC começa como uma "Internet Draft" (rascunho). Se for bem-sucedido e passar por revisão por pares e testes, ele pode ser elevado ao status de Padrão da Internet. A **IETF (Internet Engineering Task Force)** é o corpo técnico que supervisiona esse desenvolvimento, garantindo que a Internet continue evoluindo para suportar novas tecnologias e o crescente volume de tráfego global.
+
+[IMAGEM 4: FLUXOGRAMA DO PROCESSO RFC. Descrição: Um fluxo de etapas mostrando: Internet Draft -> Proposta de Padrão -> Padrão de Rascunho -> Padrão da Internet. Setas indicam o processo de revisão e aprovação.]
