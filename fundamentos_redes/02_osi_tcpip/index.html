@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   A Magia das Redes de Computadores
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+   body, html { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #f4f7f6; font-family: sans-serif; }
+  .presentation { position: relative; width: 100%; height: 100%; }
+  .slide { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0; transition: opacity 0.5s ease-in-out; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; }
+  .slide.active { opacity: 1; pointer-events: auto; }
+  </style>
+ </head>
+ <body>
+  <div class="presentation" id="presentation">
+   <!-- Slide 1: Hero -->
+   <section class="slide slide-1">
+    <style>
+     .slide-1 { --bg-color: #0d253f; --text-color: #ffffff; --accent-1: #3b82f6; background-color: var(--bg-color); color: var(--text-color); text-align: center; padding: 2rem; }
+      .slide-1 h1 { font-size: 4rem; margin-bottom: 1rem; color: var(--accent-1); }
+      .slide-1 p { font-size: 1.5rem; max-width: 800px; opacity: 0.9; }
+      .slide-1 .icon-main { font-size: 8rem; color: var(--accent-1); margin-bottom: 1rem; animation: float 3s ease-in-out infinite; }
+      @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+    </style>
+    <i class="bi bi-globe2 icon-main">
+    </i>
+    <h1>
+     A Mágica da Comunicação
+    </h1>
+    <p>
+     Como dispositivos ao redor do mundo se entendem em frações de segundo?
+    </p>
+    <script>
+     // Slide 1 JS (if needed)
+    </script>
+   </section>
+   <!-- Slide 2: Problema / Alerta -->
+   <section class="slide slide-2">
+    <style>
+     .slide-2 { --bg-color: #e0f2fe; --text-color: #0f172a; --accent: #ef4444; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; text-align: center; }
+      .slide-2 .alert-box { border: 4px solid var(--accent); border-radius: 16px; padding: 3rem; background: #ffffff; max-width: 900px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+      .slide-2 h2 { font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent); }
+      .slide-2 p { font-size: 1.8rem; line-height: 1.5; }
+      .slide-2 i { font-size: 4rem; color: var(--accent); margin-bottom: 1rem; display: block; }
+    </style>
+    <div class="alert-box">
+     <i class="bi bi-exclamation-triangle">
+     </i>
+     <h2>
+      O Paradoxo do Clique
+     </h2>
+     <p>
+      Clicar em um link parece simples. Porém, envolve uma complexidade técnica monumental entre fabricantes, sistemas operacionais e meios físicos variados.
+     </p>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 3: História / Case -->
+   <section class="slide slide-3">
+    <style>
+     .slide-3 { --bg-color: #ffffff; --text-color: #1e293b; --accent: #3b82f6; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-3 .container { display: flex; gap: 4rem; max-width: 1200px; width: 100%; align-items: center; justify-content: center; }
+      .slide-3 .text-content { flex: 1; }
+      .slide-3 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 2rem; }
+      .slide-3 .visual { flex: 1; display: flex; flex-direction: column; gap: 2rem; }
+      .slide-3 .step { display: flex; align-items: center; gap: 1.5rem; background: #f1f5f9; padding: 1.5rem; border-radius: 12px; font-size: 1.5rem; }
+      .slide-3 .step i { font-size: 3rem; color: var(--accent); }
+    </style>
+    <div class="container">
+     <div class="text-content">
+      <h2>
+       Analogia Postal
+      </h2>
+      <p style="font-size:1.5rem; line-height: 1.6;">
+       Para gerenciar a complexidade, usamos
+       <strong>
+        Camadas
+       </strong>
+       . Como enviar uma carta, você não planeja o voo do avião, apenas escreve e posta. O sistema divide o trabalho.
+      </p>
+     </div>
+     <div class="visual">
+      <div class="step">
+       <i class="bi bi-envelope-paper">
+       </i>
+       <span>
+        <strong>
+         Emissor:
+        </strong>
+        Origina a mensagem.
+       </span>
+      </div>
+      <div class="step">
+       <i class="bi bi-truck">
+       </i>
+       <span>
+        <strong>
+         Transportador:
+        </strong>
+        Meios físicos e protocolos.
+       </span>
+      </div>
+      <div class="step">
+       <i class="bi bi-mailbox">
+       </i>
+       <span>
+        <strong>
+         Receptor:
+        </strong>
+        Destino final.
+       </span>
+      </div>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 4: Conceito / Lista Vertical -->
+   <section class="slide slide-4">
+    <style>
+     .slide-4 { --bg-color: #f8fafc; --text-color: #334155; --accent: #0ea5e9; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-4 h2 { font-size: 3.5rem; color: var(--accent); text-align: center; margin-bottom: 3rem; }
+      .slide-4 ul { list-style: none; padding: 0; max-width: 900px; margin: 0 auto; }
+      .slide-4 li { font-size: 1.8rem; margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem; }
+      .slide-4 li i { color: var(--accent); font-size: 2.2rem; margin-top: -0.2rem; }
+    </style>
+    <h2>
+     A Estratégia das Camadas
+    </h2>
+    <ul>
+     <li>
+      <i class="bi bi-layers">
+      </i>
+      <strong>
+       Hierarquia de Serviços:
+      </strong>
+      Cada camada usa serviços da inferior e oferece para a superior.
+     </li>
+     <li>
+      <i class="bi bi-arrow-repeat">
+      </i>
+      <strong>
+       Flexibilidade:
+      </strong>
+      Permite atualizar tecnologias físicas (cobre para fibra) sem alterar o navegador.
+     </li>
+     <li>
+      <i class="bi bi-puzzle">
+      </i>
+      <strong>
+       Modularidade:
+      </strong>
+      Divide o problema global de comunicação em partes menores e gerenciáveis.
+     </li>
+    </ul>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 5: Timeline -->
+   <section class="slide slide-5">
+    <style>
+     .slide-5 { --bg-color: #0f172a; --text-color: #f8fafc; --accent: #38bdf8; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-5 h2 { font-size: 3rem; color: var(--accent); text-align: center; margin-bottom: 4rem; }
+      .slide-5 .timeline { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; width: 100%; position: relative; }
+      .slide-5 .timeline::before { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 4px; background: var(--accent); z-index: 1; }
+      .slide-5 .point { position: relative; z-index: 2; background: var(--bg-color); padding: 1rem; text-align: center; width: 250px; }
+      .slide-5 .point i { font-size: 3.5rem; color: var(--accent); background: var(--bg-color); border-radius: 50%; padding: 0.5rem; border: 4px solid var(--accent); }
+      .slide-5 .point h3 { margin: 1rem 0 0.5rem 0; font-size: 1.8rem; }
+      .slide-5 .point p { font-size: 1.2rem; opacity: 0.8; }
+    </style>
+    <h2>
+     O Nascimento da Padronização
+    </h2>
+    <div class="timeline">
+     <div class="point">
+      <i class="bi bi-pc-display">
+      </i>
+      <h3>
+       Pré-1980
+      </h3>
+      <p>
+       Sistemas proprietários isolados, sem comunicação padronizada.
+      </p>
+     </div>
+     <div class="point">
+      <i class="bi bi-diagram-3">
+      </i>
+      <h3>
+       Década de 1980
+      </h3>
+      <p>
+       A ISO desenvolve o Modelo de Referência OSI.
+      </p>
+     </div>
+     <div class="point">
+      <i class="bi bi-globe">
+      </i>
+      <h3>
+       Hoje
+      </h3>
+      <p>
+       Modelo conceitual fundamental para interconexão de sistemas abertos.
+      </p>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 6: Split com Imagem -->
+   <section class="slide slide-6">
+    <style>
+     .slide-6 { --bg-color: #ffffff; --text-color: #000000; --accent: #2563eb; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-6 .split { display: flex; width: 100%; max-width: 1200px; gap: 3rem; align-items: center; height: 100%; }
+      .slide-6 .left { flex: 1; }
+      .slide-6 .right { flex: 1; display: flex; justify-content: center; }
+      .slide-6 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem; }
+      .slide-6 p { font-size: 1.5rem; margin-bottom: 1rem; line-height: 1.5; }
+      .slide-6 img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    </style>
+    <div class="split">
+     <div class="left">
+      <h2>
+       Processos Par-a-Par &amp; Encapsulamento
+      </h2>
+      <p>
+       <i class="bi bi-arrow-left-right" style="color:var(--accent)">
+       </i>
+       <strong>
+        Par-a-par:
+       </strong>
+       Logicamente, cada camada do emissor "conversa" diretamente com a camada correspondente do receptor.
+      </p>
+      <p>
+       <i class="bi bi-box-seam" style="color:var(--accent)">
+       </i>
+       <strong>
+        Encapsulamento:
+       </strong>
+       O dado original desce as camadas, ganhando cabeçalhos (headers) como bonecas matrioskas, até a transmissão física.
+      </p>
+     </div>
+     <div class="right">
+      <img alt="Fluxo de Encapsulamento" src="images/infografico_fluxo_encapsulamento.png"/>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 7: Accordion OSI Inferior -->
+   <section class="slide slide-7">
+    <style>
+     .slide-7 { --bg-color: #f0fdf4; --text-color: #14532d; --accent: #16a34a; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-7 h2 { font-size: 3rem; text-align: center; color: var(--accent); margin-bottom: 2rem; }
+      .slide-7 .accordion { max-width: 800px; margin: 0 auto; width: 100%; }
+      .slide-7 .acc-item { background: #ffffff; border: 2px solid var(--accent); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+      .slide-7 .acc-header { background: #dcfce7; padding: 1.5rem; cursor: pointer; font-size: 1.5rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+      .slide-7 .acc-body { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; font-size: 1.2rem; }
+      .slide-7 .acc-item.open .acc-body { padding: 1.5rem; max-height: 200px; }
+      .slide-7 .acc-item.open .acc-header i { transform: rotate(180deg); }
+    </style>
+    <h2>
+     Camadas Inferiores OSI (Hardware/Rede)
+    </h2>
+    <div class="accordion" id="acc-slide-7">
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       1. Física
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Transmissão mecânica e elétrica de bits brutos (0s e 1s). Define voltagem, taxas e conectores (cabo, fibra, rádio).
+      </div>
+     </div>
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       2. Enlace de Dados
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Transforma bits em quadros (frames). Responsável pelo endereço MAC, controle de fluxo e detecção de erros em saltos adjacentes.
+      </div>
+     </div>
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       3. Rede
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Responsável pelo roteamento de pacotes através de várias redes usando endereço lógico (IP). Decide a melhor rota.
+      </div>
+     </div>
+    </div>
+    <script>
+     const items7 = document.querySelectorAll('#acc-slide-7 .acc-item');
+      items7.forEach(item => {
+        item.querySelector('.acc-header').addEventListener('click', () => {
+          item.classList.toggle('open');
+        });
+        item.querySelector('.acc-header').addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      });
+    </script>
+   </section>
+   <!-- Slide 8: Accordion OSI Superior -->
+   <section class="slide slide-8">
+    <style>
+     .slide-8 { --bg-color: #fdf4ff; --text-color: #4a044e; --accent: #c026d3; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-8 h2 { font-size: 3rem; text-align: center; color: var(--accent); margin-bottom: 2rem; }
+      .slide-8 .accordion { max-width: 800px; margin: 0 auto; width: 100%; }
+      .slide-8 .acc-item { background: #ffffff; border: 2px solid var(--accent); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+      .slide-8 .acc-header { background: #fae8ff; padding: 1.2rem; cursor: pointer; font-size: 1.4rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+      .slide-8 .acc-body { padding: 0 1.2rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; font-size: 1.1rem; }
+      .slide-8 .acc-item.open .acc-body { padding: 1.2rem; max-height: 200px; }
+    </style>
+    <h2>
+     Camadas Superiores OSI (Software)
+    </h2>
+    <div class="accordion" id="acc-slide-8">
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       4. Transporte
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Entrega ponta a ponta. Segmenta dados e garante entrega correta (ex: TCP confiável).
+      </div>
+     </div>
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       5. Sessão
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       "Gerente de diálogo". Sincroniza e gerencia a interação, criando pontos de verificação (checkpoints).
+      </div>
+     </div>
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       6. Apresentação
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Atua como tradutor. Cuida de compressão, criptografia e formatação (ex: JPEG, ASCII).
+      </div>
+     </div>
+     <div class="acc-item">
+      <div class="acc-header" tabindex="0">
+       7. Aplicação
+       <i class="bi bi-chevron-down">
+       </i>
+      </div>
+      <div class="acc-body">
+       Interface direta com softwares do usuário. Protocolos como HTTP, SMTP e FTP operam aqui.
+      </div>
+     </div>
+    </div>
+    <script>
+     const items8 = document.querySelectorAll('#acc-slide-8 .acc-item');
+      items8.forEach(item => {
+        item.querySelector('.acc-header').addEventListener('click', () => {
+          item.classList.toggle('open');
+        });
+        item.querySelector('.acc-header').addEventListener('keypress', (e) => {
+          if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.classList.toggle('open'); }
+        });
+      });
+    </script>
+   </section>
+   <!-- Slide 9: Fluxograma Imagem -->
+   <section class="slide slide-9">
+    <style>
+     .slide-9 { --bg-color: #fffbeb; --text-color: #78350f; --accent: #d97706; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-9 .split { display: flex; width: 100%; max-width: 1200px; gap: 3rem; align-items: center; height: 100%; flex-direction: row-reverse; }
+      .slide-9 .text-box { flex: 1; }
+      .slide-9 .img-box { flex: 1.5; text-align: center; }
+      .slide-9 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem; }
+      .slide-9 p { font-size: 1.5rem; line-height: 1.5; }
+      .slide-9 img { width: 100%; max-height: 70vh; object-fit: contain; border-radius: 12px; border: 4px solid var(--accent); background: #fff; padding: 1rem; }
+    </style>
+    <div class="split">
+     <div class="text-box">
+      <h2>
+       A Jornada de um Pacote
+      </h2>
+      <p>
+       Da
+       <strong>
+        Aplicação
+       </strong>
+       (mensagem do usuário) descendo até a
+       <strong>
+        Física
+       </strong>
+       (sinal elétrico), cada estágio transforma os dados adicionando inteligência para o roteamento e entrega.
+      </p>
+     </div>
+     <div class="img-box">
+      <img alt="Jornada de um Pacote de Dados" src="images/fluxograma_jornada_pacote.png"/>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 10: Comparativo Lado a Lado -->
+   <section class="slide slide-10">
+    <style>
+     .slide-10 { --bg-color: #eff6ff; --text-color: #1e3a8a; --accent: #2563eb; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; text-align: center; }
+      .slide-10 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 3rem; }
+      .slide-10 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; }
+      .slide-10 .card { background: #ffffff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+      .slide-10 .card h3 { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+      .slide-10 .card p { font-size: 1.4rem; line-height: 1.5; }
+      .slide-10 .card i { font-size: 4rem; color: var(--accent); margin-bottom: 1rem; }
+    </style>
+    <h2>
+     Modelos de Rede
+    </h2>
+    <div class="grid">
+     <div class="card">
+      <i class="bi bi-book">
+      </i>
+      <h3>
+       Modelo OSI
+      </h3>
+      <p>
+       Modelo teórico e didático com 7 camadas. Define detalhadamente como a comunicação deve ocorrer, focando na separação rigorosa de funções.
+      </p>
+     </div>
+     <div class="card">
+      <i class="bi bi-rocket-takeoff">
+      </i>
+      <h3>
+       Conjunto TCP/IP
+      </h3>
+      <p>
+       O modelo prático que faz a internet real funcionar. Simplificado em 4 ou 5 camadas, focado no IP e TCP/UDP para roteamento e transporte.
+      </p>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 11: Grid 2x2 Endereçamento -->
+   <section class="slide slide-11">
+    <style>
+     .slide-11 { --bg-color: #ffffff; --text-color: #333333; --accent: #0284c7; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-11 h2 { font-size: 3rem; color: var(--accent); text-align: center; margin-bottom: 3rem; }
+      .slide-11 .grid { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 2rem; max-width: 1100px; margin: 0 auto; }
+      .slide-11 .box { background: #f0f9ff; padding: 2rem; border-radius: 12px; border-left: 8px solid var(--accent); }
+      .slide-11 .box h3 { font-size: 1.8rem; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 1rem; }
+      .slide-11 .box p { font-size: 1.3rem; margin: 0; line-height: 1.4; }
+    </style>
+    <h2>
+     Níveis de Endereçamento
+    </h2>
+    <div class="grid">
+     <div class="box">
+      <h3>
+       <i class="bi bi-ethernet">
+       </i>
+       Endereços Físicos (MAC)
+      </h3>
+      <p>
+       Únicos no mundo, gravados na placa de rede. Movimentam o quadro dentro da rede local (LAN).
+      </p>
+     </div>
+     <div class="box">
+      <h3>
+       <i class="bi bi-geo-alt">
+       </i>
+       Endereços Lógicos (IP)
+      </h3>
+      <p>
+       Mutáveis conforme a conexão. Permitem identificação global na Internet para o roteamento.
+      </p>
+     </div>
+     <div class="box">
+      <h3>
+       <i class="bi bi-door-open">
+       </i>
+       Endereços de Portas
+      </h3>
+      <p>
+       Números (ex: 80, 443) que garantem que o dado chegue ao programa correto (navegador vs e-mail).
+      </p>
+     </div>
+     <div class="box">
+      <h3>
+       <i class="bi bi-link-45deg">
+       </i>
+       Endereços Específicos
+      </h3>
+      <p>
+       Nomes amigáveis (URLs, e-mails) traduzidos para IPs pelo DNS para facilidade humana.
+      </p>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 12: Tabela / Benchmark Imagem -->
+   <section class="slide slide-12">
+    <style>
+     .slide-12 { --bg-color: #f8fafc; --text-color: #0f172a; --accent: #4f46e5; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-12 .content { display: flex; flex-direction: column; align-items: center; max-width: 1000px; margin: 0 auto; }
+      .slide-12 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 2rem; }
+      .slide-12 img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+      .slide-12 p { font-size: 1.5rem; margin-top: 2rem; text-align: center; }
+    </style>
+    <div class="content">
+     <h2>
+      Comparativo de Modelos e Endereços
+     </h2>
+     <img alt="Tabela Comparativa OSI vs TCP/IP e Endereços" src="images/comparativo_modelos_enderecos.png"/>
+     <p>
+      A correlação direta mostra como o endereço MAC, IP, Porta e URL se encaixam nas respectivas camadas de ambos os modelos.
+     </p>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 13: Quiz Interativo -->
+   <section class="slide slide-13">
+    <style>
+     .slide-13 { --bg-color: #ffffff; --text-color: #111827; --accent: #059669; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; text-align: center; }
+      .slide-13 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 2rem; }
+      .slide-13 .quiz-container { max-width: 800px; margin: 0 auto; background: #f3f4f6; padding: 2rem; border-radius: 12px; }
+      .slide-13 .question { font-size: 1.8rem; margin-bottom: 2rem; }
+      .slide-13 .options { display: flex; flex-direction: column; gap: 1rem; }
+      .slide-13 button { padding: 1rem; font-size: 1.2rem; cursor: pointer; border: 2px solid #d1d5db; border-radius: 8px; background: white; transition: all 0.2s; }
+      .slide-13 button:hover { border-color: var(--accent); }
+      .slide-13 button.correct { background: #dcfce7; border-color: #16a34a; color: #16a34a; font-weight: bold; }
+      .slide-13 button.wrong { background: #fee2e2; border-color: #dc2626; color: #dc2626; }
+      .slide-13 .feedback { font-size: 1.5rem; margin-top: 1.5rem; min-height: 2rem; font-weight: bold; }
+    </style>
+    <h2>
+     Teste seus Conhecimentos
+    </h2>
+    <div class="quiz-container">
+     <div class="question">
+      Qual tipo de endereço é responsável por identificar globalmente um dispositivo na Internet, operando na Camada de Rede?
+     </div>
+     <div class="options" id="quiz-opts-13">
+      <button data-correct="false" tabindex="0">
+       A) Endereço MAC
+      </button>
+      <button data-correct="false" tabindex="0">
+       B) Endereço de Porta
+      </button>
+      <button data-correct="true" tabindex="0">
+       C) Endereço IP (Lógico)
+      </button>
+      <button data-correct="false" tabindex="0">
+       D) Endereço URL
+      </button>
+     </div>
+     <div class="feedback" id="quiz-feedback-13">
+     </div>
+    </div>
+    <script>
+     const opts13 = document.querySelectorAll('#quiz-opts-13 button');
+      const feedback13 = document.getElementById('quiz-feedback-13');
+      opts13.forEach(btn => {
+        btn.addEventListener('click', () => handleQuiz13(btn));
+        btn.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleQuiz13(btn); });
+      });
+      function handleQuiz13(btn) {
+        opts13.forEach(b => { b.classList.remove('correct', 'wrong'); });
+        if(btn.dataset.correct === 'true') {
+          btn.classList.add('correct');
+          feedback13.textContent = 'Exato! O endereço IP guia o roteamento entre diferentes redes.';
+          feedback13.style.color = '#16a34a';
+        } else {
+          btn.classList.add('wrong');
+          feedback13.textContent = 'Incorreto. Tente novamente!';
+          feedback13.style.color = '#dc2626';
+        }
+      }
+    </script>
+   </section>
+   <!-- Slide 14: Fluxograma de Decisão -->
+   <section class="slide slide-14">
+    <style>
+     .slide-14 { --bg-color: #faf5ff; --text-color: #4c1d95; --accent: #7c3aed; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; }
+      .slide-14 .split { display: flex; width: 100%; max-width: 1200px; gap: 3rem; align-items: center; height: 100%; }
+      .slide-14 .text-box { flex: 1; }
+      .slide-14 .img-box { flex: 1.2; }
+      .slide-14 h2 { font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem; }
+      .slide-14 p { font-size: 1.5rem; line-height: 1.6; }
+      .slide-14 img { width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    </style>
+    <div class="split">
+     <div class="text-box">
+      <h2>
+       Como a Rede Decide?
+      </h2>
+      <p>
+       <i class="bi bi-sign-turn-right" style="font-size: 2rem; color: var(--accent);">
+       </i>
+       O roteamento é baseado em perguntas simples e lógicas.
+      </p>
+      <p>
+       Se o destino está na mesma rede, usamos o MAC. Se está longe, consultamos a tabela de roteamento e enviamos pelo gateway.
+      </p>
+     </div>
+     <div class="img-box">
+      <img alt="Decisão Lógica de Roteamento" src="images/fluxograma_decisao_roteamento.png"/>
+     </div>
+    </div>
+    <script>
+    </script>
+   </section>
+   <!-- Slide 15: Encerramento Estratégico -->
+   <section class="slide slide-15">
+    <style>
+     .slide-15 { --bg-color: #082f49; --text-color: #ffffff; --accent: #38bdf8; background-color: var(--bg-color); color: var(--text-color); padding: 4rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      .slide-15 i.end-icon { font-size: 6rem; color: var(--accent); margin-bottom: 2rem; }
+      .slide-15 h2 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+      .slide-15 p { font-size: 1.8rem; max-width: 900px; line-height: 1.5; color: #bae6fd; }
+      .slide-15 blockquote { font-size: 2rem; font-style: italic; border-left: 5px solid var(--accent); padding-left: 1.5rem; margin-top: 3rem; color: #ffffff; }
+    </style>
+    <i class="bi bi-hdd-network end-icon">
+    </i>
+    <h2>
+     Uma Sinfonia de Protocolos
+    </h2>
+    <p>
+     O Modelo OSI e o TCP/IP sustentam cada bit de informação do mundo atual. Entender essas camadas é mapear o caminho para inovações como o 5G e a IoT.
+    </p>
+    <blockquote>
+     "A complexidade da rede global é domada pela perfeita organização em camadas."
+    </blockquote>
+    <script>
+    </script>
+   </section>
+  </div>
+  <script>
+   let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (currentSlide < slides.length - 1) { currentSlide++; showSlide(currentSlide); }
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (currentSlide > 0) { currentSlide--; showSlide(currentSlide); }
+    }
+  });
+  showSlide(currentSlide);
+  </script>
+ </body>
+</html>
