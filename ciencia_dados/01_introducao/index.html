@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Ciência vs Análise de Dados
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+   body,html{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden;background:#f0f8ff;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;} :root{--bg-color:#f0f8ff;--text-color:#212529;--primary-blue:#0d6efd;--dark-blue:#084298;} .slide{position:absolute;top:0;left:0;width:100vw;height:100vh;opacity:0;pointer-events:none;transition:opacity 0.5s ease-in-out;display:flex;box-sizing:border-box;} .slide.active{opacity:1;pointer-events:auto;}
+  </style>
+ </head>
+ <body>
+  <section class="slide active" id="slide-1">
+   <style>
+    #slide-1{flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('images/capa_era_dos_dados.png') center/cover;color:#fff;}#slide-1 h1{font-size:4rem;text-align:center;margin-bottom:1rem;}#slide-1 p{font-size:1.5rem;text-align:center;}#slide-1 .hint{margin-top:3rem;font-size:1rem;opacity:0.7;}
+   </style>
+   <h1>
+    <i class="bi bi-database-fill">
+    </i>
+    Ciência vs Análise de Dados
+   </h1>
+   <p>
+    Transformando informação bruta em decisões estratégicas na era digital
+   </p>
+   <p class="hint">
+    [Use as setas do teclado para navegar]
+   </p>
+   <script>
+    (function(){var s=document.getElementById('slide-1');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-2').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-2">
+   <style>
+    #slide-2{background:#fff;color:var(--text-color);flex-direction:row;}#slide-2 .left{flex:1;background:url('images/mapa_exploracao.png') center/cover;}#slide-2 .right{flex:1;padding:4rem;display:flex;flex-direction:column;justify-content:center;}#slide-2 h2{color:var(--primary-blue);font-size:3rem;margin-bottom:2rem;}#slide-2 ul{font-size:1.5rem;line-height:2;}
+   </style>
+   <div class="left">
+   </div>
+   <div class="right">
+    <h2>
+     <i class="bi bi-compass">
+     </i>
+     A Grande Metáfora
+    </h2>
+    <ul>
+     <li>
+      <b>
+       Ciência de Dados:
+      </b>
+      Construção e mapeamento de um novo território inexplorado.
+     </li>
+     <li>
+      <b>
+       Análise de Dados:
+      </b>
+      Exploração minuciosa de uma região específica e já conhecida do mapa.
+     </li>
+    </ul>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-2');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-3').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-1').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-3">
+   <style>
+    #slide-3{background:#f8f9fa;color:var(--text-color);padding:4rem;flex-direction:column;align-items:center;justify-content:center;}#slide-3 h2{color:var(--primary-blue);font-size:3rem;margin-bottom:1rem;}#slide-3 .box{background:#fff;padding:3rem;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:900px;width:100%;}
+   </style>
+   <div class="box">
+    <h2>
+     <i class="bi bi-bar-chart-line">
+     </i>
+     Análise de Dados (Analytics)
+    </h2>
+    <p style="font-size:1.5rem;font-weight:bold;color:#6c757d;margin-bottom:1.5rem;">
+     Foco: O que aconteceu e por quê?
+    </p>
+    <ul style="font-size:1.3rem;line-height:1.8;">
+     <li>
+      Examina bases de dados existentes para identificar padrões e tendências.
+     </li>
+     <li>
+      Trabalha com o "conhecido" para apoiar decisões em evidências históricas.
+     </li>
+     <li>
+      Forte atuação em Business Intelligence (BI) e criação de dashboards.
+     </li>
+     <li>
+      Busca otimização operacional e monitoramento de desempenho.
+     </li>
+     <li>
+      Responde diretamente: "Como isso se traduz em métricas?"
+     </li>
+    </ul>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-3');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-4').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-2').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-4">
+   <style>
+    #slide-4{background:#e9ecef;color:var(--text-color);padding:4rem;flex-direction:column;align-items:center;justify-content:center;}#slide-4 h2{color:var(--dark-blue);font-size:3rem;margin-bottom:1rem;}#slide-4 .box{background:#fff;padding:3rem;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:900px;width:100%;border-left:8px solid var(--dark-blue);}
+   </style>
+   <div class="box">
+    <h2>
+     <i class="bi bi-robot">
+     </i>
+     Ciência de Dados
+    </h2>
+    <p style="font-size:1.5rem;font-weight:bold;color:#6c757d;margin-bottom:1.5rem;">
+     Foco: O que acontecerá a seguir e como otimizar?
+    </p>
+    <ul style="font-size:1.3rem;line-height:1.8;">
+     <li>
+      Projeta o futuro utilizando métodos científicos, algoritmos e aprendizado de máquina.
+     </li>
+     <li>
+      Desenvolve modelos estatísticos complexos para antecipar cenários.
+     </li>
+     <li>
+      Gera inovação e vantagem competitiva de longo prazo.
+     </li>
+     <li>
+      Lida com volumes massivos de dados estruturados e não estruturados.
+     </li>
+    </ul>
+    <p style="margin-top:1.5rem;font-size:1.2rem;background:#f8f9fa;padding:1rem;border-radius:8px;">
+     Exemplo de regressão preditiva: \( \hat{y} = \beta_0 + \beta_1 X_1 + \epsilon \)
+    </p>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-4');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-5').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-3').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-5">
+   <style>
+    #slide-5{background:#fff;padding:4rem;flex-direction:column;align-items:center;justify-content:center;}#slide-5 h2{color:var(--primary-blue);font-size:3rem;margin-bottom:3rem;}#slide-5 .grid{display:flex;gap:3rem;width:100%;max-width:1100px;}#slide-5 .card{flex:1;padding:2.5rem;border-radius:12px;background:#f8f9fa;box-shadow:0 4px 15px rgba(0,0,0,0.05);}#slide-5 .card h3{color:var(--dark-blue);border-bottom:3px solid var(--primary-blue);padding-bottom:1rem;font-size:2rem;margin-top:0;}
+   </style>
+   <h2>
+    <i class="bi bi-arrow-left-right">
+    </i>
+    Objetivos no Mundo Corporativo
+   </h2>
+   <div class="grid">
+    <div class="card">
+     <h3>
+      <i class="bi bi-graph-up">
+      </i>
+      Analytics
+     </h3>
+     <ul style="font-size:1.3rem;line-height:1.8;">
+      <li>
+       <b>
+        Objetivo:
+       </b>
+       Oferecer visibilidade e inteligência de negócios.
+      </li>
+      <li>
+       <b>
+        Exemplo:
+       </b>
+       Cruzar dados para entender a queda de vendas de um mês.
+      </li>
+      <li>
+       <b>
+        Entrega:
+       </b>
+       Relatórios e ajustes de estratégia mensal.
+      </li>
+     </ul>
+    </div>
+    <div class="card">
+     <h3>
+      <i class="bi bi-lightbulb">
+      </i>
+      Data Science
+     </h3>
+     <ul style="font-size:1.3rem;line-height:1.8;">
+      <li>
+       <b>
+        Objetivo:
+       </b>
+       Inovação e criação de novas funcionalidades.
+      </li>
+      <li>
+       <b>
+        Exemplo:
+       </b>
+       Motor de recomendação personalizada em streaming.
+      </li>
+      <li>
+       <b>
+        Entrega:
+       </b>
+       Modelos de previsão baseados em comportamento de milhões.
+      </li>
+     </ul>
+    </div>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-5');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-6').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-4').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-6">
+   <style>
+    #slide-6{background:var(--bg-color);flex-direction:column;justify-content:center;align-items:center;padding:3rem;}#slide-6 h2{color:var(--dark-blue);font-size:3rem;margin-bottom:3rem;}#slide-6 .timeline{display:flex;gap:2rem;max-width:1200px;width:100%;}#slide-6 .step{background:#fff;padding:2rem;border-radius:12px;flex:1;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);position:relative;}#slide-6 .step i{font-size:3.5rem;color:var(--primary-blue);margin-bottom:1rem;display:block;}#slide-6 h4{font-size:1.5rem;margin:1rem 0;}#slide-6 p{font-size:1.1rem;color:#555;}
+   </style>
+   <h2>
+    <i class="bi bi-sign-turn-right">
+    </i>
+    Jornada de Valor: Evitando Cancelamentos (Churn)
+   </h2>
+   <div class="timeline">
+    <div class="step">
+     <i class="bi bi-1-circle-fill">
+     </i>
+     <h4>
+      1. O Diagnóstico (Analistas)
+     </h4>
+     <p>
+      Organizam a base, aplicam análises descritivas e identificam quais perfis de clientes estão cancelando e possíveis falhas passadas.
+     </p>
+    </div>
+    <div class="step">
+     <i class="bi bi-2-circle-fill">
+     </i>
+     <h4>
+      2. A Prevenção (Cientistas)
+     </h4>
+     <p>
+      Aplicam modelagem preditiva avançada para criar um alerta que identifica clientes com alta chance de sair antes que a ação ocorra.
+     </p>
+    </div>
+    <div class="step">
+     <i class="bi bi-3-circle-fill">
+     </i>
+     <h4>
+      3. A Validação (Analistas)
+     </h4>
+     <p>
+      O modelo entra em produção e os analistas voltam a monitorar se as intervenções propostas realmente reduziram as taxas com viabilidade financeira.
+     </p>
+    </div>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-6');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-7').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-5').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-7">
+   <style>
+    #slide-7{background:#fff;padding:4rem;flex-direction:column;align-items:center;justify-content:center;}#slide-7 h2{color:var(--primary-blue);font-size:3rem;margin-bottom:1rem;}#slide-7 .skills{display:flex;gap:3rem;width:100%;max-width:1100px;margin-top:2rem;}#slide-7 .skill-card{flex:1;background:#f8f9fa;border-radius:12px;padding:2.5rem;border-top:6px solid var(--primary-blue);}#slide-7 .badge{display:inline-block;background:var(--primary-blue);color:#fff;padding:0.6rem 1rem;border-radius:30px;margin:0.3rem;font-size:1.1rem;}
+   </style>
+   <h2>
+    <i class="bi bi-tools">
+    </i>
+    Competências do Profissional
+   </h2>
+   <p style="font-size:1.4rem;color:#666;">
+    Matemática e estatística são a base de ambos, mas as ferramentas variam.
+   </p>
+   <div class="skills">
+    <div class="skill-card">
+     <h3>
+      <i class="bi bi-person-badge">
+      </i>
+      Analista de Dados
+     </h3>
+     <p style="font-size:1.2rem;margin-bottom:1.5rem;">
+      <b>
+       Foco:
+      </b>
+      Comunicação e tradução técnica para executivos.
+     </p>
+     <div>
+      <span class="badge">
+       SQL
+      </span>
+      <span class="badge">
+       Power BI
+      </span>
+      <span class="badge">
+       Tableau
+      </span>
+      <span class="badge">
+       Excel Avançado
+      </span>
+     </div>
+    </div>
+    <div class="skill-card">
+     <h3>
+      <i class="bi bi-person-workspace">
+      </i>
+      Cientista de Dados
+     </h3>
+     <p style="font-size:1.2rem;margin-bottom:1.5rem;">
+      <b>
+       Foco:
+      </b>
+      Resolução de problemas complexos e arquitetura.
+     </p>
+     <div>
+      <span class="badge">
+       Python / R
+      </span>
+      <span class="badge">
+       Machine Learning
+      </span>
+      <span class="badge">
+       Engenharia de Features
+      </span>
+      <span class="badge">
+       IA em Larga Escala
+      </span>
+     </div>
+    </div>
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-7');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-8').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-6').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-8">
+   <style>
+    #slide-8{background:#f8f9fa;flex-direction:column;align-items:center;justify-content:center;}#slide-8 .quiz-box{background:#fff;padding:4rem;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,0.1);text-align:center;max-width:850px;}#slide-8 h2{color:var(--dark-blue);font-size:2.8rem;}#slide-8 button{background:var(--primary-blue);color:#fff;border:none;padding:1.2rem 2.5rem;margin:1.5rem 1rem;font-size:1.3rem;border-radius:8px;cursor:pointer;transition:background 0.3s;}#slide-8 button:hover{background:var(--dark-blue);}#slide-8 .feedback{margin-top:2rem;font-size:1.5rem;font-weight:bold;min-height:2rem;}
+   </style>
+   <div class="quiz-box">
+    <h2>
+     <i class="bi bi-patch-question-fill">
+     </i>
+     Validação Rápida
+    </h2>
+    <p style="font-size:1.6rem;margin-top:1rem;">
+     Uma empresa médica deseja criar um alerta automático que detecta propensão de doenças futuras em pacientes com base em exames genéticos. Qual profissional é ideal para liderar a criação desse algoritmo?
+    </p>
+    <button onclick="checkAns8(false)">
+     Analista de Dados
+    </button>
+    <button onclick="checkAns8(true)">
+     Cientista de Dados
+    </button>
+    <div class="feedback" id="fb-8">
+    </div>
+   </div>
+   <script>
+    function checkAns8(isCorrect){var fb=document.getElementById('fb-8');if(isCorrect){fb.style.color='green';fb.innerHTML='<i class="bi bi-check-circle-fill"></i> Exato! O Cientista atua na previsão do futuro e algoritmos complexos.';}else{fb.style.color='red';fb.innerHTML='<i class="bi bi-x-circle-fill"></i> Incorreto. Analistas focam em diagnósticos do passado. Tente novamente!';}}(function(){var s=document.getElementById('slide-8');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-9').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-7').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-9">
+   <style>
+    #slide-9{background:#fff;flex-direction:column;align-items:center;justify-content:center;padding:4rem;}#slide-9 h2{color:var(--primary-blue);font-size:3rem;margin-bottom:1rem;}#slide-9 .acc{width:100%;max-width:900px;margin-top:2rem;}#slide-9 .acc-item{border:1px solid #dee2e6;border-radius:8px;margin-bottom:1rem;overflow:hidden;}#slide-9 .acc-header{background:#f8f9fa;padding:1.5rem 2rem;cursor:pointer;font-size:1.4rem;font-weight:bold;color:var(--dark-blue);display:flex;justify-content:space-between;margin:0;transition:background 0.2s;}#slide-9 .acc-header:hover{background:#e9ecef;}#slide-9 .acc-body{padding:0 2rem;max-height:0;overflow:hidden;transition:max-height 0.4s ease-out;background:#fff;}#slide-9 .acc-body p{margin:1.5rem 0;font-size:1.2rem;line-height:1.6;}
+   </style>
+   <h2>
+    <i class="bi bi-arrow-repeat">
+    </i>
+    A Retroalimentação
+   </h2>
+   <p style="font-size:1.4rem;color:#555;">
+    Um erro comum é achar que só precisamos de cientistas ou de analistas. Eles se complementam!
+   </p>
+   <div class="acc">
+    <div class="acc-item">
+     <h3 class="acc-header" onclick="toggleAcc9(this)">
+      <i class="bi bi-plus-circle">
+      </i>
+      A Dependência do Cientista
+      <i class="bi bi-chevron-down">
+      </i>
+     </h3>
+     <div class="acc-body">
+      <p>
+       O cientista de dados não trabalha no vácuo. Ele depende da qualidade das bases preparadas, do contexto validado e das perguntas de negócio que foram afiadas pelos analistas de dados.
+      </p>
+     </div>
+    </div>
+    <div class="acc-item">
+     <h3 class="acc-header" onclick="toggleAcc9(this)">
+      <i class="bi bi-plus-circle">
+      </i>
+      A Dependência do Analista
+      <i class="bi bi-chevron-down">
+      </i>
+     </h3>
+     <div class="acc-body">
+      <p>
+       O analista, por sua vez, depende das soluções avançadas e modelos preditivos desenvolvidos pelos cientistas para conseguir oferecer insights cada vez mais sofisticados aos tomadores de decisão.
+      </p>
+     </div>
+    </div>
+   </div>
+   <script>
+    function toggleAcc9(el){var body=el.nextElementSibling;if(body.style.maxHeight){body.style.maxHeight=null;}else{body.style.maxHeight=body.scrollHeight+'px';}}(function(){var s=document.getElementById('slide-9');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowRight'||e.key===' '){s.classList.remove('active');document.getElementById('slide-10').classList.add('active');}else if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-8').classList.add('active');}})})();
+   </script>
+  </section>
+  <section class="slide" id="slide-10">
+   <style>
+    #slide-10{background:linear-gradient(rgba(13,110,253,0.85),rgba(8,66,152,0.9)),url('images/encerramento_dados.png') center/cover;color:#fff;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem;}#slide-10 h2{font-size:4rem;margin-bottom:1.5rem;}#slide-10 p{font-size:1.8rem;max-width:900px;line-height:1.6;}#slide-10 .highlight{display:inline-block;margin-top:3rem;font-size:1.4rem;font-weight:bold;background:rgba(255,255,255,0.2);padding:1.2rem 2.5rem;border-radius:40px;border:2px solid #fff;}
+   </style>
+   <h2>
+    <i class="bi bi-rocket-takeoff">
+    </i>
+    O Futuro é Movido a Dados
+   </h2>
+   <p>
+    O sucesso moderno reside na capacidade de transformar números em decisões, evidências em estratégia e complexidade em clareza.
+   </p>
+   <div class="highlight">
+    Domine os fundamentos e seja o motor da evolução tecnológica!
+   </div>
+   <script>
+    (function(){var s=document.getElementById('slide-10');window.addEventListener('keydown',function(e){if(!s.classList.contains('active'))return;if(e.key==='ArrowLeft'){s.classList.remove('active');document.getElementById('slide-9').classList.add('active');}})})();
+   </script>
+  </section>
+ </body>
+</html>
