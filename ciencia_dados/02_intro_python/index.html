@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   O Zen do Python
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root{--bg-color:#f4f7f6;--text-color:#2b3a42;--accent-1:#306998;--accent-2:#FFE873;--font-primary:'Poppins',sans-serif;}body{margin:0;overflow:hidden;font-family:var(--font-primary);background:var(--bg-color);color:var(--text-color);}#presentation{position:relative;width:100vw;height:100vh;}.slide{width:100vw;height:100vh;display:none;flex-direction:column;justify-content:center;align-items:center;position:absolute;top:0;left:0;padding:5%;box-sizing:border-box;transition:opacity 0.5s ease-in-out;opacity:0;}.slide.active{display:flex;opacity:1;z-index:10;}
+  </style>
+ </head>
+ <body>
+  <div id="presentation">
+   <section class="slide active" id="slide1">
+    <style>
+     #slide1{background:linear-gradient(135deg,var(--accent-1),#1a3c5b);color:white;}#slide1 h1{font-size:4rem;margin-bottom:0.5rem;}#slide1 p{font-size:1.5rem;color:var(--accent-2);}
+    </style>
+    <i class="bi bi-filetype-py" style="font-size:6rem;color:var(--accent-2);">
+    </i>
+    <h1>
+     O Código Pythonico
+    </h1>
+    <p>
+     Uma introdução à filosofia e estrutura do Python
+    </p>
+    <script>
+     console.log('Slide 1 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide2">
+    <style>
+     #slide2{background:var(--bg-color);}#slide2 blockquote{font-size:2rem;font-style:italic;border-left:5px solid var(--accent-1);padding-left:20px;max-width:800px;text-align:center;}#slide2 .img-container{margin-top:20px;max-width:400px;}
+    </style>
+    <i class="bi bi-book-half" style="font-size:4rem;color:var(--accent-1);">
+    </i>
+    <blockquote>
+     "Bonito é melhor que feio. Explícito é melhor que implícito. Simples é melhor que complexo."
+    </blockquote>
+    <p>
+     - O Zen of Python (PEP 20)
+    </p>
+    <img alt="Zen do Python" class="img-container" src="images/zen_of_python_concept.png"/>
+    <script>
+     console.log('Slide 2 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide3">
+    <style>
+     #slide3 ul{list-style:none;padding:0;}#slide3 li{font-size:1.5rem;margin:15px 0;display:flex;align-items:center;}#slide3 li i{color:var(--accent-1);margin-right:15px;font-size:2rem;}
+    </style>
+    <h2>
+     A Filosofia da Legibilidade
+    </h2>
+    <ul>
+     <li>
+      <i class="bi bi-eye">
+      </i>
+      O código é lido mais vezes do que escrito.
+     </li>
+     <li>
+      <i class="bi bi-x-circle">
+      </i>
+      Sem símbolos complexos como {} ou ; para blocos.
+     </li>
+     <li>
+      <i class="bi bi-text-indent-left">
+      </i>
+      Utiliza indentação obrigatória para estruturar lógica.
+     </li>
+     <li>
+      <i class="bi bi-lightbulb">
+      </i>
+      Foco na clareza e soluções diretas e óbvias.
+     </li>
+    </ul>
+    <script>
+     console.log('Slide 3 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide4">
+    <style>
+     #slide4 .split{display:flex;width:100%;height:100%;align-items:center;justify-content:space-around;}#slide4 .half{width:45%;}
+    </style>
+    <div class="split">
+     <div class="half">
+      <img alt="Indentação vs Chaves" src="images/python_indentation_vs_braces.png" style="width:100%;border-radius:10px;"/>
+     </div>
+     <div class="half">
+      <h2>
+       Por que Indentação?
+      </h2>
+      <p>
+       Quando você escreve um programa, está redigindo um documento para outros humanos. O Python força um visual limpo, eliminando ruídos sintáticos para destacar a lógica.
+      </p>
+      <i class="bi bi-code-slash" style="font-size:3rem;color:var(--accent-1);">
+      </i>
+     </div>
+    </div>
+    <script>
+     console.log('Slide 4 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide5">
+    <style>
+     #slide5 .list-container{text-align:left;max-width:800px;}#slide5 h3{color:var(--accent-1);margin-bottom:5px;}
+    </style>
+    <h2>
+     Tipos Básicos de Dados
+    </h2>
+    <div class="list-container">
+     <div>
+      <h3>
+       <i class="bi bi-123">
+       </i>
+       Inteiros (int)
+      </h3>
+      <p>
+       Números inteiros, positivos ou negativos, sem decimais (ex: 10, -5, 0).
+      </p>
+     </div>
+     <div>
+      <h3>
+       <i class="bi bi-calculator">
+       </i>
+       Ponto Flutuante (float)
+      </h3>
+      <p>
+       Números reais com parte decimal. Ex: 3.14, 2.0.
+      </p>
+     </div>
+     <div>
+      <h3>
+       <i class="bi bi-fonts">
+       </i>
+       Strings (str)
+      </h3>
+      <p>
+       Sequências imutáveis de caracteres manipuladas como texto. Ex: 'Olá'.
+      </p>
+     </div>
+     <div>
+      <h3>
+       <i class="bi bi-toggle-on">
+       </i>
+       Booleanos (bool)
+      </h3>
+      <p>
+       Tipo lógico que assume True ou False. Base do controle de fluxo.
+      </p>
+     </div>
+    </div>
+    <script>
+     console.log('Slide 5 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide6">
+    <style>
+     #slide6 .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:80%;max-width:900px;}#slide6 .card{background:white;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);text-align:center;}#slide6 .card i{font-size:3rem;color:var(--accent-1);}
+    </style>
+    <h2>
+     Estruturas de Dados Nativas
+    </h2>
+    <div class="grid">
+     <div class="card">
+      <i class="bi bi-list-ul">
+      </i>
+      <h3>
+       Listas (list)
+      </h3>
+      <p>
+       Coleções ordenadas e mutáveis. Usa [ ].
+      </p>
+     </div>
+     <div class="card">
+      <i class="bi bi-lock">
+      </i>
+      <h3>
+       Tuplas (tuple)
+      </h3>
+      <p>
+       Coleções ordenadas e imutáveis. Usa ( ).
+      </p>
+     </div>
+     <div class="card">
+      <i class="bi bi-journal-bookmark">
+      </i>
+      <h3>
+       Dicionários (dict)
+      </h3>
+      <p>
+       Pares chave-valor não ordenados. Usa { }.
+      </p>
+     </div>
+     <div class="card">
+      <i class="bi bi-intersect">
+      </i>
+      <h3>
+       Conjuntos (set)
+      </h3>
+      <p>
+       Elementos únicos não ordenados. Usa { }.
+      </p>
+     </div>
+    </div>
+    <script>
+     console.log('Slide 6 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide7">
+    <style>
+     #slide7 .compare{display:flex;justify-content:space-between;width:80%;}#slide7 .col{width:45%;background:#fff;padding:2rem;border-radius:10px;border-top:5px solid var(--accent-1);}
+    </style>
+    <h2>
+     Listas vs Tuplas
+    </h2>
+    <div class="compare">
+     <div class="col">
+      <h3>
+       <i class="bi bi-unlock">
+       </i>
+       Listas
+      </h3>
+      <ul>
+       <li>
+        Sintaxe: [1, 2, 3]
+       </li>
+       <li>
+        Mutável: pode ser alterada.
+       </li>
+       <li>
+        Ideal para coleções dinâmicas.
+       </li>
+      </ul>
+     </div>
+     <div class="col">
+      <h3>
+       <i class="bi bi-lock-fill">
+       </i>
+       Tuplas
+      </h3>
+      <ul>
+       <li>
+        Sintaxe: (1, 2, 3)
+       </li>
+       <li>
+        Imutável: não muda após criada.
+       </li>
+       <li>
+        Ideal para coordenadas ou chaves.
+       </li>
+      </ul>
+     </div>
+    </div>
+    <script>
+     console.log('Slide 7 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide8">
+    <style>
+     #slide8 .accordion{width:80%;max-width:800px;}#slide8 .acc-btn{background:var(--accent-1);color:white;cursor:pointer;padding:18px;width:100%;border:none;text-align:left;outline:none;font-size:1.2rem;transition:0.4s;margin-top:10px;border-radius:5px;}#slide8 .acc-panel{padding:0 18px;background-color:white;display:none;overflow:hidden;border:1px solid #ddd;border-radius:0 0 5px 5px;}
+    </style>
+    <h2>
+     Explorando Dados Avançados
+    </h2>
+    <div class="accordion">
+     <button class="acc-btn">
+      <i class="bi bi-journal-text">
+      </i>
+      Dicionários (dict)
+     </button>
+     <div class="acc-panel">
+      <p>
+       São coleções de pares chave-valor. Funcionam como um dicionário real: você busca uma palavra (chave) para encontrar sua definição (valor). Muito rápidos para recuperação de dados.
+      </p>
+     </div>
+     <button class="acc-btn">
+      <i class="bi bi-circle-square">
+      </i>
+      Conjuntos (set)
+     </button>
+     <div class="acc-panel">
+      <p>
+       Coleções de elementos únicos. Eliminam duplicatas automaticamente e são ideais para operações matemáticas como união e interseção de conjuntos.
+      </p>
+     </div>
+    </div>
+    <script>
+     document.querySelectorAll('#slide8 .acc-btn').forEach(b=>{b.addEventListener('click',function(){const p=this.nextElementSibling;p.style.display=p.style.display==='block'?'none':'block';});});
+    </script>
+   </section>
+   <section class="slide" id="slide9">
+    <style>
+     #slide9 .diagram{display:flex;flex-direction:column;align-items:center;gap:15px;}#slide9 .box{background:white;border:2px solid var(--accent-1);padding:15px 30px;border-radius:8px;font-size:1.5rem;}#slide9 i.arrow{font-size:2rem;color:var(--text-color);}
+    </style>
+    <h2>
+     Controle de Fluxo Condicional
+    </h2>
+    <div class="diagram">
+     <div class="box">
+      <i class="bi bi-question-circle">
+      </i>
+      if (Condição Verdadeira)
+     </div>
+     <i class="bi bi-arrow-down arrow">
+     </i>
+     <div class="box">
+      <i class="bi bi-question-circle">
+      </i>
+      elif (Outra Condição)
+     </div>
+     <i class="bi bi-arrow-down arrow">
+     </i>
+     <div class="box">
+      <i class="bi bi-exclamation-circle">
+      </i>
+      else (Nenhuma Anterior)
+     </div>
+    </div>
+    <script>
+     console.log('Slide 9 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide10">
+    <style>
+     #slide10 pre{background:#2b3a42;color:#fff;padding:20px;border-radius:10px;font-size:1.5rem;text-align:left;}#slide10 .code-title{font-weight:bold;color:var(--accent-2);}
+    </style>
+    <h2>
+     Estrutura Condicional na Prática
+    </h2>
+    <i class="bi bi-terminal" style="font-size:3rem;color:var(--accent-1);">
+    </i>
+    <pre><code><span class="code-title"># Exemplo de verificação</span>
+idade = 18
+
+if idade &gt;= 18:
+    print("Maior de idade")
+elif idade &gt; 0:
+    print("Menor de idade")
+else:
+    print("Idade inválida")</code></pre>
+    <script>
+     console.log('Slide 10 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide11">
+    <style>
+     #slide11 .split{display:flex;width:100%;height:100%;align-items:center;justify-content:center;gap:40px;}#slide11 .loop-box{text-align:center;max-width:400px;}
+    </style>
+    <h2>
+     Laços de Repetição (Loops)
+    </h2>
+    <div class="split">
+     <div class="loop-box">
+      <h3>
+       <i class="bi bi-arrow-repeat">
+       </i>
+       Laço FOR
+      </h3>
+      <p>
+       Itera sobre sequências (listas, strings). "Para cada item nesta sequência, execute isto".
+      </p>
+     </div>
+     <div class="loop-box">
+      <img alt="Loops no Python" src="images/loops_in_python.png" style="width:100%;border-radius:10px;"/>
+     </div>
+     <div class="loop-box">
+      <h3>
+       <i class="bi bi-arrow-clockwise">
+       </i>
+       Laço WHILE
+      </h3>
+      <p>
+       Executa enquanto uma condição booleana permanecer True. Requer atenção à condição de parada.
+      </p>
+     </div>
+    </div>
+    <script>
+     console.log('Slide 11 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide12">
+    <style>
+     #slide12 .func-card{background:white;padding:30px;border-radius:10px;border-left:8px solid var(--accent-1);max-width:700px;font-size:1.3rem;}
+    </style>
+    <h2>
+     Funções: O Coração da Modularidade
+    </h2>
+    <div class="func-card">
+     <p>
+      <i class="bi bi-braces-asterisk" style="font-size:2rem;color:var(--accent-1);">
+      </i>
+     </p>
+     <p>
+      Em vez de escrever comandos repetidos, encapsulamos lógicas em
+      <b>
+       funções
+      </b>
+      com a palavra-chave
+      <code>
+       def
+      </code>
+      .
+     </p>
+     <ul>
+      <li>
+       Promove reutilização de código.
+      </li>
+      <li>
+       Facilita manutenção e testes.
+      </li>
+      <li>
+       Podem receber argumentos e usar
+       <code>
+        return
+       </code>
+       .
+      </li>
+     </ul>
+    </div>
+    <script>
+     console.log('Slide 12 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide13">
+    <style>
+     #slide13{background-color:#ffe6e6;}#slide13 h2{color:#d9534f;}#slide13 .warning-box{text-align:center;max-width:600px;}
+    </style>
+    <h2>
+     <i class="bi bi-exclamation-triangle-fill" style="color:#d9534f;">
+     </i>
+     Alerta: Loop Infinito
+    </h2>
+    <div class="warning-box">
+     <img alt="Alerta de Loop Infinito" src="images/infinite_loop_warning.png" style="width:200px;"/>
+     <p style="font-size:1.3rem;color:#333;">
+      Ao usar o laço
+      <code>
+       while
+      </code>
+      , certifique-se de que a condição se tornará
+      <b>
+       False
+      </b>
+      em algum momento. Caso contrário, o programa travará executando a mesma tarefa para sempre!
+     </p>
+    </div>
+    <script>
+     console.log('Slide 13 carregado');
+    </script>
+   </section>
+   <section class="slide" id="slide14">
+    <style>
+     #slide14 .quiz-btn{background:var(--accent-1);color:white;border:none;padding:15px 30px;font-size:1.2rem;margin:10px;border-radius:5px;cursor:pointer;transition:0.3s;}#slide14 #feedback{margin-top:20px;font-size:1.5rem;font-weight:bold;}
+    </style>
+    <h2>
+     <i class="bi bi-patch-question">
+     </i>
+     Quiz Pythonico
+    </h2>
+    <p>
+     Qual das estruturas de dados abaixo é
+     <b>
+      imutável
+     </b>
+     (não pode ser alterada após a criação)?
+    </p>
+    <div>
+     <button class="quiz-btn" data-correct="false">
+      A) Lista (list)
+     </button>
+     <button class="quiz-btn" data-correct="true">
+      B) Tupla (tuple)
+     </button>
+     <button class="quiz-btn" data-correct="false">
+      C) Dicionário (dict)
+     </button>
+    </div>
+    <div id="feedback">
+    </div>
+    <script>
+     document.querySelectorAll('#slide14 .quiz-btn').forEach(btn=>{btn.addEventListener('click',function(){const fb=document.getElementById('feedback');if(this.dataset.correct==='true'){this.style.backgroundColor='#28a745';fb.style.color='#28a745';fb.innerHTML='<i class="bi bi-check-circle"></i> Correto! Tuplas são imutáveis.';}else{this.style.backgroundColor='#dc3545';fb.style.color='#dc3545';fb.innerHTML='<i class="bi bi-x-circle"></i> Incorreto. Tente novamente.';}});});
+    </script>
+   </section>
+   <section class="slide" id="slide15">
+    <style>
+     #slide15{background:linear-gradient(135deg,#1a3c5b,var(--accent-1));color:white;text-align:center;}#slide15 h2{font-size:3rem;}#slide15 i{font-size:5rem;color:var(--accent-2);}
+    </style>
+    <i class="bi bi-rocket-takeoff-fill">
+    </i>
+    <h2>
+     Pronto para Programar?
+    </h2>
+    <p style="font-size:1.5rem;">
+     Combine o Zen do Python, tipos básicos, estruturas e modularidade para escrever softwares inteligentes e elegantes.
+    </p>
+    <script>
+     console.log('Slide 15 carregado');
+    </script>
+   </section>
+  </div>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+   let currentSlide=0;const slides=document.querySelectorAll('.slide');document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&currentSlide<slides.length-1){slides[currentSlide].classList.remove('active');currentSlide++;slides[currentSlide].classList.add('active');}else if(e.key==='ArrowLeft'&&currentSlide>0){slides[currentSlide].classList.remove('active');currentSlide--;slides[currentSlide].classList.add('active');}});
+  </script>
+ </body>
+</html>
