@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Apresentação Interativa</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+
+    /* 2. RESET E ESTRUTURA BASE */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: var(--text-main);
+        font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 3. CONTAINER DE ROLAGEM */
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .presentation-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. WRAPPER DE CADA SLIDE */
+    .slide-wrapper {
+        min-height: 100vh; 
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--bg-gradient);
+    }
+
+    /* 5. AJUSTES DE TAMANHO E RESPONSIVIDADE */
+    
+    .display-1 { font-size: clamp(3rem, 8vw, 6rem) !important; font-weight: 900; line-height: 0.9; color: var(--text-main); }
+    .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem) !important; font-weight: 900; color: var(--text-main); }
+    .display-6 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; color: var(--text-muted); }
+
+    /* Força os cards a serem flexíveis - Estilo Light Mode */
+    .main-card {
+        height: auto !important;
+        min-height: 100px;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: var(--text-main);
+    }
+
+    /* Auxiliares de espaçamento */
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Shadow suave para o Light Mode em vez de glow agressivo */
+    .text-shadow {
+        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .fw-black { 
+        font-weight: 900 !important; 
+    }
+
+    .transition-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--secondary-color) !important;
+    }
+
+    /* Ajuste para o slide Split no Light Mode */
+    .slide-split .col-md-6:first-child {
+        background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        .slide-split .col-md-6 {
+            min-height: 100vh;
+        }
+    }
+
+    /* Custom Divider para o Light Mode */
+    .custom-divider {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        height: 4px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+    <main class="presentation-container">
+        
+            <article class="slide-wrapper">
+                <div class="slide-hero vh-100 d-flex flex-column align-items-center justify-content-center position-relative text-white text-center" 
+     
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;"
+     >
+    
+    <div class="container position-relative z-1 px-4">
+        
+        <div class="mb-4">
+            <i class="bi bi-box-seam display-1 text-primary"></i>
+        </div>
+        
+
+        <h1 class="display-1 fw-bold mb-4 tracking-tight">
+            Introdução à Modelagem 3D
+        </h1>
+        
+        
+        <p class="lead fs-3 fw-light text-white-50 mx-auto" style="max-width: 800px;">
+            Do conceito à realidade digital: o alicerce da computação gráfica moderna.
+        </p>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-cpu display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    FUNDAMENTOS
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Modelagem 3D
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Processo de criação de representações virtuais de objetos tridimensionais em um ambiente computacional, integrando profundidade, volume e simulação física.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> A criação de personagens para jogos ou peças mecânicas para engenharia que podem ser visualizadas de qualquer ângulo.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-triangle display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Os Três Pilares da Geometria 3D
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    A estrutura básica de uma malha poligonal é composta por três elementos fundamentais que definem a forma do objeto.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Vértices: Pontos precisos no espaço 3D definidos por coordenadas X, Y e Z.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Arestas: Linhas retas que conectam dois vértices, definindo o contorno estrutural.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Faces: Superfícies planas que preenchem o espaço entre três ou mais arestas, formando a 'pele' do objeto.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-imagem-info min-vh-100 d-flex align-items-center bg-white text-dark py-5">
+    <div class="container-fluid px-5">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0 border-end border-light border-3">
+                
+                <i class="bi bi-grid-3x3 display-4 text-primary mb-3 d-block opacity-75"></i>
+                
+                
+                <h2 class="display-5 fw-bold mb-3 text-dark lh-sm">
+                    Topologia de Malha
+                </h2>
+                
+                
+                <div class="border-top border-primary border-3 mb-4" style="width: 50px;"></div>
+                <p class="lead text-secondary fs-5 lh-base">
+                    A topologia refere-se à organização das faces. Um bom modelo equilibra a densidade de polígonos para garantir fidelidade visual sem comprometer a performance do sistema.
+                </p>
+                
+            </div>
+
+            <div class="col-lg-9 ps-lg-5 text-center">
+                <div class="p-3 bg-light rounded-4 shadow-inner overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                    <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&fit=crop&w=800&q=80" 
+                         alt="Topologia de Malha" 
+                         class="img-fluid rounded-3 shadow-sm" 
+                         style="max-height: 75vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    /* Sombra interna sutil para dar profundidade à área da imagem */
+    .shadow-inner {
+        box-shadow: inset 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-compass display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    ESPAÇO VIRTUAL
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Sistema de Coordenadas e Primitivas
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    O ambiente 3D utiliza eixos cartesianos (X, Y, Z) para posicionamento. A modelagem inicia-se com primitivas, formas básicas como cubos e esferas, que são modificadas para criar objetos complexos.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Começar com um cilindro para modelar o braço de um personagem ou um cubo para o torso.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-passo-a-passo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-arrows-move display-4 text-primary mb-3"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Transformações Espaciais</h2>
+            
+            
+            <p class="lead text-secondary">O controle fundamental sobre objetos 3D é exercido através de três operações básicas de manipulação.</p>
+            
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch mt-4">
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            1
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-arrows-move display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Translação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Deslocamento do objeto ou vértices ao longo dos eixos X, Y e Z.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            2
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-arrow-clockwise display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Rotação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Giro do elemento em torno de um dos eixos espaciais.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            3
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-aspect-ratio display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Escala</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Alteração das dimensões do objeto, expandindo ou contraindo seu tamanho.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-gear-wide-connected display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Pipeline 3D</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">As fases essenciais para levar um modelo do conceito à finalização.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Modelagem
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Criação da forma geométrica através de técnicas como box modeling ou escultura digital.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> UV Mapping
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Desembrulhar o volume 3D em um plano 2D para aplicação de texturas e materiais.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse3">
+                                <span class="text-primary me-3">03.</span> Rigging
+                            </button>
+                        </h2>
+                        <div id="collapse3" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading3" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Criação de uma estrutura interna de ossos para permitir a animação do modelo.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse4" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse4">
+                                <span class="text-primary me-3">04.</span> Renderização
+                            </button>
+                        </h2>
+                        <div id="collapse4" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading4" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Cálculo final da luz e materiais para gerar a imagem ou vídeo definitivo.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-layers display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Aplicações Práticas</h2>
+            
+            
+            <p class="lead text-secondary">A modelagem 3D é uma competência versátil aplicada em diversos setores.</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-controller display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Jogos Digitais</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Foco em otimização e topologia eficiente para tempo real.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-house-door display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Arquitetura</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Precisão técnica e visualização fotorrealista de projetos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-printer display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Impressão 3D</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Criação de modelos sólidos (manifold) para fabricação física.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-film display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Cinema</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Produção de ativos complexos e renderização de alta fidelidade.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-split vh-100 container-fluid p-0 bg-light">
+    <div class="row g-0 h-100">
+        
+        
+        <div class="col-md-6 d-flex flex-column justify-content-center p-5 px-lg-5">
+            <div class="mx-lg-5">
+                
+                <i class="bi bi-controller display-4 text-primary mb-3 d-block"></i>
+                
+                <h2 class="display-4 fw-bold mb-4 text-dark">Foco: Jogos Digitais</h2>
+                
+                <p class="lead text-secondary mb-4">Otimização e Performance</p>
+                
+                <div class="fs-5 text-body">
+                    Em jogos, a topologia é crítica. Modelos precisam ser leves para rodar suavemente em tempo real, exigindo que o modelador equilibre a complexidade geométrica com a fidelidade visual necessária para a experiência do jogador.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 h-100 shadow-sm" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+        
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-tabela min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-table display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Comparativo Técnico</h2>
+            
+            
+            <p class="lead text-secondary">Requisitos de modelagem conforme a finalidade do projeto.</p>
+            
+        </div>
+        
+        <div class="table-responsive shadow-sm rounded-4">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">Critério</th>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">Jogos Digitais</th>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">Impressão 3D</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="bg-light">
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Foco Principal
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Otimização/Performance
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Geometria Sólida
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Topologia
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Eficiente/Leve
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Manifold (Sem buracos)
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Saída
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Engine (Unreal/Unity)
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Arquivo STL/OBJ
+                        </td>
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div class="mt-4 text-end">
+            <p class="text-secondary fst-italic mb-0">Fonte: Pipeline de Produção 3D.</p>
+        </div>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-comparativo vh-100 d-flex flex-column justify-content-center bg-white text-dark">
+    <div class="container px-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                
+                <i class="bi bi-shield-check display-4 text-primary mb-3 d-block"></i>
+                
+                
+                <h2 class="display-4 fw-bold mb-3">Abordagens de Modelagem</h2>
+                
+                
+                <p class="lead text-secondary">Diferentes métodos para diferentes necessidades criativas.</p>
+                
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-box display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Poligonal</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Baseada em vértices e faces.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Controle manual</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Ideal para jogos</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-brush display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Escultura</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Pincéis digitais sobre malha.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Alta fidelidade</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Orgânico</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-calculator display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Paramétrica</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Regras e medidas exatas.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Precisão matemática</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Engenharia</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-citacao vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5 text-center">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <i class="bi bi-quote display-1 text-primary opacity-50 mb-3 d-block"></i>
+                
+                <blockquote class="blockquote mb-5">
+                    <p class="display-5 fw-medium fst-italic text-dark lh-base">
+                        "A modelagem 3D é a intersecção fascinante entre arte, matemática e tecnologia, transformando ideias criativas em realidades digitais impactantes."
+                    </p>
+                </blockquote>
+                
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    
+                    
+                    <div class="text-start">
+                        <h4 class="h3 fw-bold mb-1 text-dark">Engenharia de Conteúdo</h4>
+                        
+                        <p class="text-secondary fs-5 mb-0">Especialista em Computação Gráfica</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-pergunta min-vh-100 d-flex flex-column justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="container px-5 text-center">
+        
+        
+        <div class="mb-4">
+            <i class="bi bi-patch-question display-1 text-white opacity-50"></i>
+        </div>
+        
+        
+        <h2 class="display-2 fw-bolder mb-4 lh-sm mx-auto tracking-tight" style="max-width: 1000px;">
+            Como a modelagem 3D está transformando a sua área de atuação hoje?
+        </h2>
+        
+        
+        <hr class="w-25 mx-auto border-white border-2 opacity-50 mb-4 rounded">
+        <p class="display-6 fw-light text-white-50 mx-auto mb-0" style="max-width: 800px;">
+            Reflita sobre como a visualização tridimensional pode otimizar seus processos atuais.
+        </p>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-encerramento min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" 
+     style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                
+                <div class="main-card p-5 p-md-6 rounded-5 border border-white border-opacity-10 shadow-2xl text-center"
+                     style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);">
+                    
+                    
+                    <h1 class="display-1 fw-black mb-2 tracking-tighter text-white text-uppercase">
+                        Conclusão<span class="text-info">.</span>
+                    </h1>
+
+                    
+                    
+                    <p class="fs-4 fw-light text-white mb-5 mx-auto lh-base opacity-75" style="max-width: 650px;">
+                        O domínio técnico é a ponte para a criatividade. Continue explorando as possibilidades do mundo 3D.
+                    </p>
+                    
+
+                    <div class="custom-divider mb-5 mx-auto"></div>
+
+                    
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                        
+                        <div class="d-flex align-items-center">
+                            <span class="small text-uppercase tracking-widest text-info fw-bold">Júlio Dantas</span>
+                        </div>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="mailto:dantas.j.c.s@gmail.com" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            dantas.j.c.s@gmail.com
+                        </a>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="https://www.linkedin.com/in/dantasjcs" target="_blank" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-linkedin me-2 text-info"></i>
+                            in/dantasjcs
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.slide-encerramento {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.fw-black { font-weight: 900; }
+
+.contact-link {
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
+
+/* Divisor com brilho neon suave */
+.custom-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.8), transparent);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.2);
+}
+
+.tracking-tighter { letter-spacing: -0.06em; }
+.tracking-widest { letter-spacing: 0.35em; }
+
+/* Sombra profunda para destacar o card do background complexo */
+.main-card {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3.5rem; }
+    .main-card { padding: 2rem !important; }
+}
+</style>
+            </article>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.querySelector('.presentation-container');
+        
+        window.addEventListener('keydown', (e) => {
+            // Seta para Baixo, Direita ou Barra de Espaço: Próximo Slide
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }
+            // Seta para Cima ou Esquerda: Slide Anterior
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
