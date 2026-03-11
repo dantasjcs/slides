@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Apresentação Interativa</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+
+    /* 2. RESET E ESTRUTURA BASE */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: var(--text-main);
+        font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 3. CONTAINER DE ROLAGEM */
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .presentation-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. WRAPPER DE CADA SLIDE */
+    .slide-wrapper {
+        min-height: 100vh; 
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--bg-gradient);
+    }
+
+    /* 5. AJUSTES DE TAMANHO E RESPONSIVIDADE */
+    
+    .display-1 { font-size: clamp(3rem, 8vw, 6rem) !important; font-weight: 900; line-height: 0.9; color: var(--text-main); }
+    .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem) !important; font-weight: 900; color: var(--text-main); }
+    .display-6 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; color: var(--text-muted); }
+
+    /* Força os cards a serem flexíveis - Estilo Light Mode */
+    .main-card {
+        height: auto !important;
+        min-height: 100px;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: var(--text-main);
+    }
+
+    /* Auxiliares de espaçamento */
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Shadow suave para o Light Mode em vez de glow agressivo */
+    .text-shadow {
+        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .fw-black { 
+        font-weight: 900 !important; 
+    }
+
+    .transition-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--secondary-color) !important;
+    }
+
+    /* Ajuste para o slide Split no Light Mode */
+    .slide-split .col-md-6:first-child {
+        background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        .slide-split .col-md-6 {
+            min-height: 100vh;
+        }
+    }
+
+    /* Custom Divider para o Light Mode */
+    .custom-divider {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        height: 4px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+    <main class="presentation-container">
+        
+            <article class="slide-wrapper">
+                <div class="slide-hero vh-100 d-flex flex-column align-items-center justify-content-center position-relative text-white text-center" 
+     
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"
+     >
+    
+    <div class="container position-relative z-1 px-4">
+        
+        <div class="mb-4">
+            <i class="bi bi-shield-lock display-1 text-primary"></i>
+        </div>
+        
+
+        <h1 class="display-1 fw-bold mb-4 tracking-tight">
+            Criptografia: Fundamentos e Era Digital
+        </h1>
+        
+        
+        <p class="lead fs-3 fw-light text-white-50 mx-auto" style="max-width: 800px;">
+            A ciência e a arte do sigilo na proteção da infraestrutura global.
+        </p>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-key display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    FUNDAMENTOS
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Criptografia
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Derivado do grego 'kryptós' (oculto) e 'gráphein' (escrever), é a ciência de transformar informações legíveis em dados ininteligíveis para garantir a segurança.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Transformar dados sensíveis em texto cifrado (ciphertext) para que, mesmo interceptados, permaneçam inacessíveis sem a chave correta.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-shield-check display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Pilares da Segurança da Informação
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    A criptografia é a ferramenta primordial para sustentar os pilares da tríade CIA e garantir a confiança digital.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Confidencialidade: Acesso restrito apenas a partes autorizadas.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Integridade: Garantia de que a informação não foi manipulada.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Autenticidade: Prova da origem real da mensagem.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Não Repúdio: Impossibilidade do emissor negar o envio da mensagem.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-pergunta min-vh-100 d-flex flex-column justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="container px-5 text-center">
+        
+        
+        <div class="mb-4">
+            <i class="bi bi-question-circle display-1 text-white opacity-50"></i>
+        </div>
+        
+        
+        <h2 class="display-2 fw-bolder mb-4 lh-sm mx-auto tracking-tight" style="max-width: 1000px;">
+            A criptografia garante a disponibilidade dos dados?
+        </h2>
+        
+        
+        <hr class="w-25 mx-auto border-white border-2 opacity-50 mb-4 rounded">
+        <p class="display-6 fw-light text-white-50 mx-auto mb-0" style="max-width: 800px;">
+            Não. Embora proteja o conteúdo, a criptografia não impede ataques de negação de serviço (DDoS) ou a perda da chave de descriptografia, que tornam os dados indisponíveis.
+        </p>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-passo-a-passo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-clock-history display-4 text-primary mb-3"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Evolução Histórica</h2>
+            
+            
+            <p class="lead text-secondary">A história da criptografia é um ciclo de inovação e superação pela criptoanálise.</p>
+            
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch mt-4">
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            1
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-alphabet display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Cifra de César</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Método clássico de substituição por deslocamento, hoje trivialmente quebrável.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            2
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-gear display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Máquina Enigma</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Complexidade eletromecânica superada por falhas operacionais e computação primitiva.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            3
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-cpu display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">DES para AES</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Transição de padrões de 56 bits para algoritmos robustos de 256 bits contra força bruta.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-imagem-info min-vh-100 d-flex align-items-center bg-white text-dark py-5">
+    <div class="container-fluid px-5">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0 border-end border-light border-3">
+                
+                <i class="bi bi-person-badge display-4 text-primary mb-3 d-block opacity-75"></i>
+                
+                
+                <h2 class="display-5 fw-bold mb-3 text-dark lh-sm">
+                    Lições de Alan Turing
+                </h2>
+                
+                
+                <div class="border-top border-primary border-3 mb-4" style="width: 50px;"></div>
+                <p class="lead text-secondary fs-5 lh-base">
+                    A quebra da Enigma demonstrou que a segurança de um sistema não depende apenas do algoritmo, mas também da disciplina operacional e da ausência de hábitos previsíveis.
+                </p>
+                
+            </div>
+
+            <div class="col-lg-9 ps-lg-5 text-center">
+                <div class="p-3 bg-light rounded-4 shadow-inner overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                    <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80" 
+                         alt="Lições de Alan Turing" 
+                         class="img-fluid rounded-3 shadow-sm" 
+                         style="max-height: 75vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    /* Sombra interna sutil para dar profundidade à área da imagem */
+    .shadow-inner {
+        box-shadow: inset 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-comparativo vh-100 d-flex flex-column justify-content-center bg-white text-dark">
+    <div class="container px-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                
+                <i class="bi bi-grid-fill display-4 text-primary mb-3 d-block"></i>
+                
+                
+                <h2 class="display-4 fw-bold mb-3">Criptografia Simétrica vs. Assimétrica</h2>
+                
+                
+                <p class="lead text-secondary">Modelos distintos de operação para diferentes necessidades de segurança.</p>
+                
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-speedometer2 display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Simétrica</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Usa a mesma chave para cifrar e decifrar.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Alta velocidade</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Ideal para grandes volumes</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Desafio na distribuição de chaves</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-key-fill display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Assimétrica</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Usa um par de chaves (pública e privada).</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Resolve distribuição de chaves</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Baseada em problemas matemáticos</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Processamento mais lento</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-passo-a-passo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-arrow-left-right display-4 text-primary mb-3"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">O Handshake TLS</h2>
+            
+            
+            <p class="lead text-secondary">Coreografia criptográfica para estabelecer uma conexão segura.</p>
+            
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch mt-4">
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            1
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-chat-dots display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Negociação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Definição dos algoritmos suportados por cliente e servidor.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            2
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-patch-check display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Autenticação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Validação do certificado digital do servidor.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            3
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-key display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Troca de Chaves</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Geração segura da chave de sessão temporária.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-book display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Melhores Práticas de Segurança</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Diretrizes essenciais para o desenvolvimento web seguro.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Hashing com Salt
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Uso de funções como Argon2 ou bcrypt para armazenar senhas de forma unidirecional.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> HSTS
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Cabeçalho que força o navegador a utilizar apenas conexões HTTPS.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse3">
+                                <span class="text-primary me-3">03.</span> Gestão de Segredos
+                            </button>
+                        </h2>
+                        <div id="collapse3" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading3" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Evitar hardcoding de chaves; utilizar cofres como AWS Secrets Manager ou HashiCorp Vault.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-codigo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5">
+            
+            <i class="bi bi-code-slash display-5 text-primary mb-3 d-inline-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-2">Implementação de Hash de Senha</h2>
+            
+            
+            <p class="lead text-secondary">Exemplo conceitual de armazenamento seguro utilizando funções de hash com salt.</p>
+            
+        </div>
+        
+        <div class="card bg-dark border-0 shadow-lg rounded-4 overflow-hidden">
+            
+            <div class="card-header bg-black bg-opacity-25 border-bottom border-secondary border-opacity-25 d-flex align-items-center py-2 px-4">
+                <div class="d-flex gap-2 me-auto mt-1">
+                    <div class="rounded-circle bg-danger opacity-75" style="width: 12px; height: 12px;"></div>
+                    <div class="rounded-circle bg-warning opacity-75" style="width: 12px; height: 12px;"></div>
+                    <div class="rounded-circle bg-success opacity-75" style="width: 12px; height: 12px;"></div>
+                </div>
+                
+                
+                <span class="text-white-50 small font-monospace text-uppercase fw-bold tracking-wide">JavaScript</span>
+                
+            </div>
+            
+            <div class="card-body p-0">
+                <pre class="m-0 p-4 p-lg-5 font-monospace fs-5 text-light" style="overflow-x: auto;"><code>const bcrypt = require('bcrypt');
+const saltRounds = 12;
+const password = 'user_password';
+
+// Hash seguro
+const hash = await bcrypt.hash(password, saltRounds);</code></pre>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-citacao vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5 text-center">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <i class="bi bi-chat-quote display-1 text-primary opacity-50 mb-3 d-block"></i>
+                
+                <blockquote class="blockquote mb-5">
+                    <p class="display-5 fw-medium fst-italic text-dark lh-base">
+                        "A segurança da informação é uma corrida armamentista contínua."
+                    </p>
+                </blockquote>
+                
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    
+                    
+                    <div class="text-start">
+                        <h4 class="h3 fw-bold mb-1 text-dark">Especialista em Segurança</h4>
+                        
+                        <p class="text-secondary fs-5 mb-0">Reflexão sobre vigilância e inovação</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-metrica min-vh-100 d-flex flex-column justify-content-center py-5" style="background: var(--bg-gradient);">
+    <div class="container px-lg-5">
+        
+        <div class="text-center mb-5 pb-4">
+            
+            <div class="mb-2">
+                <i class="bi bi-lightning-charge fs-1 opacity-50" style="color: var(--secondary-color);"></i>
+            </div>
+            
+            
+            <h2 class="display-4 fw-black mb-2" style="color: var(--text-main); letter-spacing: -2px;">
+                Impacto da Computação Quântica
+            </h2>
+            
+            
+            <p class="fs-5 mx-auto fw-light opacity-75" style="max-width: 600px; color: var(--text-muted);">
+                A transição necessária para algoritmos resistentes a ataques quânticos.
+            </p>
+            
+        </div>
+        
+        <div class="row g-5 justify-content-center">
+            
+            <div class="col-md-4 d-flex">
+                <div class="w-100 d-flex flex-column align-items-center text-center">
+                    
+                    
+                    <div class="mb-3">
+                        <i class="bi bi-clock fs-2" style="color: var(--secondary-color); opacity: 0.8;"></i>
+                    </div>
+                    
+                    
+                    <div class="display-1 fw-black mb-1" style="color: var(--text-main); line-height: 1; letter-spacing: -4px;">
+                        0s
+                    </div>
+                    
+                    <div class="my-3" style="width: 20px; height: 2px; background: var(--secondary-color); opacity: 0.3; border-radius: 2px;"></div>
+                    
+                    <p class="text-uppercase fw-bold tracking-widest" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 3px;">
+                        RSA (Teórico)
+                    </p>
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-4 d-flex">
+                <div class="w-100 d-flex flex-column align-items-center text-center">
+                    
+                    
+                    <div class="mb-3">
+                        <i class="bi bi-shield-lock fs-2" style="color: var(--secondary-color); opacity: 0.8;"></i>
+                    </div>
+                    
+                    
+                    <div class="display-1 fw-black mb-1" style="color: var(--text-main); line-height: 1; letter-spacing: -4px;">
+                        PQC
+                    </div>
+                    
+                    <div class="my-3" style="width: 20px; height: 2px; background: var(--secondary-color); opacity: 0.3; border-radius: 2px;"></div>
+                    
+                    <p class="text-uppercase fw-bold tracking-widest" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 3px;">
+                        Resistência Quântica
+                    </p>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-grid-3x3-gap display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Desafios da Criptografia Pós-Quântica (PQC)</h2>
+            
+            
+            <p class="lead text-secondary">O papel do NIST na padronização de novos algoritmos.</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-calculator display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Redes Euclidianas</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Base matemática para novos algoritmos resistentes.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-globe display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Padronização</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Esforço global para substituir padrões obsoletos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-calendar-check display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Transição</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Desafio técnico para a próxima década.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-problema min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-10">
+                
+                <div class="mb-4">
+                    <i class="bi bi-exclamation-triangle display-2 text-danger"></i>
+                </div>
+                
+                
+                <h2 class="display-3 fw-bolder mb-4">Riscos de Implementação</h2>
+                
+                
+                <p class="display-6 fw-light text-secondary mb-0 line-height-base">
+                    A negligência na proteção de dados gera riscos éticos e legais severos.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row g-4 justify-content-center mt-2">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 border-top border-danger border-4 shadow-sm bg-light">
+                    <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center text-center">
+                        
+                        
+                        
+                        <div class="mb-3">
+                            <i class="bi bi-code fs-3 text-danger"></i>
+                        </div>
+                        
+                        
+                        
+                        <p class="fs-5 mb-0 text-dark fw-medium">Hardcoding de chaves de API e segredos no código-fonte.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 border-top border-danger border-4 shadow-sm bg-light">
+                    <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center text-center">
+                        
+                        
+                        
+                        <div class="mb-3">
+                            <i class="bi bi-shield-x fs-3 text-danger"></i>
+                        </div>
+                        
+                        
+                        
+                        <p class="fs-5 mb-0 text-dark fw-medium">Uso de algoritmos obsoletos ou proprietários.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 border-top border-danger border-4 shadow-sm bg-light">
+                    <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center text-center">
+                        
+                        
+                        
+                        <div class="mb-3">
+                            <i class="bi bi-file-earmark-lock fs-3 text-danger"></i>
+                        </div>
+                        
+                        
+                        
+                        <p class="fs-5 mb-0 text-dark fw-medium">Não conformidade com legislações como a LGPD.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-encerramento min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" 
+     style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                
+                <div class="main-card p-5 p-md-6 rounded-5 border border-white border-opacity-10 shadow-2xl text-center"
+                     style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);">
+                    
+                    
+                    <h1 class="display-1 fw-black mb-2 tracking-tighter text-white text-uppercase">
+                        Conclusão<span class="text-info">.</span>
+                    </h1>
+
+                    
+                    
+                    <p class="fs-4 fw-light text-white mb-5 mx-auto lh-base opacity-75" style="max-width: 650px;">
+                        A criptografia é uma responsabilidade ética. Continue aprofundando seus conhecimentos para garantir a segurança na era digital.
+                    </p>
+                    
+
+                    <div class="custom-divider mb-5 mx-auto"></div>
+
+                    
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                        
+                        <div class="d-flex align-items-center">
+                            <span class="small text-uppercase tracking-widest text-info fw-bold">Júlio Dantas</span>
+                        </div>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="mailto:dantas.j.c.s@gmail.com" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            dantas.j.c.s@gmail.com
+                        </a>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="https://www.linkedin.com/in/dantasjcs" target="_blank" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-linkedin me-2 text-info"></i>
+                            in/dantasjcs
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.slide-encerramento {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.fw-black { font-weight: 900; }
+
+.contact-link {
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
+
+/* Divisor com brilho neon suave */
+.custom-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.8), transparent);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.2);
+}
+
+.tracking-tighter { letter-spacing: -0.06em; }
+.tracking-widest { letter-spacing: 0.35em; }
+
+/* Sombra profunda para destacar o card do background complexo */
+.main-card {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3.5rem; }
+    .main-card { padding: 2rem !important; }
+}
+</style>
+            </article>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.querySelector('.presentation-container');
+        
+        window.addEventListener('keydown', (e) => {
+            // Seta para Baixo, Direita ou Barra de Espaço: Próximo Slide
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }
+            // Seta para Cima ou Esquerda: Slide Anterior
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
