@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Apresentação Interativa</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+
+    /* 2. RESET E ESTRUTURA BASE */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: var(--text-main);
+        font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 3. CONTAINER DE ROLAGEM */
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .presentation-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. WRAPPER DE CADA SLIDE */
+    .slide-wrapper {
+        min-height: 100vh; 
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--bg-gradient);
+    }
+
+    /* 5. AJUSTES DE TAMANHO E RESPONSIVIDADE */
+    
+    .display-1 { font-size: clamp(3rem, 8vw, 6rem) !important; font-weight: 900; line-height: 0.9; color: var(--text-main); }
+    .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem) !important; font-weight: 900; color: var(--text-main); }
+    .display-6 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; color: var(--text-muted); }
+
+    /* Força os cards a serem flexíveis - Estilo Light Mode */
+    .main-card {
+        height: auto !important;
+        min-height: 100px;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: var(--text-main);
+    }
+
+    /* Auxiliares de espaçamento */
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Shadow suave para o Light Mode em vez de glow agressivo */
+    .text-shadow {
+        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .fw-black { 
+        font-weight: 900 !important; 
+    }
+
+    .transition-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--secondary-color) !important;
+    }
+
+    /* Ajuste para o slide Split no Light Mode */
+    .slide-split .col-md-6:first-child {
+        background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        .slide-split .col-md-6 {
+            min-height: 100vh;
+        }
+    }
+
+    /* Custom Divider para o Light Mode */
+    .custom-divider {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        height: 4px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+    <main class="presentation-container">
+        
+            <article class="slide-wrapper">
+                <div class="slide-hero vh-100 d-flex flex-column align-items-center justify-content-center position-relative text-white text-center" 
+     
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1629654297236-c55744c324e8?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;"
+     >
+    
+    <div class="container position-relative z-1 px-4">
+        
+        <div class="mb-4">
+            <i class="bi bi-terminal display-1 text-primary"></i>
+        </div>
+        
+
+        <h1 class="display-1 fw-bold mb-4 tracking-tight">
+            Linux: A Jornada de um Fenômeno Global
+        </h1>
+        
+        
+        <p class="lead fs-3 fw-light text-white-50 mx-auto" style="max-width: 800px;">
+            Da evolução do kernel à consolidação como o pilar da infraestrutura tecnológica mundial.
+        </p>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-imagem-info min-vh-100 d-flex align-items-center bg-white text-dark py-5">
+    <div class="container-fluid px-5">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0 border-end border-light border-3">
+                
+                <i class="bi bi-clock-history display-4 text-primary mb-3 d-block opacity-75"></i>
+                
+                
+                <h2 class="display-5 fw-bold mb-3 text-dark lh-sm">
+                    O Nascimento em 1991
+                </h2>
+                
+                
+                <div class="border-top border-primary border-3 mb-4" style="width: 50px;"></div>
+                <p class="lead text-secondary fs-5 lh-base">
+                    Linus Torvalds, frustrado com as limitações do Minix e a falta de acesso ao código-fonte dos sistemas proprietários, iniciou o desenvolvimento do kernel Linux como um projeto pessoal na Universidade de Helsinque.
+                </p>
+                
+            </div>
+
+            <div class="col-lg-9 ps-lg-5 text-center">
+                <div class="p-3 bg-light rounded-4 shadow-inner overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" 
+                         alt="O Nascimento em 1991" 
+                         class="img-fluid rounded-3 shadow-sm" 
+                         style="max-height: 75vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    /* Sombra interna sutil para dar profundidade à área da imagem */
+    .shadow-inner {
+        box-shadow: inset 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-timeline min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-hourglass-split display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Evolução do Linux</h2>
+            
+            
+            <p class="lead text-secondary">A trajetória de um projeto estudantil para a espinha dorsal da computação moderna.</p>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="position-relative py-2">
+                    <div class="position-absolute h-100 border-start border-2 border-primary" style="left: 0.45rem; top: 0;"></div>
+                    
+                    
+                    <div class="position-relative mb-5 d-flex align-items-start">
+                        
+                        <div class="bg-white border border-primary border-3 rounded-circle z-1 mt-2 flex-shrink-0" style="width: 1rem; height: 1rem;"></div>
+                        
+                        <div class="ms-4 bg-light p-4 rounded shadow-sm w-100 border-start border-primary border-4 transition-hover">
+                            <div class="d-flex align-items-center mb-3">
+                                
+                                <i class="bi bi-rocket-takeoff fs-4 text-primary me-2"></i>
+                                
+                                
+                                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">1991</span>
+                            </div>
+                            
+                            
+                            
+                            <h3 class="h4 fw-bold mb-2">O Anúncio</h3>
+                            
+                            
+                            <p class="text-secondary mb-0 fs-5">Linus Torvalds posta na Usenet sobre seu projeto de kernel, atraindo colaboradores globais.</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="position-relative mb-5 d-flex align-items-start">
+                        
+                        <div class="bg-white border border-primary border-3 rounded-circle z-1 mt-2 flex-shrink-0" style="width: 1rem; height: 1rem;"></div>
+                        
+                        <div class="ms-4 bg-light p-4 rounded shadow-sm w-100 border-start border-primary border-4 transition-hover">
+                            <div class="d-flex align-items-center mb-3">
+                                
+                                <i class="bi bi-people fs-4 text-primary me-2"></i>
+                                
+                                
+                                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Integração</span>
+                            </div>
+                            
+                            
+                            
+                            <h3 class="h4 fw-bold mb-2">Projeto GNU</h3>
+                            
+                            
+                            <p class="text-secondary mb-0 fs-5">A união do kernel de Torvalds com as ferramentas do projeto GNU cria o sistema GNU/Linux.</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="position-relative mb-5 d-flex align-items-start">
+                        
+                        <div class="bg-white border border-primary border-3 rounded-circle z-1 mt-2 flex-shrink-0" style="width: 1rem; height: 1rem;"></div>
+                        
+                        <div class="ms-4 bg-light p-4 rounded shadow-sm w-100 border-start border-primary border-4 transition-hover">
+                            <div class="d-flex align-items-center mb-3">
+                                
+                                <i class="bi bi-globe fs-4 text-primary me-2"></i>
+                                
+                                
+                                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Expansão</span>
+                            </div>
+                            
+                            
+                            
+                            <h3 class="h4 fw-bold mb-2">Domínio Global</h3>
+                            
+                            
+                            <p class="text-secondary mb-0 fs-5">O Linux torna-se a base de servidores, supercomputadores e dispositivos móveis em todo o mundo.</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-shield-lock display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    FILOSOFIA
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Software Livre vs. Código Aberto
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    O Software Livre foca na ética e nas quatro liberdades do usuário, enquanto o Código Aberto enfatiza o pragmatismo do desenvolvimento colaborativo. A licença GPL garante a transparência e a liberdade contínua do código.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> A licença GPL obriga que derivados do código original mantenham a mesma transparência, impedindo o fechamento de tecnologias baseadas no kernel.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-journal-text display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    As 4 Liberdades Fundamentais
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Os pilares éticos que definem o Software Livre segundo a Free Software Foundation:
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Executar o programa para qualquer finalidade.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Estudar o código-fonte para entender seu funcionamento.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Redistribuir cópias para ajudar o próximo.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Modificar o programa e distribuir as melhorias.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-split vh-100 container-fluid p-0 bg-light">
+    <div class="row g-0 h-100">
+        
+        
+        <div class="col-md-6 d-flex flex-column justify-content-center p-5 px-lg-5">
+            <div class="mx-lg-5">
+                
+                <i class="bi bi-layers display-4 text-primary mb-3 d-block"></i>
+                
+                <h2 class="display-4 fw-bold mb-4 text-dark">O Conceito de Distribuição</h2>
+                
+                <p class="lead text-secondary mb-4">Kernel + Softwares = Sistema Operacional</p>
+                
+                <div class="fs-5 text-body">
+                    O Linux, por si só, é apenas o kernel. Uma 'distribuição' é a união desse núcleo com utilitários, bibliotecas e interfaces gráficas, tornando o sistema funcional e adaptável a diferentes necessidades.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 h-100 shadow-sm" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+        
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-grid-3x3-gap display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Distribuições para Iniciantes</h2>
+            
+            
+            <p class="lead text-secondary">Focadas em usabilidade e na transição suave de sistemas proprietários.</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-ubuntu display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Ubuntu</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Foco em estabilidade, facilidade de uso e uma comunidade vasta para suporte.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-laptop display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Linux Mint</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Experiência de desktop tradicional e amigável, ideal para quem vem do Windows.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-server display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Distribuições para Servidores</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Foco em estabilidade, segurança e suporte corporativo.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Debian
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Conhecida pelo rigor extremo em testes, é a base estável para inúmeros servidores e outras distribuições.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> RHEL
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Distribuição paga voltada ao mercado corporativo com suporte técnico profissional e certificações.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse3">
+                                <span class="text-primary me-3">03.</span> Fedora
+                            </button>
+                        </h2>
+                        <div id="collapse3" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading3" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Vitrine de inovações tecnológicas, ideal para desenvolvedores que buscam as versões mais recentes.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-tools display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Distribuições para Especialistas</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Foco em controle total, performance e personalização.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Arch Linux
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Segue a filosofia KISS, permitindo que o usuário monte o sistema peça por peça com documentação exemplar.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> Gentoo
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Focado em performance máxima através da compilação local de pacotes otimizados para o hardware.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-cpu display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Distribuições com Focos Específicos</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Soluções para necessidades particulares de segurança e mobilidade.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Tails
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Projetada para anonimato total, roteando tráfego via Tor e rodando na RAM sem deixar rastros.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> Android
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Sistema móvel baseado em kernel Linux, demonstrando versatilidade em dispositivos touch e arquiteturas ARM.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-graph-up display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Impacto na Economia do Software</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">O investimento de gigantes no modelo colaborativo.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Investimento Corporativo
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Empresas como Google, Meta, Amazon e Microsoft investem no kernel por ser o modelo mais eficiente e escalável.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> Nuvem e IA
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                A maioria dos serviços de nuvem e supercomputadores de IA rodam sobre a infraestrutura do Linux.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-metrica min-vh-100 d-flex flex-column justify-content-center py-5" style="background: var(--bg-gradient);">
+    <div class="container px-lg-5">
+        
+        <div class="text-center mb-5 pb-4">
+            
+            <div class="mb-2">
+                <i class="bi bi-trophy fs-1 opacity-50" style="color: var(--secondary-color);"></i>
+            </div>
+            
+            
+            <h2 class="display-4 fw-black mb-2" style="color: var(--text-main); letter-spacing: -2px;">
+                Domínio em Supercomputação
+            </h2>
+            
+            
+            <p class="fs-5 mx-auto fw-light opacity-75" style="max-width: 600px; color: var(--text-muted);">
+                Dados de impacto sobre a infraestrutura mundial.
+            </p>
+            
+        </div>
+        
+        <div class="row g-5 justify-content-center">
+            
+            <div class="col-md-4 d-flex">
+                <div class="w-100 d-flex flex-column align-items-center text-center">
+                    
+                    
+                    <div class="mb-3">
+                        <i class="bi bi-speedometer2 fs-2" style="color: var(--secondary-color); opacity: 0.8;"></i>
+                    </div>
+                    
+                    
+                    <div class="display-1 fw-black mb-1" style="color: var(--text-main); line-height: 1; letter-spacing: -4px;">
+                        100%
+                    </div>
+                    
+                    <div class="my-3" style="width: 20px; height: 2px; background: var(--secondary-color); opacity: 0.3; border-radius: 2px;"></div>
+                    
+                    <p class="text-uppercase fw-bold tracking-widest" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 3px;">
+                        Dos 500 supercomputadores mais rápidos rodam Linux
+                    </p>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-citacao vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5 text-center">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <i class="bi bi-chat-quote display-1 text-primary opacity-50 mb-3 d-block"></i>
+                
+                <blockquote class="blockquote mb-5">
+                    <p class="display-5 fw-medium fst-italic text-dark lh-base">
+                        "O Linux é um testemunho da capacidade humana de colaboração, provando que a liberdade e o acesso aberto são os melhores catalisadores para o progresso."
+                    </p>
+                </blockquote>
+                
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    
+                    
+                    <div class="text-start">
+                        <h4 class="h3 fw-bold mb-1 text-dark">Análise do Ecossistema</h4>
+                        
+                        <p class="text-secondary fs-5 mb-0">História da Computação</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-pergunta min-vh-100 d-flex flex-column justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="container px-5 text-center">
+        
+        
+        <div class="mb-4">
+            <i class="bi bi-patch-question display-1 text-white opacity-50"></i>
+        </div>
+        
+        
+        <h2 class="display-2 fw-bolder mb-4 lh-sm mx-auto tracking-tight" style="max-width: 1000px;">
+            O Linux é apenas um sistema operacional ou um bem comum da humanidade?
+        </h2>
+        
+        
+        <hr class="w-25 mx-auto border-white border-2 opacity-50 mb-4 rounded">
+        <p class="display-6 fw-light text-white-50 mx-auto mb-0" style="max-width: 800px;">
+            Reflita sobre como a colaboração aberta moldou a base da nossa tecnologia atual.
+        </p>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-encerramento min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" 
+     style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                
+                <div class="main-card p-5 p-md-6 rounded-5 border border-white border-opacity-10 shadow-2xl text-center"
+                     style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);">
+                    
+                    
+                    <h1 class="display-1 fw-black mb-2 tracking-tighter text-white text-uppercase">
+                        O Futuro é Aberto<span class="text-info">.</span>
+                    </h1>
+
+                    
+                    
+                    <p class="fs-4 fw-light text-white mb-5 mx-auto lh-base opacity-75" style="max-width: 650px;">
+                        O Linux continua a evoluir em IA, IoT e computação de borda, mantendo-se como a fundação indispensável para as próximas revoluções tecnológicas.
+                    </p>
+                    
+
+                    <div class="custom-divider mb-5 mx-auto"></div>
+
+                    
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                        
+                        <div class="d-flex align-items-center">
+                            <span class="small text-uppercase tracking-widest text-info fw-bold">Júlio Dantas</span>
+                        </div>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="mailto:dantas.j.c.s@gmail.com" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            dantas.j.c.s@gmail.com
+                        </a>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="https://www.linkedin.com/in/dantasjcs" target="_blank" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-linkedin me-2 text-info"></i>
+                            in/dantasjcs
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.slide-encerramento {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.fw-black { font-weight: 900; }
+
+.contact-link {
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
+
+/* Divisor com brilho neon suave */
+.custom-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.8), transparent);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.2);
+}
+
+.tracking-tighter { letter-spacing: -0.06em; }
+.tracking-widest { letter-spacing: 0.35em; }
+
+/* Sombra profunda para destacar o card do background complexo */
+.main-card {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3.5rem; }
+    .main-card { padding: 2rem !important; }
+}
+</style>
+            </article>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.querySelector('.presentation-container');
+        
+        window.addEventListener('keydown', (e) => {
+            // Seta para Baixo, Direita ou Barra de Espaço: Próximo Slide
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }
+            // Seta para Cima ou Esquerda: Slide Anterior
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
