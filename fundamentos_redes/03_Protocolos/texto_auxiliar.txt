@@ -1,0 +1,83 @@
+# Apresentação: Fundamentos de Redes de Computadores
+
+## Introdução
+Bem-vindos, alunos. Nesta aula, exploraremos os fundamentos que sustentam a comunicação na rede mundial de computadores. A internet, como a conhecemos hoje, não seria possível sem um conjunto de regras padronizadas chamadas de **protocolos**.
+
+Um protocolo de rede é, essencialmente, uma "língua" comum que permite que dispositivos diferentes (computadores, servidores, smartphones) se entendam, independentemente do fabricante ou do sistema operacional que utilizam. Nesta apresentação, analisaremos os protocolos mais críticos que compõem a arquitetura da rede, desde as aplicações que utilizamos diariamente até os mecanismos de transporte e endereçamento que tornam a comunicação possível.
+
+---
+
+## O Modelo TCP/IP: A Base da Internet
+Para entender como esses protocolos se organizam, precisamos conhecer o modelo **TCP/IP**. Diferente do modelo teórico OSI (de sete camadas), o TCP/IP é a arquitetura prática que deu origem à Internet. Ele é composto por quatro camadas principais, cada uma com funções específicas:
+
+1.  **Camada de Aplicação:** Onde interagem os protocolos que usamos diretamente, como HTTP, SMTP e FTP.
+2.  **Camada de Transporte:** Responsável pela entrega de dados entre os dispositivos, garantindo a comunicação fim a fim (ex: TCP e UDP).
+3.  **Camada de Rede (ou Internet):** Onde ocorre o roteamento dos pacotes através da rede mundial usando endereços lógicos (ex: IP, ICMP).
+4.  **Camada de Enlace (ou Acesso à Rede):** Gerencia a comunicação física, lidando com endereços físicos (MAC) e meios de transmissão (cabos, fibra, Wi-Fi).
+
+---
+
+## Protocolos da Camada de Aplicação
+Os protocolos de aplicação são a interface entre o usuário e a rede.
+
+*   **HTTP (Hypertext Transfer Protocol):** É o protocolo fundamental da Web. Ele define como as mensagens são formatadas e transmitidas, e como navegadores devem responder a comandos (como GET e POST). É utilizado para carregar páginas web.
+*   **HTTPS (HTTP Secure):** É a versão segura do HTTP. Ele utiliza criptografia (TLS/SSL) para garantir que a comunicação entre o navegador e o servidor não seja interceptada. É essencial para transações bancárias e logins.
+*   **SMTP (Simple Mail Transfer Protocol):** É o padrão para o envio de e-mails. Ele define as regras para que um servidor de e-mail possa transferir a mensagem até o servidor do destinatário.
+*   **FTP (File Transfer Protocol):** Utilizado para a transferência de arquivos entre um cliente e um servidor. Permite operações como upload e download de grandes volumes de dados.
+*   **DNS (Domain Name System):** Frequentemente chamado de "lista telefônica da internet". Sua função é traduzir nomes de domínio (como `www.google.com`) para endereços IP numéricos, que os computadores realmente compreendem para estabelecer a conexão.
+
+---
+
+## A Camada de Transporte: TCP vs. UDP
+No coração da comunicação de dados estão dois protocolos principais de transporte, cada um com uma filosofia distinta:
+
+### TCP (Transmission Control Protocol)
+O TCP é **orientado à conexão**. Isso significa que, antes de enviar dados, ele estabelece uma conexão formal entre o remetente e o destinatário (o famoso *three-way handshake*). Sua maior prioridade é a **confiabilidade**. Ele garante que todos os dados cheguem, cheguem na ordem correta e sem corrupção. Caso um pacote se perca, o TCP solicita a retransmissão.
+*   **Emprego:** Navegação Web (HTTP/S), e-mail (SMTP), transferência de arquivos (FTP), onde a integridade dos dados é fundamental.
+
+### UDP (User Datagram Protocol)
+O UDP é **sem conexão**. Ele simplesmente envia os dados (datagramas) sem estabelecer uma conexão prévia ou verificar se o destinatário os recebeu. Sua prioridade é a **velocidade** e a baixa latência. Ele é ideal quando a rapidez é mais importante do que a entrega garantida de cada bit.
+*   **Emprego:** Streaming de vídeo ao vivo, jogos online, VoIP (chamadas de voz), onde perder um ou dois quadros é aceitável, mas o atraso é inaceitável.
+
+---
+
+## Endereçamento IP e Classes
+O protocolo IP (Internet Protocol) define os endereços que identificam cada dispositivo na rede. No modelo IPv4 original, o endereçamento era organizado em classes para gerenciar a distribuição desses endereços.
+
+![Classes do tcp/ip](http://www.tcpipguide.com/free/diagrams/ipclasses.png)
+
+Como podemos ver na imagem acima, as classes dividem o espaço de endereçamento IP para atender a diferentes necessidades de rede:
+*   **Classe A:** Projetada para redes extremamente grandes, utilizando o primeiro octeto para o endereço de rede e os três restantes para hosts.
+*   **Classe B:** Projetada para redes de médio a grande porte, utilizando dois octetos para rede e dois para hosts.
+*   **Classe C:** Projetada para redes menores, comuns em empresas e residências, usando três octetos para a rede e apenas o último para hosts.
+*   **Classe D e E:** Reservadas para endereçamento *multicast* e propósitos experimentais ou futuros, respectivamente.
+
+---
+
+## IPv4 vs. IPv6
+O mundo digital cresceu de forma exponencial, e o esgotamento dos endereços IPv4 tornou necessária a evolução para o IPv6.
+
+*   **IPv4:** Utiliza endereços de **32 bits**, permitindo aproximadamente 4,3 bilhões de endereços. Como esse número foi superado pelo número de dispositivos conectados hoje (Internet das Coisas, celulares, servidores), técnicas como o NAT (Network Address Translation) foram criadas para prolongar sua vida útil.
+*   **IPv6:** Utiliza endereços de **128 bits**. Esse novo formato permite um número virtualmente infinito de endereços (cerca de 340 undecilhões). Além de mais espaço, o IPv6 traz melhorias no roteamento, segurança integrada (IPsec) e autoconfiguração de endereços, tornando a rede mais eficiente.
+
+---
+
+## Protocolos de Suporte: ICMP, ARP e RARP
+Para que o IP e o TCP funcionem, a rede precisa de protocolos auxiliares que gerenciem diagnósticos e mapeamentos.
+
+*   **ICMP (Internet Control Message Protocol):** É o protocolo responsável por mensagens de erro e diagnóstico da camada de rede. O comando `ping` é o exemplo clássico de uso do ICMP, testando a conectividade entre dois hosts.
+*   **ARP (Address Resolution Protocol):** Dentro de uma rede local (LAN), um computador conhece o IP do destino, mas precisa do endereço físico (MAC) para enviar o dado. O ARP faz essa tradução: ele "pergunta" na rede quem tem aquele IP e recebe como resposta o endereço MAC correspondente.
+*   **RARP (Reverse ARP):** Como o nome sugere, é o inverso do ARP. Era utilizado por máquinas "sem disco" (como estações de trabalho sem HD) para descobrir seu próprio endereço IP inicial a partir do seu endereço MAC, consultando um servidor na rede. É um protocolo que caiu em desuso, substituído por soluções modernas como DHCP.
+
+---
+
+## Conclusão
+Compreender esses protocolos é fundamental para qualquer profissional da área técnica. Eles formam a infraestrutura invisível que permite o trabalho, o lazer e a comunicação global.
+
+Ao projetar, configurar ou solucionar problemas de rede, lembre-se:
+1.  O **TCP** garante integridade, enquanto o **UDP** garante velocidade.
+2.  O **DNS** transforma nomes em endereços IP.
+3.  O **ARP** conecta o mundo lógico (IP) ao mundo físico (MAC).
+4.  A transição para o **IPv6** é uma realidade necessária para a escalabilidade da rede.
+
+Dominar esses conceitos permitirá que você não apenas entenda como a rede funciona, mas que seja capaz de mantê-la robusta e eficiente.
