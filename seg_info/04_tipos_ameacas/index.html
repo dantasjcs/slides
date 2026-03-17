@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Apresentação Interativa</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+
+    /* 2. RESET E ESTRUTURA BASE */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: var(--text-main);
+        font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 3. CONTAINER DE ROLAGEM */
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .presentation-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. WRAPPER DE CADA SLIDE */
+    .slide-wrapper {
+        min-height: 100vh; 
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--bg-gradient);
+    }
+
+    /* 5. AJUSTES DE TAMANHO E RESPONSIVIDADE */
+    
+    .display-1 { font-size: clamp(3rem, 8vw, 6rem) !important; font-weight: 900; line-height: 0.9; color: var(--text-main); }
+    .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem) !important; font-weight: 900; color: var(--text-main); }
+    .display-6 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; color: var(--text-muted); }
+
+    /* Força os cards a serem flexíveis - Estilo Light Mode */
+    .main-card {
+        height: auto !important;
+        min-height: 100px;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: var(--text-main);
+    }
+
+    /* Auxiliares de espaçamento */
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Shadow suave para o Light Mode em vez de glow agressivo */
+    .text-shadow {
+        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .fw-black { 
+        font-weight: 900 !important; 
+    }
+
+    .transition-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--secondary-color) !important;
+    }
+
+    /* Ajuste para o slide Split no Light Mode */
+    .slide-split .col-md-6:first-child {
+        background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        .slide-split .col-md-6 {
+            min-height: 100vh;
+        }
+    }
+
+    /* Custom Divider para o Light Mode */
+    .custom-divider {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        height: 4px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+    <main class="presentation-container">
+        
+            <article class="slide-wrapper">
+                <div class="slide-hero vh-100 d-flex flex-column align-items-center justify-content-center position-relative text-white text-center" 
+     
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"
+     >
+    
+    <div class="container position-relative z-1 px-4">
+        
+        <div class="mb-4">
+            <i class="bi bi-shield-lock display-1 text-primary"></i>
+        </div>
+        
+
+        <h1 class="display-1 fw-bold mb-4 tracking-tight">
+            Fundamentos da Segurança da Informação
+        </h1>
+        
+        
+        <p class="lead fs-3 fw-light text-white-50 mx-auto" style="max-width: 800px;">
+            O papel do técnico na proteção contra ameaças digitais e falhas humanas.
+        </p>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-shield-check display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Objetivos da Segurança (Tríade CID)
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Os pilares fundamentais que todo profissional de TI deve proteger:
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Confidencialidade: Garantir que a informação seja acessada apenas por pessoas autorizadas.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Integridade: Assegurar que os dados não sejam alterados indevidamente.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Disponibilidade: Garantir que os sistemas estejam acessíveis quando necessário.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-bug display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    AMEAÇAS
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Malware
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Abreviação de 'malicious software', engloba qualquer código ou programa desenvolvido para se infiltrar em sistemas, causar danos, roubar dados ou obter acesso não autorizado.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Um script malicioso embutido em um anexo de e-mail que criptografa arquivos do usuário.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-virus display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Tipos de Malware</h2>
+            
+            
+            <p class="lead text-secondary">Principais ameaças que exploram vulnerabilidades técnicas:</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-file-earmark-binary display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Vírus</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Código que se anexa a arquivos legítimos e depende de execução humana.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-diagram-3 display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Worms</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Programas autônomos que se replicam via rede sem precisar de hospedeiro.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-gift display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Trojans</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Disfarçam-se de software legítimo para abrir portas dos fundos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-eye display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Spywares</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Coletam dados de navegação e teclas digitadas silenciosamente.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-badge-ad display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Adwares</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Exibem anúncios intrusivos e podem redirecionar para sites maliciosos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-passo-a-passo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-arrow-repeat display-4 text-primary mb-3"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Ciclo de Vida de um Vírus</h2>
+            
+            
+            <p class="lead text-secondary">Como o vírus se comporta dentro de um sistema infectado:</p>
+            
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch mt-4">
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            1
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-download display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Hospedagem</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">O código malicioso se anexa a um arquivo executável ou documento legítimo.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            2
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-play-circle display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Ativação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">O usuário executa o arquivo hospedeiro, disparando o código do vírus.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            3
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-layers display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Replicação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">O vírus infecta outros arquivos do sistema, espalhando a ameaça.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-imagem-info min-vh-100 d-flex align-items-center bg-white text-dark py-5">
+    <div class="container-fluid px-5">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0 border-end border-light border-3">
+                
+                <i class="bi bi-cpu display-4 text-primary mb-3 d-block opacity-75"></i>
+                
+                
+                <h2 class="display-5 fw-bold mb-3 text-dark lh-sm">
+                    Vírus vs. Worms
+                </h2>
+                
+                
+                <div class="border-top border-primary border-3 mb-4" style="width: 50px;"></div>
+                <p class="lead text-secondary fs-5 lh-base">
+                    A diferença técnica fundamental: Vírus exigem um arquivo hospedeiro e interação humana para se propagar, enquanto Worms são autônomos e exploram vulnerabilidades de rede para se espalhar rapidamente.
+                </p>
+                
+            </div>
+
+            <div class="col-lg-9 ps-lg-5 text-center">
+                <div class="p-3 bg-light rounded-4 shadow-inner overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" 
+                         alt="Vírus vs. Worms" 
+                         class="img-fluid rounded-3 shadow-sm" 
+                         style="max-height: 75vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    /* Sombra interna sutil para dar profundidade à área da imagem */
+    .shadow-inner {
+        box-shadow: inset 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-split vh-100 container-fluid p-0 bg-light">
+    <div class="row g-0 h-100">
+        
+        
+        <div class="col-md-6 d-flex flex-column justify-content-center p-5 px-lg-5">
+            <div class="mx-lg-5">
+                
+                <i class="bi bi-shield-exclamation display-4 text-primary mb-3 d-block"></i>
+                
+                <h2 class="display-4 fw-bold mb-4 text-dark">Cavalos de Troia</h2>
+                
+                <p class="lead text-secondary mb-4">A ilusão do software legítimo.</p>
+                
+                <div class="fs-5 text-body">
+                    O Trojan não se replica sozinho. Ele se disfarça de utilitário, jogo ou atualização para enganar o usuário. Uma vez executado, ele abre portas para acesso remoto e roubo de dados.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 h-100 shadow-sm" style="background-image: url('https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+        
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-pergunta min-vh-100 d-flex flex-column justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="container px-5 text-center">
+        
+        
+        <div class="mb-4">
+            <i class="bi bi-question-circle display-1 text-white opacity-50"></i>
+        </div>
+        
+        
+        <h2 class="display-2 fw-bolder mb-4 lh-sm mx-auto tracking-tight" style="max-width: 1000px;">
+            Como o Spyware monitora o usuário sem ser detectado?
+        </h2>
+        
+        
+        <hr class="w-25 mx-auto border-white border-2 opacity-50 mb-4 rounded">
+        <p class="display-6 fw-light text-white-50 mx-auto mb-0" style="max-width: 800px;">
+            Ele opera silenciosamente em segundo plano, capturando hábitos, senhas e telas, enviando tudo para um servidor remoto.
+        </p>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-eye-fill display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Variações de Spyware</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Ferramentas de espionagem digital:</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> Keyloggers
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Registram cada tecla digitada pelo usuário, sendo eficazes para roubar senhas e dados bancários.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> Screenloggers
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Capturam imagens da tela em intervalos ou cliques, permitindo ver exatamente o que o usuário faz.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse3">
+                                <span class="text-primary me-3">03.</span> Adwares
+                            </button>
+                        </h2>
+                        <div id="collapse3" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading3" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Exibem anúncios intrusivos e frequentemente coletam dados de navegação para fins publicitários.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-timeline min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-people display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Evolução da Engenharia Social</h2>
+            
+            
+            <p class="lead text-secondary">A transição do foco técnico para o foco humano.</p>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="position-relative py-2">
+                    <div class="position-absolute h-100 border-start border-2 border-primary" style="left: 0.45rem; top: 0;"></div>
+                    
+                    
+                    <div class="position-relative mb-5 d-flex align-items-start">
+                        
+                        <div class="bg-white border border-primary border-3 rounded-circle z-1 mt-2 flex-shrink-0" style="width: 1rem; height: 1rem;"></div>
+                        
+                        <div class="ms-4 bg-light p-4 rounded shadow-sm w-100 border-start border-primary border-4 transition-hover">
+                            <div class="d-flex align-items-center mb-3">
+                                
+                                <i class="bi bi-terminal fs-4 text-primary me-2"></i>
+                                
+                                
+                                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Passado</span>
+                            </div>
+                            
+                            
+                            
+                            <h3 class="h4 fw-bold mb-2">Hacking de Sistemas</h3>
+                            
+                            
+                            <p class="text-secondary mb-0 fs-5">Foco total em explorar falhas de software e protocolos de rede.</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="position-relative mb-5 d-flex align-items-start">
+                        
+                        <div class="bg-white border border-primary border-3 rounded-circle z-1 mt-2 flex-shrink-0" style="width: 1rem; height: 1rem;"></div>
+                        
+                        <div class="ms-4 bg-light p-4 rounded shadow-sm w-100 border-start border-primary border-4 transition-hover">
+                            <div class="d-flex align-items-center mb-3">
+                                
+                                <i class="bi bi-person-badge fs-4 text-primary me-2"></i>
+                                
+                                
+                                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">Presente</span>
+                            </div>
+                            
+                            
+                            
+                            <h3 class="h4 fw-bold mb-2">Hacking Humano</h3>
+                            
+                            
+                            <p class="text-secondary mb-0 fs-5">Exploração da falibilidade humana através de manipulação e persuasão.</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-comparativo vh-100 d-flex flex-column justify-content-center bg-white text-dark">
+    <div class="container px-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                
+                <i class="bi bi-graph-up display-4 text-primary mb-3 d-block"></i>
+                
+                
+                <h2 class="display-4 fw-bold mb-3">Gatilhos Psicológicos</h2>
+                
+                
+                <p class="lead text-secondary">Como atacantes manipulam a vítima:</p>
+                
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-clock display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Urgência</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Criação de pressão temporal.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Bloqueio de conta</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Ação imediata</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-person-check display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Autoridade</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Fingir ser suporte ou chefia.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Confiança cega</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Medo de punição</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-exclamation-triangle display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">Medo</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Ameaça de consequências.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Multas</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Processos</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-envelope-exclamation display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    O Processo do Phishing
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Etapas da 'pescaria digital' para captura de dados:
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Criação de página falsa idêntica a um serviço legítimo.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Envio de mensagem (e-mail/SMS) com link malicioso.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Indução do usuário a inserir credenciais.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Captura dos dados em tempo real pelo atacante.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-patch-question display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    PHISHING
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Variações de Phishing
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    O Phishing possui níveis de sofisticação: o Spear Phishing é direcionado com dados da vítima, enquanto o Whaling foca exclusivamente em executivos de alto nível.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Um e-mail personalizado citando o nome do seu gerente para solicitar uma transferência bancária.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-tools display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Técnicas de Manipulação</h2>
+            
+            
+            <p class="lead text-secondary">Métodos comuns de engenharia social:</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-chat-left-text display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Pretexting</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Criação de um cenário falso para obter informações.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-gift display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Baiting</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Uso de iscas físicas ou digitais para infectar sistemas.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-door-open display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Tailgating</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Seguir alguém para acessar áreas restritas fisicamente.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-metrica min-vh-100 d-flex flex-column justify-content-center py-5" style="background: var(--bg-gradient);">
+    <div class="container px-lg-5">
+        
+        <div class="text-center mb-5 pb-4">
+            
+            <div class="mb-2">
+                <i class="bi bi-person-x fs-1 opacity-50" style="color: var(--secondary-color);"></i>
+            </div>
+            
+            
+            <h2 class="display-4 fw-black mb-2" style="color: var(--text-main); letter-spacing: -2px;">
+                Impacto das Falhas Humanas
+            </h2>
+            
+            
+            <p class="fs-5 mx-auto fw-light opacity-75" style="max-width: 600px; color: var(--text-muted);">
+                Por que o usuário é o elo mais fraco:
+            </p>
+            
+        </div>
+        
+        <div class="row g-5 justify-content-center">
+            
+            <div class="col-md-4 d-flex">
+                <div class="w-100 d-flex flex-column align-items-center text-center">
+                    
+                    
+                    <div class="mb-3">
+                        <i class="bi bi-shield-slash fs-2" style="color: var(--secondary-color); opacity: 0.8;"></i>
+                    </div>
+                    
+                    
+                    <div class="display-1 fw-black mb-1" style="color: var(--text-main); line-height: 1; letter-spacing: -4px;">
+                        90%+
+                    </div>
+                    
+                    <div class="my-3" style="width: 20px; height: 2px; background: var(--secondary-color); opacity: 0.3; border-radius: 2px;"></div>
+                    
+                    <p class="text-uppercase fw-bold tracking-widest" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 3px;">
+                        Ataques iniciados por erro humano
+                    </p>
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-4 d-flex">
+                <div class="w-100 d-flex flex-column align-items-center text-center">
+                    
+                    
+                    <div class="mb-3">
+                        <i class="bi bi-clock-history fs-2" style="color: var(--secondary-color); opacity: 0.8;"></i>
+                    </div>
+                    
+                    
+                    <div class="display-1 fw-black mb-1" style="color: var(--text-main); line-height: 1; letter-spacing: -4px;">
+                        Constante
+                    </div>
+                    
+                    <div class="my-3" style="width: 20px; height: 2px; background: var(--secondary-color); opacity: 0.3; border-radius: 2px;"></div>
+                    
+                    <p class="text-uppercase fw-bold tracking-widest" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 3px;">
+                        Evolução das ameaças
+                    </p>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-gear-wide-connected display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Defesas Técnicas (Hardening)
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Medidas de proteção na infraestrutura:
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Atualizações constantes de sistemas e softwares.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Uso de EDR para análise comportamental de ameaças.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Implementação de MFA (Autenticação de Múltiplos Fatores).</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-citacao vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5 text-center">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <i class="bi bi-quote display-1 text-primary opacity-50 mb-3 d-block"></i>
+                
+                <blockquote class="blockquote mb-5">
+                    <p class="display-5 fw-medium fst-italic text-dark lh-base">
+                        "A segurança da informação não é um estado final, mas um processo contínuo de vigilância e adaptação."
+                    </p>
+                </blockquote>
+                
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    
+                    
+                    <div class="text-start">
+                        <h4 class="h3 fw-bold mb-1 text-dark">Equipe de Segurança</h4>
+                        
+                        <p class="text-secondary fs-5 mb-0">Especialistas em TI</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-people-fill display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Defesas Humanas
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Construindo uma cultura de segurança:
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Treinamento e conscientização contínua dos usuários.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Políticas claras de uso de dispositivos e senhas.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Simulações de ataques para identificar vulnerabilidades.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-lightbulb display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    CULTURA
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Cultura de Segurança
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    A integração da segurança como pilar fundamental da TI, onde todos os usuários compreendem seu papel na proteção da infraestrutura.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Realizar verificações de identidade antes de fornecer acesso a dados sensíveis.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-encerramento min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" 
+     style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                
+                <div class="main-card p-5 p-md-6 rounded-5 border border-white border-opacity-10 shadow-2xl text-center"
+                     style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);">
+                    
+                    
+                    <h1 class="display-1 fw-black mb-2 tracking-tighter text-white text-uppercase">
+                        Conclusão<span class="text-info">.</span>
+                    </h1>
+
+                    
+                    
+                    <p class="fs-4 fw-light text-white mb-5 mx-auto lh-base opacity-75" style="max-width: 650px;">
+                        A segurança é responsabilidade de todos. Mantenha-se vigilante e continue aprendendo. Dúvidas? Entre em contato com o suporte técnico.
+                    </p>
+                    
+
+                    <div class="custom-divider mb-5 mx-auto"></div>
+
+                    
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                        
+                        <div class="d-flex align-items-center">
+                            <span class="small text-uppercase tracking-widest text-info fw-bold">Júlio Dantas</span>
+                        </div>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="mailto:dantas.j.c.s@gmail.com" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            dantas.j.c.s@gmail.com
+                        </a>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="https://www.linkedin.com/in/dantasjcs" target="_blank" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-linkedin me-2 text-info"></i>
+                            in/dantasjcs
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.slide-encerramento {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.fw-black { font-weight: 900; }
+
+.contact-link {
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
+
+/* Divisor com brilho neon suave */
+.custom-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.8), transparent);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.2);
+}
+
+.tracking-tighter { letter-spacing: -0.06em; }
+.tracking-widest { letter-spacing: 0.35em; }
+
+/* Sombra profunda para destacar o card do background complexo */
+.main-card {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3.5rem; }
+    .main-card { padding: 2rem !important; }
+}
+</style>
+            </article>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.querySelector('.presentation-container');
+        
+        window.addEventListener('keydown', (e) => {
+            // Seta para Baixo, Direita ou Barra de Espaço: Próximo Slide
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }
+            // Seta para Cima ou Esquerda: Slide Anterior
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
