@@ -1,0 +1,92 @@
+# Apresentação: Fundamentos da Segurança da Informação – Ameaças e Vetores de Ataque
+
+## Introdução
+Bem-vindos, estudantes do curso técnico em informática. O campo da Segurança da Informação é, possivelmente, uma das áreas mais dinâmicas e cruciais dentro da tecnologia da informação. À medida que nos tornamos mais dependentes de sistemas digitais, redes interconectadas e armazenamento em nuvem, a superfície de ataque para cibercriminosos aumenta exponencialmente.
+
+Como futuros profissionais técnicos, vocês não devem apenas saber "consertar" computadores ou programar sistemas; vocês devem compreender a natureza das ameaças que buscam comprometer a integridade, a confidencialidade e a disponibilidade dos dados. Esta apresentação aborda o panorama das ameaças cibernéticas, dividindo-as entre aquelas que exploram vulnerabilidades técnicas (malwares) e aquelas que exploram a falibilidade humana (engenharia social).
+
+---
+
+## Parte I: O Universo dos Malwares (Softwares Maliciosos)
+
+O termo "malware" é uma abreviação de *malicious software* (software malicioso). Ele engloba qualquer tipo de código, script ou programa desenvolvido com a finalidade de se infiltrar em sistemas alheios, causar danos, roubar informações ou obter acesso não autorizado. É fundamental distinguir os tipos de malwares, pois cada um possui um comportamento e um objetivo distinto.
+
+### 1. Vírus de Computador
+O vírus é, talvez, o tipo de ameaça mais conhecido, mas frequentemente confundido com outros malwares. A característica definidora de um vírus é a sua necessidade de um programa hospedeiro. Um vírus é um fragmento de código que se anexa a um arquivo executável legítimo (como um programa, um documento com macros ou o setor de inicialização de um disco).
+*   **Comportamento:** Quando o usuário executa o programa hospedeiro, o vírus é ativado e passa a se replicar, infectando outros arquivos no sistema.
+*   **Propagação:** Ocorre principalmente por meio de compartilhamento de arquivos infectados, uso de pendrives contaminados ou downloads de fontes não confiáveis. O vírus depende da interação humana para se espalhar.
+
+### 2. Worms (Vermes)
+Diferente dos vírus, os *worms* são programas maliciosos autônomos. Eles não precisam se anexar a outro arquivo para serem executados ou se espalharem.
+*   **Comportamento:** O *worm* utiliza vulnerabilidades em redes ou protocolos de comunicação para se auto-replicar e infectar outros computadores conectados à mesma rede.
+*   **Impacto:** Por serem capazes de se replicar em altíssima velocidade, os *worms* podem consumir largura de banda da rede de forma extrema, causando lentidão ou a paralisação completa de sistemas, além de abrir "portas" (backdoors) para que outros ataques ocorram.
+
+### 3. Cavalos de Troia (Trojans)
+O nome vem da lenda grega: um presente aparentemente útil ou inofensivo que esconde uma ameaça perigosa. O Cavalo de Troia não se replica sozinho como um vírus ou um *worm*.
+*   **Comportamento:** Ele se disfarça de software legítimo, como um jogo, um utilitário de otimização ou até mesmo uma atualização de sistema. Quando o usuário o executa voluntariamente, o código malicioso embutido é ativado silenciosamente.
+*   **Objetivo:** Uma vez instalado, o *trojan* pode criar portas dos fundos para acesso remoto, permitir o roubo de dados, capturar senhas ou instalar outros tipos de malwares, como *ransomware* ou *spyware*.
+
+### 4. Spywares
+O *spyware* é um tipo de software que opera silenciosamente em segundo plano com o objetivo principal de espionagem.
+*   **Comportamento:** Ele coleta informações sobre o uso do computador, hábitos de navegação, dados sensíveis ou teclas digitadas e envia essas informações para um servidor remoto controlado pelo atacante.
+*   **Variações (Keyloggers e Screenloggers):**
+    *   *Keyloggers:* Registram cada tecla que o usuário digita. É uma das formas mais eficazes de roubar senhas bancárias, logins de redes sociais e e-mails corporativos.
+    *   *Screenloggers:* Capturam imagens da tela (prints) em intervalos específicos ou quando cliques de mouse ocorrem, permitindo que o invasor veja exatamente o que o usuário está vendo e clicando.
+
+### 5. Adware
+Embora nem sempre seja considerado "malicioso" no sentido estrito da palavra, o *adware* é frequentemente indesejado. Ele é projetado para exibir anúncios intrusivos e pop-ups no navegador ou no sistema operacional.
+*   **O Risco:** Muitos *adwares* também possuem capacidades de coleta de dados (comportando-se como *spyware*) e podem redirecionar o usuário para sites infectados, expondo o sistema a ameaças maiores.
+
+---
+
+## Parte II: O Elo Mais Fraco – Falhas Humanas e Engenharia Social
+
+Após anos de evolução em sistemas de defesa, como firewalls, antivírus e sistemas de detecção de intrusão, os cibercriminosos perceberam que é muito mais fácil hackear o usuário do que hackear o software. A **Engenharia Social** é a arte de manipular, enganar e persuadir indivíduos para que eles revelem informações confidenciais, realizem ações indevidas ou concedam acesso a sistemas protegidos.
+
+### 1. A Psicologia da Engenharia Social
+O engenheiro social não usa apenas técnicas técnicas; ele explora fraquezas psicológicas inerentes ao ser humano, tais como:
+*   **Senso de Urgência:** "Sua conta será bloqueada em 1 hora, clique aqui para atualizar."
+*   **Autoridade:** "Aqui é do suporte técnico de TI; preciso da sua senha para uma manutenção emergencial."
+*   **Medo/Ameaça:** "Detectamos uso indevido em seu CPF. Clique no link para verificar ou sofrerá multas."
+*   **Curiosidade/Ganância:** "Você ganhou um prêmio, clique aqui para resgatar."
+
+### 2. Phishing: O Golpe Digital
+O *phishing* (pescaria digital) é a forma mais comum de engenharia social. Consiste no envio de mensagens fraudulentas (e-mails, SMS, mensagens de WhatsApp, redes sociais) que se passam por instituições legítimas.
+
+*   **Como Funciona:**
+    1.  O atacante cria uma página falsa idêntica a um banco real ou a um serviço popular (como e-mail corporativo).
+    2.  O usuário recebe uma mensagem contendo um link para essa página falsa.
+    3.  A mensagem induz o usuário a inserir credenciais (login/senha) ou dados financeiros.
+    4.  O atacante captura essas informações em tempo real.
+
+*   **Evolução do Phishing:**
+    *   **Spear Phishing:** Um ataque direcionado. O criminoso realiza um trabalho prévio de coleta de informações sobre a vítima (nome, cargo, empresa, colegas) para tornar a mensagem extremamente convincente.
+    *   **Whaling:** Phishing direcionado especificamente a executivos ou pessoas de alto nível na hierarquia de uma organização.
+
+### 3. Outras Técnicas de Manipulação
+*   **Pretexting:** O atacante cria um cenário (um pretexto) elaborado para convencer a vítima de que ele é alguém que não é. Exemplo: ligar para o financeiro fingindo ser de uma empresa fornecedora, pedindo para atualizar os dados bancários para receber um pagamento.
+*   **Baiting (Isca):** Oferecer algo atraente para a vítima, como um pendrive deixado em um local público com uma etiqueta "Fotos da Festa da Empresa" ou "Salários 2026". Ao plugar o dispositivo, o computador é automaticamente infectado.
+*   **Tailgating (Seguimento):** Ocorre no ambiente físico. O atacante segue alguém que tem acesso a uma área restrita (sala de servidores, escritório) sem passar pela crachá, contando com a cortesia da pessoa de segurar a porta para ele.
+
+---
+
+## Parte III: Estratégias de Defesa e Conscientização
+
+Para um técnico em informática, entender as ameaças é apenas metade da batalha. A outra metade é a implementação de defesas e a promoção de uma cultura de segurança.
+
+### 1. Defesas Técnicas (Hardening)
+*   **Atualizações:** Manter sistemas operacionais e softwares sempre atualizados é a defesa mais básica e eficaz contra *worms* e malwares que exploram vulnerabilidades conhecidas.
+*   **Soluções de Endpoint:** Utilizar EDR (*Endpoint Detection and Response*) ou antivírus modernos capazes de análise comportamental (heurística), que identificam malwares não por assinaturas, mas pelo seu comportamento suspeito.
+*   **Autenticação de Múltiplos Fatores (MFA):** Esta é uma barreira crítica. Mesmo que o atacante consiga a senha através de *phishing* ou *keylogger*, ele não conseguirá acessar o sistema sem o segundo fator (token, app de autenticação ou biometria).
+
+### 2. Defesas Humanas (Segurança da Informação como Cultura)
+*   **Treinamento e Conscientização:** A educação é a vacina contra a engenharia social. Os usuários devem ser treinados para desconfiar de links inesperados, verificar a veracidade de solicitações de dados sensíveis e nunca compartilhar senhas.
+*   **Políticas de Segurança:** Implementar políticas claras sobre o uso de dispositivos pessoais, armazenamento de senhas e procedimentos de verificação de identidade.
+*   **Simulações de Ataque:** Realizar campanhas internas de simulação de *phishing* ajuda a identificar quais departamentos ou usuários são mais vulneráveis e precisam de mais treinamento.
+
+---
+
+## Conclusão
+A segurança da informação não é um estado final, mas um processo contínuo de vigilância e adaptação. As ameaças que discutimos hoje — desde vírus simples até ataques sofisticados de engenharia social — evoluem conforme a tecnologia avança. Como profissionais de TI, vocês são a linha de frente dessa defesa.
+
+Lembrem-se: os sistemas podem ser protegidos por firewalls e criptografia, mas a mente humana, se não estiver preparada, continuará sendo o vetor de ataque mais eficiente para os criminosos. Ao desenharem soluções, ao configurarem redes e, principalmente, ao orientarem usuários, pensem sempre na segurança como um pilar fundamental da tecnologia, não como um acessório opcional. O sucesso de uma infraestrutura robusta depende tanto da qualidade do código e da infraestrutura quanto da prudência e do conhecimento de quem interage com eles.

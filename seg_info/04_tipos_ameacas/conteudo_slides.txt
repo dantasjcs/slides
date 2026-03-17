@@ -1,0 +1,20 @@
+1. Hero: Introdução aos Fundamentos da Segurança da Informação e o papel do técnico.
+2. Lista: Objetivos da Segurança: Confidencialidade, Integridade e Disponibilidade.
+3. Conceito: Definição de Malware e sua classificação geral.
+4. Grid: Tipos de Malware: Vírus, Worms, Trojans, Spywares e Adwares.
+5. Passo_a_passo: Ciclo de vida de um Vírus: Hospedagem, Ativação e Replicação.
+6. Imagem: Diferença técnica entre Vírus (anexo) e Worms (autônomos).
+7. Split: Cavalos de Troia: A ilusão do software legítimo vs. a ameaça oculta.
+8. Pergunta: Como o Spyware monitora o usuário sem ser detectado?
+9. Accordion: Variações de Spyware: Keyloggers, Screenloggers e Adwares.
+10. Timeline: A evolução da Engenharia Social: Do hacking de sistemas para o hacking humano.
+11. Comparativo: Gatilhos psicológicos: Urgência, Autoridade, Medo e Curiosidade.
+12. Lista: O processo do Phishing: Da criação da página falsa à captura de dados.
+13. Conceito: Diferenciação entre Phishing, Spear Phishing e Whaling.
+14. Grid: Técnicas de manipulação: Pretexting, Baiting e Tailgating.
+15. Metrica: Impacto das falhas humanas: Por que o usuário é o elo mais fraco.
+16. Lista: Defesas Técnicas (Hardening): Atualizações, EDR e MFA.
+17. Citacao: Frase de impacto sobre a segurança ser um processo contínuo, não um estado final.
+18. Lista: Defesas Humanas: Treinamento, Políticas de Segurança e Simulações.
+19. Conceito: A importância da cultura de segurança na infraestrutura de TI.
+20. Encerramento: Conclusão, mensagem final e canais de contato para suporte técnico.
