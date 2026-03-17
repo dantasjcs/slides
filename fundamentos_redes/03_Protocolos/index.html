@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Apresentação Interativa</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<style>
+
+    /* 2. RESET E ESTRUTURA BASE */
+    html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: var(--text-main);
+        font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 3. CONTAINER DE ROLAGEM */
+    .presentation-container {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .presentation-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 4. WRAPPER DE CADA SLIDE */
+    .slide-wrapper {
+        min-height: 100vh; 
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--bg-gradient);
+    }
+
+    /* 5. AJUSTES DE TAMANHO E RESPONSIVIDADE */
+    
+    .display-1 { font-size: clamp(3rem, 8vw, 6rem) !important; font-weight: 900; line-height: 0.9; color: var(--text-main); }
+    .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem) !important; font-weight: 900; color: var(--text-main); }
+    .display-6 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; color: var(--text-muted); }
+
+    /* Força os cards a serem flexíveis - Estilo Light Mode */
+    .main-card {
+        height: auto !important;
+        min-height: 100px;
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: var(--text-main);
+    }
+
+    /* Auxiliares de espaçamento */
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Shadow suave para o Light Mode em vez de glow agressivo */
+    .text-shadow {
+        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .fw-black { 
+        font-weight: 900 !important; 
+    }
+
+    .transition-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--secondary-color) !important;
+    }
+
+    /* Ajuste para o slide Split no Light Mode */
+    .slide-split .col-md-6:first-child {
+        background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+        .slide-split .col-md-6 {
+            min-height: 100vh;
+        }
+    }
+
+    /* Custom Divider para o Light Mode */
+    .custom-divider {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        height: 4px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+
+    <main class="presentation-container">
+        
+            <article class="slide-wrapper">
+                <div class="slide-hero vh-100 d-flex flex-column align-items-center justify-content-center position-relative text-white text-center" 
+     
+     style="background-color: #212529;"
+     >
+    
+    <div class="container position-relative z-1 px-4">
+        
+        <div class="mb-4">
+            <i class="bi bi-globe display-1 text-primary"></i>
+        </div>
+        
+
+        <h1 class="display-1 fw-bold mb-4 tracking-tight">
+            Fundamentos de Redes de Computadores
+        </h1>
+        
+        
+        <p class="lead fs-3 fw-light text-white-50 mx-auto" style="max-width: 800px;">
+            Explorando os protocolos que sustentam a comunicação global e a arquitetura da internet.
+        </p>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-chat-dots display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    FUNDAMENTOS
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    Protocolo de Rede
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Um protocolo de rede é uma 'língua' comum que permite que dispositivos diferentes, como computadores e smartphones, se comuniquem de forma padronizada, independentemente do fabricante ou sistema operacional.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> O uso de um navegador web para acessar um site, onde o protocolo HTTP garante que o servidor e o cliente entendam a requisição.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-passo-a-passo min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-layers display-4 text-primary mb-3"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Modelo TCP/IP</h2>
+            
+            
+            <p class="lead text-secondary">A arquitetura prática que sustenta a internet, organizada em quatro camadas funcionais.</p>
+            
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch mt-4">
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            1
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-window-sidebar display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Aplicação</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Interface direta com o usuário (HTTP, SMTP, FTP).</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            2
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-arrow-left-right display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Transporte</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Entrega fim a fim de dados (TCP e UDP).</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            3
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-router display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Rede</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Roteamento de pacotes via endereços lógicos (IP, ICMP).</p>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="position-absolute top-50 start-100 translate-middle d-none d-md-block z-1 ps-3">
+                    <i class="bi bi-caret-right-fill fs-2 text-primary opacity-25"></i>
+                </div>
+                
+                
+            </div>
+            
+            <div class="col-md position-relative mt-4 mt-md-0">
+                
+                <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 border-bottom border-primary border-4 bg-white">
+                    
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge rounded-pill bg-primary fs-4 border border-4 border-light shadow-sm" style="width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+                            4
+                        </span>
+                    </div>
+
+                    <div class="card-body mt-4 pt-2">
+                        
+                        <i class="bi bi-ethernet display-6 text-secondary mb-3 d-block"></i>
+                        
+                        
+                        <h3 class="h4 fw-bold mb-3 text-dark">Enlace</h3>
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Comunicação física e endereçamento MAC.</p>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-grid-3x3-gap display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Camadas do TCP/IP</h2>
+            
+            
+            <p class="lead text-secondary">Resumo das funções de cada camada na arquitetura de rede.</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-window display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Aplicação</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Protocolos de interação direta com o usuário final.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-truck display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Transporte</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Gerenciamento da entrega e integridade dos dados.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-globe display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Rede</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Endereçamento lógico e roteamento global.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-pc-display display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">Enlace</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Conexão física e endereçamento de hardware (MAC).</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-accordion min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="mb-5 text-center">
+            
+            <i class="bi bi-window-stack display-4 text-primary mb-3 d-block"></i>
+            
+            <h2 class="display-3 fw-bold mb-3">Protocolos de Aplicação</h2>
+            
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">Protocolos que facilitam a comunicação entre o usuário e a rede.</p>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border" id="accordionSlide">
+                    
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button  fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapse1">
+                                <span class="text-primary me-3">01.</span> HTTP / HTTPS
+                            </button>
+                        </h2>
+                        <div id="collapse1" 
+                             class="accordion-collapse collapse show" 
+                             aria-labelledby="heading1" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                HTTP é o protocolo base da web. O HTTPS adiciona uma camada de criptografia (TLS/SSL) para transações seguras.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse2">
+                                <span class="text-primary me-3">02.</span> SMTP
+                            </button>
+                        </h2>
+                        <div id="collapse2" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading2" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Protocolo padrão para o envio de e-mails entre servidores.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse3">
+                                <span class="text-primary me-3">03.</span> FTP
+                            </button>
+                        </h2>
+                        <div id="collapse3" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading3" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                Utilizado para transferência de arquivos entre cliente e servidor.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed fw-bold fs-5 py-4" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse4" 
+                                    aria-expanded="false" 
+                                    aria-controls="collapse4">
+                                <span class="text-primary me-3">04.</span> DNS
+                            </button>
+                        </h2>
+                        <div id="collapse4" 
+                             class="accordion-collapse collapse " 
+                             aria-labelledby="heading4" 
+                             data-bs-parent="#accordionSlide">
+                            <div class="accordion-body py-4 px-4 fs-5 text-secondary">
+                                A 'lista telefônica da internet', traduz nomes de domínio em endereços IP.
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-comparativo vh-100 d-flex flex-column justify-content-center bg-white text-dark">
+    <div class="container px-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                
+                <i class="bi bi-arrow-left-right display-4 text-primary mb-3 d-block"></i>
+                
+                
+                <h2 class="display-4 fw-bold mb-3">TCP vs UDP</h2>
+                
+                
+                <p class="lead text-secondary">Diferenças fundamentais na filosofia de transporte de dados.</p>
+                
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-shield-check display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">TCP</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Orientado à conexão, prioriza a confiabilidade.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Three-way handshake</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Garante entrega</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Ordem correta</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Uso: Web, E-mail</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-speedometer2 display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">UDP</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Sem conexão, prioriza a velocidade.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Envio direto</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Baixa latência</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Sem verificação</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Uso: Streaming, VoIP</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-imagem-info min-vh-100 d-flex align-items-center bg-white text-dark py-5">
+    <div class="container-fluid px-5">
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-3 pe-lg-5 mb-5 mb-lg-0 border-end border-light border-3">
+                
+                <i class="bi bi-diagram-3 display-4 text-primary mb-3 d-block opacity-75"></i>
+                
+                
+                <h2 class="display-5 fw-bold mb-3 text-dark lh-sm">
+                    Classes de Endereçamento IP
+                </h2>
+                
+                
+                <div class="border-top border-primary border-3 mb-4" style="width: 50px;"></div>
+                <p class="lead text-secondary fs-5 lh-base">
+                    Visualização da divisão do espaço de endereçamento IPv4 em classes para diferentes escalas de rede.
+                </p>
+                
+            </div>
+
+            <div class="col-lg-9 ps-lg-5 text-center">
+                <div class="p-3 bg-light rounded-4 shadow-inner overflow-hidden d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+                    <img src="http://www.tcpipguide.com/free/diagrams/ipclasses.png" 
+                         alt="Classes de Endereçamento IP" 
+                         class="img-fluid rounded-3 shadow-sm" 
+                         style="max-height: 75vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    /* Sombra interna sutil para dar profundidade à área da imagem */
+    .shadow-inner {
+        box-shadow: inset 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-list-ol display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Características das Classes IP
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Como o endereçamento é distribuído conforme o tamanho da rede.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Classe A: Redes extremamente grandes (1 octeto para rede).</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Classe B: Redes de médio a grande porte (2 octetos para rede).</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Classe C: Redes pequenas, comuns em empresas e residências (3 octetos para rede).</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Classe D e E: Reservadas para multicast e fins experimentais.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-comparativo vh-100 d-flex flex-column justify-content-center bg-white text-dark">
+    <div class="container px-5">
+        
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                
+                <i class="bi bi-hdd-network display-4 text-primary mb-3 d-block"></i>
+                
+                
+                <h2 class="display-4 fw-bold mb-3">IPv4 vs IPv6</h2>
+                
+                
+                <p class="lead text-secondary">A evolução necessária para a escalabilidade da internet.</p>
+                
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-box display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">IPv4</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Padrão original de 32 bits.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>4,3 bilhões de endereços</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Uso de NAT</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Esgotamento iminente</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="col-md d-flex">
+                <div class="w-100 p-5 bg-light rounded shadow-sm border-top border-primary border-4 d-flex flex-column text-center">
+                    
+                    
+                    <i class="bi bi-infinity display-5 text-primary mb-3"></i>
+                    
+                    
+                    
+                    <h3 class="h4 fw-bold mb-3">IPv6</h3>
+                    
+                    
+                    
+                    <p class="text-body fs-5 mb-0">Novo padrão de 128 bits.</p>
+                    
+                    
+                    
+                    <ul class="list-unstyled text-start mt-4 mb-0">
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>340 undecilhões de endereços</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Segurança IPsec nativa</span>
+                        </li>
+                        
+                        <li class="mb-2 fs-5 d-flex align-items-start">
+                            <i class="bi bi-check2 text-success me-2 mt-1"></i> 
+                            <span>Autoconfiguração</span>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-tabela min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-table display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Limites e Capacidades</h2>
+            
+            
+            <p class="lead text-secondary">Comparação técnica entre os protocolos de endereçamento.</p>
+            
+        </div>
+        
+        <div class="table-responsive shadow-sm rounded-4">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">Característica</th>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">IPv4</th>
+                        
+                        <th scope="col" class="py-4 px-4 fs-5 fw-bold border-0">IPv6</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="bg-light">
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Tamanho do endereço
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            32 bits
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            128 bits
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Capacidade
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            4,3 bilhões
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            340 undecilhões
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Segurança
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Opcional
+                        </td>
+                        
+                        <td class="py-4 px-4 fs-5 text-secondary border-bottom border-secondary border-opacity-10">
+                            Integrada (IPsec)
+                        </td>
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div class="mt-4 text-end">
+            <p class="text-secondary fst-italic mb-0">Fonte: Fundamentos de Redes de Computadores.</p>
+        </div>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-gear display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Protocolos de Suporte
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Protocolos auxiliares essenciais para diagnóstico e mapeamento.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">ICMP: Diagnóstico e mensagens de erro (ex: ping).</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">ARP: Mapeamento de IP para endereço físico (MAC).</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-arrow-right-short text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">RARP: Descoberta de IP a partir do MAC (obsoleto).</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-pergunta min-vh-100 d-flex flex-column justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="container px-5 text-center">
+        
+        
+        <div class="mb-4">
+            <i class="bi bi-patch-question display-1 text-white opacity-50"></i>
+        </div>
+        
+        
+        <h2 class="display-2 fw-bolder mb-4 lh-sm mx-auto tracking-tight" style="max-width: 1000px;">
+            Como o computador descobre o endereço físico (MAC) de um destino?
+        </h2>
+        
+        
+        <hr class="w-25 mx-auto border-white border-2 opacity-50 mb-4 rounded">
+        <p class="display-6 fw-light text-white-50 mx-auto mb-0" style="max-width: 800px;">
+            O protocolo ARP atua como um tradutor entre o mundo lógico do IP e o mundo físico da rede local.
+        </p>
+        
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-search display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Funcionamento do ARP
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    O processo de resolução de endereços em uma rede local.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-dot text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">O computador conhece o IP de destino.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-dot text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Ele envia uma requisição broadcast na rede perguntando quem possui aquele IP.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-dot text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">O dispositivo com o IP correspondente responde com seu endereço MAC.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-dot text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">O computador armazena essa relação em sua tabela ARP.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-activity display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    DIAGNÓSTICO
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    ICMP
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Protocolo de controle que gerencia mensagens de erro e diagnóstico na camada de rede.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> O comando 'ping', que utiliza ICMP para verificar se um host está ativo e medir o tempo de resposta.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-arrow-counterclockwise display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    LEGADO
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    RARP
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Protocolo utilizado por máquinas sem disco para descobrir seu próprio endereço IP a partir do endereço MAC.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Estações de trabalho antigas que precisavam de um servidor para inicializar sua configuração de rede.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-conceito min-vh-100 d-flex flex-column justify-content-center bg-white text-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                
+                
+                <div class="mb-4">
+                    <i class="bi bi-book display-3 text-primary opacity-75"></i>
+                </div>
+                
+                
+                
+                <span class="badge bg-light text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill mb-4 fs-6 text-uppercase tracking-wide">
+                    APLICAÇÃO
+                </span>
+                
+                
+                <h2 class="display-2 fw-bolder mb-4 text-dark tracking-tight">
+                    DNS
+                </h2>
+                
+                <hr class="w-25 mx-auto border-primary border-3 opacity-100 mb-5 rounded">
+                
+                <p class="display-6 fw-light text-secondary lh-base mb-5">
+                    Sistema de nomes de domínio que atua como a 'lista telefônica da internet', traduzindo nomes legíveis em endereços IP.
+                </p>
+                
+                
+                <div class="p-4 bg-light rounded-4 border-start border-4 border-primary text-start shadow-sm mx-auto" style="max-width: 800px;">
+                    <p class="fs-5 mb-0 text-dark">
+                        <strong class="text-primary me-2">Exemplo:</strong> Ao digitar 'google.com', o DNS traduz esse nome para o endereço IP do servidor do Google.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-grid min-vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5">
+        
+        <div class="text-center mb-5">
+            
+            <i class="bi bi-grid-3x3-gap display-4 text-primary mb-3 d-block"></i>
+            
+            
+            <h2 class="display-4 fw-bold mb-3">Resumo dos Pilares</h2>
+            
+            
+            <p class="lead text-secondary">Conceitos fundamentais para a manutenção de redes.</p>
+            
+        </div>
+        
+        
+        
+        
+            
+        
+
+        <div class="row row-cols-md-2 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-arrow-left-right display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">TCP vs UDP</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Escolha entre confiabilidade ou velocidade.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-book display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">DNS</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Tradução de nomes para endereços IP.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-search display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">ARP</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Conexão entre IP e endereço físico MAC.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm p-3 transition-hover">
+                    <div class="card-body text-center">
+                        
+                        <div class="mb-4">
+                            <i class="bi bi-infinity display-6 text-primary"></i>
+                        </div>
+                        
+                        
+                        
+                        <h3 class="h5 fw-bold mb-3 text-dark">IPv6</h3>
+                        
+                        
+                        
+                        <p class="card-text text-secondary mb-0">Escalabilidade para o futuro da internet.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-lista vh-100 d-flex flex-column justify-content-center bg-light text-dark">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="mb-3">
+                    <i class="bi bi-tools display-4 text-primary"></i>
+                </div>
+                
+
+                <h2 class="display-4 fw-bold mb-4">
+                    Dicas para Profissionais
+                </h2>
+                
+                
+                <p class="lead text-secondary mb-5">
+                    Boas práticas para manter redes robustas e eficientes.
+                </p>
+                
+                
+                <ul class="list-unstyled fs-4">
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Sempre monitore a latência para decidir entre TCP e UDP.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Mantenha o DNS configurado corretamente para evitar falhas de acesso.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Planeje a transição para IPv6 para garantir a longevidade da infraestrutura.</span>
+                    </li>
+                    
+                    <li class="mb-4 d-flex align-items-start">
+                        <i class="bi bi-check-circle text-primary me-3 fs-3" style="margin-top: -0.15rem;"></i>
+                        <span class="text-dark">Entenda o fluxo ARP para solucionar problemas de conectividade local.</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-citacao vh-100 d-flex flex-column justify-content-center bg-light text-dark py-5">
+    <div class="container px-5 text-center">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <i class="bi bi-chat-quote display-1 text-primary opacity-50 mb-3 d-block"></i>
+                
+                <blockquote class="blockquote mb-5">
+                    <p class="display-5 fw-medium fst-italic text-dark lh-base">
+                        "Os protocolos de rede formam a infraestrutura invisível que permite o trabalho, o lazer e a comunicação global."
+                    </p>
+                </blockquote>
+                
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    
+                    
+                    <div class="text-start">
+                        <h4 class="h3 fw-bold mb-1 text-dark">Engenharia de Redes</h4>
+                        
+                        <p class="text-secondary fs-5 mb-0">Fundamentos de TI</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+            </article>
+        
+            <article class="slide-wrapper">
+                <div class="slide-encerramento min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" 
+     style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                
+                <div class="main-card p-5 p-md-6 rounded-5 border border-white border-opacity-10 shadow-2xl text-center"
+                     style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);">
+                    
+                    
+                    <h1 class="display-1 fw-black mb-2 tracking-tighter text-white text-uppercase">
+                        Obrigado!<span class="text-info">.</span>
+                    </h1>
+
+                    
+                    
+                    <p class="fs-4 fw-light text-white mb-5 mx-auto lh-base opacity-75" style="max-width: 650px;">
+                        Dominar esses conceitos é o primeiro passo para construir redes robustas. Dúvidas? Entre em contato.
+                    </p>
+                    
+
+                    <div class="custom-divider mb-5 mx-auto"></div>
+
+                    
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                        
+                        <div class="d-flex align-items-center">
+                            <span class="small text-uppercase tracking-widest text-info fw-bold">Júlio Dantas</span>
+                        </div>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="mailto:dantas.j.c.s@gmail.com" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            dantas.j.c.s@gmail.com
+                        </a>
+
+                        <div class="d-none d-md-block bg-white opacity-20" style="width: 1px; height: 24px;"></div>
+
+                        <a href="https://www.linkedin.com/in/dantasjcs" target="_blank" class="contact-link text-decoration-none text-white transition-all opacity-70">
+                            <i class="bi bi-linkedin me-2 text-info"></i>
+                            in/dantasjcs
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.slide-encerramento {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.fw-black { font-weight: 900; }
+
+.contact-link {
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+    transform: translateY(-2px);
+}
+
+/* Divisor com brilho neon suave */
+.custom-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.8), transparent);
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.2);
+}
+
+.tracking-tighter { letter-spacing: -0.06em; }
+.tracking-widest { letter-spacing: 0.35em; }
+
+/* Sombra profunda para destacar o card do background complexo */
+.main-card {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .display-1 { font-size: 3.5rem; }
+    .main-card { padding: 2rem !important; }
+}
+</style>
+            </article>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.querySelector('.presentation-container');
+        
+        window.addEventListener('keydown', (e) => {
+            // Seta para Baixo, Direita ou Barra de Espaço: Próximo Slide
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }
+            // Seta para Cima ou Esquerda: Slide Anterior
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                container.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
