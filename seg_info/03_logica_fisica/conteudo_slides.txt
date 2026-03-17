@@ -1,0 +1,15 @@
+1. Hero: Título 'Fundamentos da Segurança da Informação' com subtítulo sobre a convergência entre proteção física e lógica.
+2. Conceito: Definição de Segurança da Informação como pilar de confiança, continuidade e integridade.
+3. Split: Comparativo visual entre Segurança Física (infraestrutura) e Segurança Lógica (dados/software).
+4. Lista: Elementos da Segurança Física: Controle de Acesso, Segurança Ambiental e Segurança de Ativos.
+5. Problema: Foco em falhas físicas como Tailgating e negligência ambiental (inundações/incêndios).
+6. Conceito: Definição de Segurança Lógica como o 'escudo virtual' contra acessos não autorizados.
+7. Grid: Elementos da Segurança Lógica: Criptografia, Firewalls, IAM, IDS/IPS e EDR.
+8. Timeline: Evolução histórica de ameaças lógicas: Worm Morris (1988) e Ataque SolarWinds (2020).
+9. Case: Análise do ataque SolarWinds: Desafio (cadeia de suprimentos), Solução (monitoramento) e Resultados (lições aprendidas).
+10. Pergunta: 'Como a convergência entre segurança física e lógica pode prevenir incidentes em tempo real?'
+11. Passo_a_passo: Guia do Técnico: 5 passos para proteção física (Biometria, Monitoramento, Climatização, Gestão de Hardware, Cultura).
+12. Accordion: Guia do Técnico: 5 passos para proteção lógica (Patch Management, Privilégio Mínimo, 2FA, Backups 3-2-1, Segmentação de Rede).
+13. Lista: Boas práticas de cultura de segurança e vigilância contínua para o técnico em TI.
+14. Citacao: Frase de impacto sobre a responsabilidade do técnico como guardião dos dados.
+15. Encerramento: Mensagem final sobre segurança como processo contínuo e canais de contato.
